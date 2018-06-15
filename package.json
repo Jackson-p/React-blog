@@ -1,0 +1,32 @@
+{
+  "name": "react-blog",
+  "version": "1.0.0",
+  "description": "先写个简陋的开始txt日记吧，用于记录自己练手用React栈搭个人博客的过程，希望可以学到东西 回头整理 6.14 日开始配webpack和目录位置等，试试es-lint, npm --save install sth 是以前用过的 安装包的同时会把版本号记录到package.json里面,--save-dev会安装到devDependencies里 dependencies：项目跑起来后需要使用到的模块 devDependencies：开发的时候需要用的模块，但是项目跑起来后就不需要了",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/201585052/201585052.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/201585052/201585052.github.io/issues"
+  },
+  "homepage": "https://github.com/201585052/201585052.github.io#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.7"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10"
+  }
+}
