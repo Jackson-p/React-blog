@@ -2,10 +2,9 @@ const path = require('path');
 
 module.exports = {
     mode:'development',
-    entry: './src/index.js',
+    entry: './src/js/index.js',
     devtool: 'inline-source-map',
     devServer:{
-        contentBase: path.join(__dirname, 'dist'),
         compress: true
     },
     module:{
@@ -22,7 +21,11 @@ module.exports = {
                 use:{
                     loader:'babel-loader',
                     options: {
-                        presets: ['@babel/preset-react']
+                        presets: ['@babel/preset-react'],
+                        plugins: [
+                            '@babel/plugin-proposal-class-properties',
+                            ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }] // `style: true` 会加载 less 文件
+                        ]
                     }
                 }
             },
@@ -39,7 +42,8 @@ module.exports = {
     },
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname,'dist')
+        path: path.resolve(__dirname,'dist'),
+        publicPath:'/dist'
     },
     plugins: [
         
