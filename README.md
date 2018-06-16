@@ -46,3 +46,11 @@ npm v5.2.0引入的一条命令（npx），引入这个命令的目的是为了�
 [为css增加类名的方法](https://blog.csdn.net/nanhupatar/article/details/79101797)
 
 嗯嗯今天算是学到了webpack多输入多输出和那个HtmlWebpackPlugin其实是动态根据自己的bundle.js生成相关的index.html模版的
+
+一顿操作之后还不知道是babel出现了问题，还是webpack出现了问题，现在git clone老项目下来的话包好像都不好使了，同样的招数不是总管用，技术更新太快
+再来之前是安装webpack官网教程来的这里从新开始
+这里先把后面的clean掉dist里面那个插件删掉了用的不多
+心得babel这里不是先看babel的官网而是先看webpack的官网，再去观察babel-loader中需要的部分，react官网给的则是人家自己的脚手架555,好吧我错了，接着还是要看babel有没有能搞react的插件。。
+果然巨讨厌的问题：Uncaught Error: Target container is not a DOM element.
+简单说就是额，，，react没抓到那个root，我到现在。。至少排除了react解析的错误，还是单纯解决webpack的问题再说...我擦问题的所在就是那个插件官网上的HTMLwebpackplugin可能我用的不对吧，每次webpack后这个html都会重新生成会导致里面的DOM元素直接凉掉，当然啥也没有。。。
+终于好使了，核心在于不太熟别乱加

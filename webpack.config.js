@@ -1,22 +1,13 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: {
-        app:'./src/index.js',
-        print:'./src/print.js'
+    mode:'development',
+    entry: './src/index.js',
+    devtool: 'inline-source-map',
+    devServer:{
+        contentBase: path.join(__dirname, 'dist'),
+        compress: true
     },
-    output: {
-        filename: '[name].bundle.js',
-        path: path.resolve(__dirname,'dist')
-    },
-    plugins: [
-        new CleanWebpackPlugin(['dist']),
-        new HtmlWebpackPlugin({
-           title: 'Output Management'
-         })
-    ],
     module:{
         rules:[
             {
@@ -25,7 +16,32 @@ module.exports = {
                     'style-loader',
                     'css-loader'
                 ]
+            },
+            {
+                test:/\.js?$/,
+                use:{
+                    loader:'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-react']
+                    }
+                }
+            },
+            {
+                test: /\.(png|jpg|gif)$/,
+                use: [
+                    {
+                        loader: "file-loader",
+                        options: {}
+                    }
+                ]
             }
         ]
-    }
+    },
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname,'dist')
+    },
+    plugins: [
+        
+    ]
 };
