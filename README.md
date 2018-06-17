@@ -63,3 +63,13 @@ npm config set registry http://registry.cnpmjs.org
 遇到了没实时刷新的问题
 //publicPath: './dist' =>  publicPath: '/dist'
 就可以了emmm
+这里用的新方法不同 以往不是用的import导入css 而是在主页面进行引用，不太喜欢吧，既然用webpack就包一起吧
+注意在书写components中的路径时，才发现虚拟DOM部分对应的路径开始并不是当前路径，而是 项目整体所在的目录，所以用了'./src'
+
+看到这里一定要时不时去看看flex布局orz,所以也抛弃了以前的简单浮动方式，因为看了下github也是用的flex布局所以尝试下(antd用的是简单的ul+li传统的那种方法)
+回头学到在ReactDOM操作的时候可以用渲染去搞那个a标签的变色
+注意react最后render的只是一个结点，所以中间有的那些自定义插件都要放在一个div里
+
+## 待修正与升级
+
+* 确定选定后变色(可参考antd)
