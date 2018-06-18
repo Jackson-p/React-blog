@@ -52,3 +52,8 @@ a{
 .banner-tag li:hover a{
     color: #1890ff;
 }
+#peoclock{
+    position:absolute;
+    top:-5px;
+    right:-35px;
+}

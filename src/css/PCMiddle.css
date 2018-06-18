@@ -5,11 +5,30 @@
     background: url('../img/bcg.jpg') no-repeat center center fixed;
     background-size: cover;
     height: 650px;
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 .midtext{
-    width: 300px;
-    height: 300px;
-    background-color: greenyellow;
-    position: absolute;
-    left: 300px;
+    width: 400px;
+    height: 200px;
+    margin: auto;
+    text-align: center;
+}
+.midtext img{
+    width: 30px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.midtext img:hover{
+    opacity: 1;
+}
+#zhi{
+    border-radius: 50%;
+    width: 28px;
+}
+.midarti{
+    background-color: #ffffff;
+    height: 500px;
+
 }

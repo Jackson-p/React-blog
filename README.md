@@ -59,7 +59,9 @@ npm v5.2.0引入的一条命令（npx），引入这个命令的目的是为了�
 先想看看用antd是怎样的 结果安装报错
 Unexpected end of JSON input while parsing near '...oattachment":false,"t'
 改变淘宝代理设置回去就行
+
 npm config set registry http://registry.cnpmjs.org
+
 遇到了没实时刷新的问题
 //publicPath: './dist' =>  publicPath: '/dist'
 就可以了emmm
@@ -69,7 +71,33 @@ npm config set registry http://registry.cnpmjs.org
 看到这里一定要时不时去看看flex布局orz,所以也抛弃了以前的简单浮动方式，因为看了下github也是用的flex布局所以尝试下(antd用的是简单的ul+li传统的那种方法)
 回头学到在ReactDOM操作的时候可以用渲染去搞那个a标签的变色
 注意react最后render的只是一个结点，所以中间有的那些自定义插件都要放在一个div里
+突然发现一个坑：如果bundle进了css的话，里面引用的图片名字都不能后改，否则会报错，所以如果要bundlecss的话起名要慎重。。。。，否则我觉得可能要删掉这个bundle重新来一下了orz sorry 是我没改js里的路径蠢了蠢了上面不算
+
+6.18 我想先学着从issue里提取数据
 
 ## 待修正与升级
 
+### 设计与交互层面
+
 * 确定选定后变色(可参考antd)
+
+* 移动到顶时调整header透明度几乎为0，下滑消失，上滑出现
+
+* 页面scroll down时文字链接部分向下消失，否则向上消失
+
+* Demo写一个todolist型的就可以了～
+
+* 响应式设计
+
+* [参考一](https://lnoe-lzy.github.io/)
+
+* [参考二](https://ant.design/components/dropdown-cn/#)
+
+### 逻辑层面
+
+
+* 从issue里提取数据生成比较基础的随笔页在首页，右侧是分类，还要有标签
+
+* react-router文档看下实现切换页面
+
+* [参考三](https://segmentfault.com/a/1190000011399153)
