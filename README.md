@@ -73,7 +73,11 @@ npm config set registry http://registry.cnpmjs.org
 注意react最后render的只是一个结点，所以中间有的那些自定义插件都要放在一个div里
 突然发现一个坑：如果bundle进了css的话，里面引用的图片名字都不能后改，否则会报错，所以如果要bundlecss的话起名要慎重。。。。，否则我觉得可能要删掉这个bundle重新来一下了orz sorry 是我没改js里的路径蠢了蠢了上面不算
 
-6.18 我想先学着从issue里提取数据
+6.18 我想先学着从issue里提取数据,然后解决一下webpack直接打包没图片的问题，我觉得。。。这是loader的问题orz
+问题出在了这个图片是通过css的background-img引用的，所以用的是“实路径”.
+看了官网的file-loader之后知道要在option里改下名字，发现输出了disbcg.jpg到dist文件夹下，突然想到output那里的publicpath。。。。
+
+然后在fileloader那里加上publicPath就好了
 
 ## 待修正与升级
 
@@ -86,6 +90,8 @@ npm config set registry http://registry.cnpmjs.org
 * 页面scroll down时文字链接部分向下消失，否则向上消失
 
 * Demo写一个todolist型的就可以了～
+
+* 要有“一键升天”
 
 * 响应式设计
 

@@ -8,7 +8,7 @@ export default class PCArti extends React.Component{
     render(){
         return(
             <div>
-                
+                123
             </div>
         );
     }

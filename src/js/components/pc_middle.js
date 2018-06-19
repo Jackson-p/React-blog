@@ -1,6 +1,7 @@
 import React from 'react';
-import PCArti from './components/pc_arti.js';
+import PCArti from './pc_arti.js';
 import 'antd/dist/antd.css';
+import '../../img/bcg.jpg';
 import '../../css/PCMiddle.css';
 export default class PCMiddle extends React.Component{
     render(){
