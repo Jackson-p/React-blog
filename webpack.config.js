@@ -35,8 +35,7 @@ module.exports = {
                     {
                         loader: "file-loader",
                         options: {
-                            name:'[name].[ext]',
-                            publicPath: './src/img/'
+                            name:'[path][name].[ext]'
                         }
                     }
                 ]
@@ -45,8 +44,8 @@ module.exports = {
     },
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname,'dist'),
-        publicPath:'/dist'
+        path: path.resolve(__dirname,'./'),
+        publicPath:'./'
     },
     plugins: [
         

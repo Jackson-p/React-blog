@@ -77,7 +77,10 @@ npm config set registry http://registry.cnpmjs.org
 问题出在了这个图片是通过css的background-img引用的，所以用的是“实路径”.
 看了官网的file-loader之后知道要在option里改下名字，发现输出了disbcg.jpg到dist文件夹下，突然想到output那里的publicpath。。。。
 
-然后在fileloader那里加上publicPath就好了
+其实是本地读取图片时的path在作妖,publicPath只会影响本地
+GET file:///Users/wanghy/Documents/React-blog/+/src/img/bcg.jpg 0 ()
+其实是这样一种囧境。。。
+事到如今我才发现bundle.js的位置不是无缘无故放在那里的。。。。应该删掉dist，放在src里,最后兼顾本地直接打开，服务器打开，development测试的方法，改变weback输出位置，共用src
 
 ## 待修正与升级
 

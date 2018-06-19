@@ -5,7 +5,7 @@ import '../../css/PCContent.css';
 export default class PCContent extends React.Component{
     render(){
         return(
-            
+            11
         );
     }
 }
