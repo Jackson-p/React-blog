@@ -82,6 +82,12 @@ GET file:///Users/wanghy/Documents/React-blog/+/src/img/bcg.jpg 0 ()
 其实是这样一种囧境。。。
 事到如今我才发现bundle.js的位置不是无缘无故放在那里的。。。。应该删掉dist，放在src里,最后兼顾本地直接打开，服务器打开，development测试的方法，改变weback输出位置，共用src
 
+然后又出现了新的问题
+：不即时更新了。。。老问题 注意下publicPath.要去掉。。publicPath是输出解析文件的目录也就是这里devServer的解析目录和图片的解析起始目录
+
+6.20 虽是繁忙的期末考试，但是因为失眠总还是解决了图片问题和提取issue问题
+注意用箭头函数的方法声明组件的时候是圆括号
+
 ## 待修正与升级
 
 ### 设计与交互层面

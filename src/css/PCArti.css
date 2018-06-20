@@ -1,0 +1,10 @@
+.arti-head{
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top:50px;
+}
+.arti-head h2{
+    color: #7f7f7f;
+    border-bottom: 0.5px dotted black;
+}

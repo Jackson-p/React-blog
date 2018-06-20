@@ -5,7 +5,8 @@ module.exports = {
     entry: './src/js/index.js',
     devtool: 'inline-source-map',
     devServer:{
-        compress: true
+        compress: true,
+        contentBase: './'
     },
     module:{
         rules:[
@@ -45,7 +46,7 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname,'./'),
-        publicPath:'./'
+        publicPath: '/'
     },
     plugins: [
         
