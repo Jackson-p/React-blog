@@ -1,0 +1,29 @@
+.pc-artiTem{
+    height: 200px;
+    width: 100%;
+    border: 1px outside black;
+    padding-top: 50px;
+}
+.pc-artiTem h3{
+    font-style: normal;
+    font-size: 1.4em;
+    line-height: 20px;
+}
+.pc-artiTem-head{
+    float: left;
+    width: 33.33%;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    margin-top:20px;
+}
+.pc-artiTem-body{
+    float: left;
+    width: 60%;
+}
+.pc-artiTem-hr{
+    border: 0.5px solid #7f7f7f;
+    opacity: 0.5;
+    position: relative;
+    top: 150px;
+}

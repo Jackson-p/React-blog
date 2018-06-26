@@ -13,7 +13,7 @@ const ArtiHead = () => (
 );
 export default class PCArti extends React.Component{
 
-    
+    //这一页是首页博文展示部分整体的组件
     render(){
         return(
             <div>
