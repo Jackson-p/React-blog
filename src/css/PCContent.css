@@ -1,0 +1,15 @@
+.content-container{
+    width:650px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:20px;
+    margin-bottom: 20px;
+    padding: 30px;
+    height: 800px;
+    box-shadow: 1px 1px 10px #333333; 
+
+}
+.content-header h1{
+    margin: 1em 0;
+    font-weight: 200;
+}

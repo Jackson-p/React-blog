@@ -1,6 +1,7 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import '../../css/PCHeader.css';
+import {Link} from 'react-router-dom';
 
 export default class PCHeader extends React.Component{
     render(){
@@ -8,11 +9,11 @@ export default class PCHeader extends React.Component{
             <div className = 'header'>
                 <div className = 'banner'>
                     <div className = 'banner-header'>
-                        <img src = './src/img/head.jpeg' />
+                        <img src = './src/img/head.jpeg'  />
                         <h1>&nbsp;Jackson</h1>
                     </div>
                     <ul className = 'banner-tag'>
-                        <li><a>Home</a></li>
+                        <li><Link to="/">Home</Link></li>
                         <li><a>Learn</a></li>
                         <li><a>Demo</a></li>
                         <li><a>About</a></li>

@@ -95,6 +95,31 @@ GET file:///Users/wanghy/Documents/React-blog/+/src/img/bcg.jpg 0 ()
 6.26 重回开发：先是解决了一个jsx中标签与语句变量的问题，又解决了一个setstate渲染和Didmount问题；html引用js变量用{},html引用js函数用</>看似简单，容易错
 ,写样式自己写一个时间处理函数把issue里的时间用正则截一截这里用match
 \i大小写,\g全局等当复习了,遇到的问题当然就是怎么在传递数据的过程中标准化这个时间了orz,之前错的原因有exec主体用反了了，和正则里最后不应该有$有点儿思维定式
+今天就到react-router这里吧，明天实现打开一个issue进去之后能看到详情页就好啦，差点儿忘了首页的省略号，插件参考react-newspublish，后天实现标签转换，然后还有4天就小学期开学了，设计方面应该不是问题，没准可以在小学期结束之前完成这个小demo？算了，重点还是练响应式布局和react
+
+6.27开始写router和link好像router中的route定义路径里的内容，而link对应跳转，试试在index中定义,然后改成了root为入口，然后突然发现～Link标签的本质就是一个a标签哈～但注意linkto的地址是已经建立在'/'之上的,text-overflow: ellipsis;和white-space,但只能局限于1行觉得不是太合适，所以还是摘要固定字数吧,用js手动再补一个'...'机智
+遇到新的问题就是在其他页面中引入首页的这个。。。,路由会改变路径从而导致img 虚拟src发生变化orz,emm..先用报错的方法解决以后碰到好的了要回更，更重要的是index.html打包不好使了突然！！应该是router的事,和webpack关系不是太大,改用hash router 成功解决，这个两个的区别还是要知道一下的，，，，，好像顺便也解决了图片问题！
+借用了下marked.js渲染markdown emmm.直接插入html好像不是那么安全,缺点是不能用>
+然后看到了有关css3 box-shadow不错的讲解 三个参数：水平位移，垂直位移，模糊半径。
+[参考](http://www.css88.com/tool/css3Preview/Box-Shadow.html)
+
+```js
+onError={(e)=>{e.target.src="../src/img/head.jpeg"}}
+```
+
+>可以回头看各种router
+觉得对react有帮助
+> 原css
+
+```css
+    .pc-artiTem-body p{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 300px;
+    height: 100px;
+    white-space: nowrap;
+}
+```
 
 ```txt
 issue完整博客系统+demo页+router+补充动态设计+相应页布局+精简整理代码
@@ -115,14 +140,15 @@ issue完整博客系统+demo页+router+补充动态设计+相应页布局+精简
 
 * 要有“一键升天”
 
-* 响应式设计
+* 响应式设计(包括em和rem)
 
 * [参考一](https://lnoe-lzy.github.io/)
 
 * [参考二](https://ant.design/components/dropdown-cn/#)
 
-### 逻辑层面
+* [em弹性布局](https://www.w3cplus.com/css/px-to-em)
 
+### 逻辑层面
 
 * 从issue里提取数据生成比较基础的随笔页在首页，右侧是分类，还要有标签
 

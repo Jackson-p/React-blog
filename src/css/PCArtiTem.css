@@ -20,6 +20,20 @@
 .pc-artiTem-body{
     float: left;
     width: 60%;
+    height: auto;
+}
+.pc-artiTem-body p{
+    height: 80px;
+}
+.pc-artiTem-body a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+    float: right;
+    color: black;
+}
+.pc-artiTem-body a:hover{
+    color:#1890ff;
 }
 .pc-artiTem-hr{
     border: 0.5px solid #7f7f7f;

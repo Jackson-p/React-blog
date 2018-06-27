@@ -24,21 +24,22 @@ export default class PCArtiBody extends React.Component{
         const url  = `https://api.github.com/repos/201585052/201585052.github.io/issues`;
         axios.get(url).then((response) => {
             const data = response.data;
-            console.log(data);
             this.setState({artilist:data})
         }).catch(e => console.log(e));  
     };
     render(){
 
-            const artilist = this.state.artilist;//这种问题以前遇到过的，必须用解构赋值
+            const artilist = this.state.artilist;
             const Artilist = artilist.length ?
             artilist.map((article,index) => {
                     const timel = this.transTime(article.created_at);
-                    return <PCArtiTem key={index} title={article.title} content={article.body} time={timel} />
+                    const content = article.body.substring(0,200)+"...";
+                    const label = article.labels[0].name;
+                    return <PCArtiTem key={index} title={article.title} content={content} time={timel} num={article.number} label={label} />
             }) 
             :
             "加载中";
-            console.log(Artilist);
+            //console.log(Artilist);
         return(
                 <div className="arti-container">{Artilist}</div>
         );
