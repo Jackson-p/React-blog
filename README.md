@@ -102,6 +102,9 @@ GET file:///Users/wanghy/Documents/React-blog/+/src/img/bcg.jpg 0 ()
 借用了下marked.js渲染markdown emmm.直接插入html好像不是那么安全,缺点是不能用>
 然后看到了有关css3 box-shadow不错的讲解 三个参数：水平位移，垂直位移，模糊半径。
 [参考](http://www.css88.com/tool/css3Preview/Box-Shadow.html)
+然后用下highlight.js可以和marked无缝连接的做代码高亮,可好像只有代码效果，手动加的pre的背景颜色orz
+6.28 看看今天能不能把issue都做完？顺便把router也做完？
+先看看能不能提取指定的标签下的issue,这个逻辑比较混乱真是，然后成功意识到了哇props从父组件到子组件的传递真的是非常有效的呢，但是直接从Label里提到所属文章是不可能了..然后自己都不知道竟然这么简单就实现了标签分页～
 
 ```js
 onError={(e)=>{e.target.src="../src/img/head.jpeg"}}
@@ -141,6 +144,8 @@ issue完整博客系统+demo页+router+补充动态设计+相应页布局+精简
 * 要有“一键升天”
 
 * 响应式设计(包括em和rem)
+
+* 文章页进去之后那个超美的天空层背景色带
 
 * [参考一](https://lnoe-lzy.github.io/)
 

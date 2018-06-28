@@ -34,6 +34,9 @@ a{
 .banner-tag{
     display: flex;
 }
+.banner-tag a{
+    text-decoration: none;
+}
 .banner-tag li{
     list-style: none;
     align-items: center;
@@ -48,6 +51,7 @@ a{
 
 .banner-tag li:hover{
     border-bottom: 2px solid orange;
+    cursor: pointer;
 }
 .banner-tag li:hover a{
     color: #1890ff;

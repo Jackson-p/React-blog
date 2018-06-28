@@ -17,6 +17,12 @@
     text-align: center;
     margin-top:20px;
 }
+.pc-artiTem-head a{
+    color: black;
+}
+.pc-artiTem-head a:hover{
+    color:#1890ff
+}
 .pc-artiTem-body{
     float: left;
     width: 60%;

@@ -4,6 +4,8 @@ import '../../css/PCContent.css';
 import PCHeader from './pc_header';
 import axios from 'axios';
 import marked from 'marked';
+import hljs from 'highlight.js';
+import {HashRouter as Router,Route,Link} from 'react-router-dom'
 
 export default class PCContent extends React.Component{
     //这一部分我们称之为正文。。嗯
@@ -31,13 +33,14 @@ export default class PCContent extends React.Component{
     }
     render(){
         const content = this.state.content;
-        console.log(content);
         const time = this.transTime(content.created_at);
         const labelName = content.labels ? content.labels[0].name:"";
         const title = content.title;
         const bodyInput = content.body;
         let bodyOutput;
-        console.log(bodyInput);
+        marked.setOptions({
+            highlight: code => hljs.highlightAuto(code).value,
+        });
         if(bodyInput){
             bodyOutput = marked(bodyInput);
         }else{
@@ -49,7 +52,7 @@ export default class PCContent extends React.Component{
                 <PCHeader />
                 <div className="content-container">
                     <div className="content-header">
-                        <span>{time} | {labelName}</span>
+                        <span>{time} | <Link to={`/tags/${labelName}`}>{labelName}</Link></span>
                         <h1>{title}</h1>
                     </div>
                     <div className="content-body" dangerouslySetInnerHTML={{ __html: bodyOutput }}>

@@ -14,7 +14,7 @@ export default class PCHeader extends React.Component{
                     </div>
                     <ul className = 'banner-tag'>
                         <li><Link to="/">Home</Link></li>
-                        <li><a>Learn</a></li>
+                        <li><a href="https://wjp.gitbook.io/mybook/" target="_blank" >Learn</a></li>
                         <li><a>Demo</a></li>
                         <li><a>About</a></li>
                     </ul>

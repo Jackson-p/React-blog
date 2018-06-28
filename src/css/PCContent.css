@@ -1,15 +1,26 @@
+@import '~highlight.js/styles/mono-blue.css';
 .content-container{
-    width:650px;
+    width:800px;
     margin-left: auto;
     margin-right: auto;
     margin-top:20px;
     margin-bottom: 20px;
-    padding: 30px;
-    height: 800px;
-    box-shadow: 1px 1px 10px #333333; 
-
+}
+.content-header a{
+    color: black;
+}
+.content-header a:hover{
+    color:#1890ff;
 }
 .content-header h1{
     margin: 1em 0;
     font-weight: 200;
+}
+.content-body{
+    box-shadow: 1px 1px 10px #333333; 
+    padding: 30px;
+    height: 800px;
+}
+.content-body pre{
+    background-color: #eaeef3;
 }
