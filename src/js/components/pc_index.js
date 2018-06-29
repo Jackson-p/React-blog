@@ -4,7 +4,6 @@ import PCHeader from './pc_header';
 import PCMiddle from './pc_middle';
 import PCArti from './pc_arti';
 import 'antd/dist/antd.css';
-import '../../css/PCIndex.css';
 
 export default class PCIndex extends React.Component{
 
@@ -15,9 +14,7 @@ export default class PCIndex extends React.Component{
             <div>
                 <PCHeader />
                 <PCMiddle />
-                <div className='midarti'>
-                    <PCArti tagName={tagName}/>
-                </div>
+                <PCArti tagName={tagName}/>
             </div>
         );
     };

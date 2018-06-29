@@ -34,9 +34,6 @@ a{
 .banner-tag{
     display: flex;
 }
-.banner-tag a{
-    text-decoration: none;
-}
 .banner-tag li{
     list-style: none;
     align-items: center;
@@ -47,6 +44,7 @@ a{
 }
 .banner-tag li a{
     color: #7f7f7f;
+    text-decoration: none;
 }
 
 .banner-tag li:hover{

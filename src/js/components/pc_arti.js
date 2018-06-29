@@ -7,8 +7,19 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 
 export default class PCArti extends React.Component{
+    constructor(){
+        super();
+        this.state = {
+            currentpage:1
+        }
+        //this.handlePageChange.bind(this);
+    }
+    handlePageChange(page){
+        this.setState({currentpage:page});
+    }
 
     //这一页是首页博文展示部分整体的组件,根据tagName选择文章，默认是路由首页的所有文章
+    //把分页器的组件也放在这里了，毕竟footer算是index吧
     render(){
 
         const ArtiHead = () => {
@@ -24,10 +35,12 @@ export default class PCArti extends React.Component{
                 </div>
             )
         };
+        let tagName = this.props.tagName;
+        let currentpage = this.state.currentpage;
         return(
-            <div>
+            <div className='midarti'>
                 <ArtiHead />
-                <PCArtiBody tagName={this.props.tagName} />
+                <PCArtiBody tagName={tagName} currentpage={currentpage} handlePageChange={this.handlePageChange.bind(this)}/>
                 
             </div>
         );

@@ -105,6 +105,13 @@ GET file:///Users/wanghy/Documents/React-blog/+/src/img/bcg.jpg 0 ()
 然后用下highlight.js可以和marked无缝连接的做代码高亮,可好像只有代码效果，手动加的pre的背景颜色orz
 6.28 看看今天能不能把issue都做完？顺便把router也做完？
 先看看能不能提取指定的标签下的issue,这个逻辑比较混乱真是，然后成功意识到了哇props从父组件到子组件的传递真的是非常有效的呢，但是直接从Label里提到所属文章是不可能了..然后自己都不知道竟然这么简单就实现了标签分页～
+然后感觉碰到了麻烦，解决了分页的话issue就基本就做完啦
+page的控制部分应该在显示页面之前，也就是通过props给artibody传值,现在其实还不是太明白那个this.function.bind(this)的写法的含义到底是什么，真是太菜了，回头一定要好好看看
+突然想到react好处：
+1、组件化，可复用
+2、避免了大量的DOM操作，快
+3、数据流动简单，含state和prop
+2*undefined+1 =NAN 惊了
 
 ```js
 onError={(e)=>{e.target.src="../src/img/head.jpeg"}}
@@ -155,8 +162,8 @@ issue完整博客系统+demo页+router+补充动态设计+相应页布局+精简
 
 ### 逻辑层面
 
-* 从issue里提取数据生成比较基础的随笔页在首页，右侧是分类，还要有标签
+* 从issue里提取数据生成比较基础的随笔页在首页，右侧是分类，还要有标签 v（实现了更合适的
 
-* react-router文档看下实现切换页面
+* react-router文档看下实现切换页面 （懂了怎么用了）
 
 * [参考三](https://segmentfault.com/a/1190000011399153)
