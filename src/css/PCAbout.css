@@ -1,0 +1,30 @@
+.about-container{
+    width: 850px;
+    padding: 20px;
+    margin: auto;
+    height: 700px;
+    /* background-color:rgba(127, 255, 212, 0.2); */
+}
+.about-content{
+
+}
+.steps-content {
+    margin-top: 16px;
+    border: 1px dashed #e9e9e9;
+    border-radius: 6px;
+    background-color: #fafafa;
+    min-height: 500px;
+    text-align: center;
+    padding-top: 80px;
+  }
+  
+  .steps-action {
+    margin-top: 24px;
+  }
+
+  .about-next{
+      float: right;
+  }
+  .about-prev{
+      float:left;
+  }

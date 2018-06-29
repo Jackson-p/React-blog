@@ -136,6 +136,20 @@ issue完整博客系统+demo页+router+补充动态设计+相应页布局+精简
 代码风格之命名规范：文件名下划线，css类名中划线，函数驼峰，组件双驼峰命名
 ```
 
+终于写到了demo页和about页，逻辑之类的相对还是好写一点，还是设计与内容相对难想些
+
+有关box-shadow的思考。。。
+
+有关-webkit等浏览器内核样式的思考（莫非我真的是css不行？）
+
+我今天好像终于知道了ghpages是干嘛的了，好像是让多个页面都使用github那一个仓库，这样就能把自己的项目都放到线上了
+
+用了ref中的scroll into view + 设定个node ，轻松解决锚点问题
+
+[css透明度问题](https://www.cnblogs.com/PeunZhang/p/4089894.html)
+
+6.29 哇我感觉今天就能把about都能写完
+
 ## 待修正与升级
 
 ### 设计与交互层面
@@ -148,7 +162,7 @@ issue完整博客系统+demo页+router+补充动态设计+相应页布局+精简
 
 * Demo写一个todolist型的就可以了～
 
-* 要有“一键升天”
+* 要有“一键升天” ok
 
 * 响应式设计(包括em和rem)
 
@@ -158,12 +172,14 @@ issue完整博客系统+demo页+router+补充动态设计+相应页布局+精简
 
 * [参考二](https://ant.design/components/dropdown-cn/#)
 
+* 也可以参考alloyteam的响应式设计
+
 * [em弹性布局](https://www.w3cplus.com/css/px-to-em)
 
 ### 逻辑层面
 
-* 从issue里提取数据生成比较基础的随笔页在首页，右侧是分类，还要有标签 v（实现了更合适的
+* 从issue里提取数据生成比较基础的随笔页在首页，右侧是分类，还要有标签 v（实现了更合适的 ok
 
-* react-router文档看下实现切换页面 （懂了怎么用了）
+* react-router文档看下实现切换页面 （懂了怎么用了） ok
 
 * [参考三](https://segmentfault.com/a/1190000011399153)

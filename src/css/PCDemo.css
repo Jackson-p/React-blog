@@ -1,0 +1,41 @@
+.demowhole{
+    width: 100%;
+}
+.demodis{
+    width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+    text-align: center;
+    height: 600px;
+}
+.demolist{
+    box-sizing: border-box;
+    float: left;
+    width: calc(25% - 60px);
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    height: 250px;
+    border:1px solid #e4ecf3;
+    border-radius: 4px;
+    background-color:#fff;
+    transition: all .3s ease;
+}
+.demolist:hover{
+    box-shadow: 0px 26px 40px -24px rgba(0, 36, 100, 0.5);
+    
+    transform: translateY(-6px);
+}
+.demohead{
+    height: auto;
+    overflow: hidden;
+}
+.demohead img{
+    width: 100%;
+    vertical-align: middle;
+    transition: transform 1s;
+}
+.demohead img:hover{
+    transform: scale(1.2);
+}

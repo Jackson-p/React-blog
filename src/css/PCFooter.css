@@ -1,0 +1,16 @@
+.pc-footer{
+    padding: 20px;
+    background-color: #26282c;
+}
+.pc-footer h1{
+    color: hsla(0,0%,100%,.7);
+}
+.pc-footer p{
+    color:hsla(0,0%,100%,.4)
+}
+.foot-container{
+    width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
