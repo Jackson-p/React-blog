@@ -16,10 +16,10 @@ export default class PCHeader extends React.Component{
                         <h1>&nbsp;Jackson</h1>
                     </div>
                     <ul className = 'banner-tag'>
-                        <li><Link to="/" >Home</Link></li>
-                        <li><a href="https://wjp.gitbook.io/mybook/" target="_blank" >Learn</a></li>
-                        <li><Link to="/demos" >Demo</Link></li>
-                        <li><Link to="/about" >About</Link></li>
+                        <Link to="/" ><li>Home</li></Link>
+                        <a href="https://wjp.gitbook.io/mybook/" target="_blank" ><li>Learn</li></a>
+                        <Link to="/demos" ><li>Demo</li></Link>
+                        <Link to="/about" ><li>About</li></Link>
                     </ul>
                     {/* <embed  id='peoclock' width="200" height="55"  src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.swf" quality="high" wmode="transparent" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" allowscriptaccess="always" /> */}
                 </div>

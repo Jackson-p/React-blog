@@ -60,7 +60,7 @@ npm v5.2.0引入的一条命令（npx），引入这个命令的目的是为了�
 Unexpected end of JSON input while parsing near '...oattachment":false,"t'
 改变淘宝代理设置回去就行
 
-npm config set registry http://registry.cnpmjs.org
+npm config set registry ht tp://registry.cnpmjs.org
 
 遇到了没实时刷新的问题
 //publicPath: './dist' =>  publicPath: '/dist'
@@ -150,6 +150,8 @@ issue完整博客系统+demo页+router+补充动态设计+相应页布局+精简
 
 6.29 哇我感觉今天就能把about都能写完
 
+6.30 今天我感觉能把PC端搞定。。。。
+
 ## 待修正与升级
 
 ### 设计与交互层面
@@ -160,21 +162,9 @@ issue完整博客系统+demo页+router+补充动态设计+相应页布局+精简
 
 * 页面scroll down时文字链接部分向下消失，否则向上消失
 
-* Demo写一个todolist型的就可以了～
-
-* 要有“一键升天” ok
-
-* 响应式设计(包括em和rem)
-
 * 文章页进去之后那个超美的天空层背景色带
 
-* [参考一](https://lnoe-lzy.github.io/)
-
-* [参考二](https://ant.design/components/dropdown-cn/#)
-
-* 也可以参考alloyteam的响应式设计
-
-* [em弹性布局](https://www.w3cplus.com/css/px-to-em)
+* 要有“一键升天” ok
 
 ### 逻辑层面
 
@@ -183,3 +173,19 @@ issue完整博客系统+demo页+router+补充动态设计+相应页布局+精简
 * react-router文档看下实现切换页面 （懂了怎么用了） ok
 
 * [参考三](https://segmentfault.com/a/1190000011399153)
+
+--------
+
+搞定后剩下的就是细水长流留了，响应式布局针对所有大屏小屏移动端适配哇。。。。
+前端性能优化webpack按需加载，服务器端渲染
+代码精简，结构重构
+
+* 响应式设计(包括em和rem)
+
+* [参考一](https://lnoe-lzy.github.io/)
+
+* [参考二](https://ant.design/components/dropdown-cn/#)
+
+* 也可以参考alloyteam的响应式设计
+
+* [em弹性布局](https://www.w3cplus.com/css/px-to-em)

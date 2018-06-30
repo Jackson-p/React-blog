@@ -34,24 +34,22 @@ a{
 .banner-tag{
     display: flex;
 }
+.banner-tag a{
+    color: #7f7f7f;
+    text-decoration: none;
+}
 .banner-tag li{
     list-style: none;
     align-items: center;
     min-width: 100px;
     font-size: 18px;
     text-align: center;
-    padding-bottom: 54px;
 }
-.banner-tag li a{
-    color: #7f7f7f;
-    text-decoration: none;
-}
-
 .banner-tag li:hover{
     border-bottom: 2px solid orange;
     cursor: pointer;
 }
-.banner-tag li:hover a{
+.banner-tag a:hover{
     color: #1890ff;
 }
 #peoclock{

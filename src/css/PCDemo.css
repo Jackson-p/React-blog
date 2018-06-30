@@ -39,3 +39,10 @@
 .demohead img:hover{
     transform: scale(1.2);
 }
+.demohead img{
+    border-bottom: 4px solid #7f7f7f;
+}
+.demolist p{
+    color: black;
+    margin-top: 5px;
+}

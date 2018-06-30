@@ -5,8 +5,9 @@
     height: 700px;
     /* background-color:rgba(127, 255, 212, 0.2); */
 }
-.about-content{
 
+.about-content{
+    text-decoration: none;
 }
 .steps-content {
     margin-top: 16px;
@@ -15,7 +16,9 @@
     background-color: #fafafa;
     min-height: 500px;
     text-align: center;
-    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .steps-action {
