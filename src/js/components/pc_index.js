@@ -14,7 +14,7 @@ export default class PCIndex extends React.Component{
         const tagName = this.props.match?this.props.match.params.tagName:"";
         return (
             <div>
-                <PCHeader />
+                <PCHeader selectedhead={1}/>
                 <PCMiddle />
                 <PCArti tagName={tagName}/>
                 <PCFooter />

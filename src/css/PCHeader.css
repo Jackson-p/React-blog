@@ -8,6 +8,8 @@ a{
     line-height: 56px;
     box-shadow: 0 2px 8px #f0f1f2;
     margin-bottom: 2px;
+    z-index: 10;
+    position: fixed;
 }
 .banner{
     max-width: 1012px;
@@ -48,9 +50,15 @@ a{
 .banner-tag li:hover{
     border-bottom: 2px solid orange;
     cursor: pointer;
-}
-.banner-tag a:hover{
     color: #1890ff;
+}
+.selected-tag{
+    border-bottom: 2px solid orange;
+    color: #1890ff;
+}
+.scrolltop{
+    background-color: rgba(255,255,255,0);
+    box-shadow: 0 0 0 0 ;
 }
 #peoclock{
     position:absolute;

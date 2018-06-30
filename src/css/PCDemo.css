@@ -1,6 +1,10 @@
 .demowhole{
     width: 100%;
 }
+.block{
+    display: block;
+    height: 100px;
+}
 .demodis{
     width: 1170px;
     margin-left: auto;

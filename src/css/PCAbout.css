@@ -31,3 +31,7 @@
   .about-prev{
       float:left;
   }
+  .block{
+      display: block;
+      height: 75px;
+  }

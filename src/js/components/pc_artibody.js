@@ -39,7 +39,7 @@ export default class PCArtiBody extends React.Component{
             let articlebegi = pagearticlenum*(currentpage-1)+1;//博文总数不变，选定起点
             let articlecnt = 1;
             const pagetotal = 10*(artilist.length % pagearticlenum ? parseInt(artilist.length/pagearticlenum)+1 : artilist.length/pagearticlenum);
-            console.log(pagetotal);
+            //console.log(pagetotal);
             const Artilist = artilist.length ?
             artilist.map((article,index) => {
                     const timel = this.transTime(article.created_at);

@@ -49,7 +49,7 @@ export default class PCContent extends React.Component{
         
         return(
             <div>
-                <PCHeader />
+                <PCHeader selectedhead={1}/>
                 <div className="content-container">
                     <div className="content-header">
                         <span>{time} | <Link to={`/tags/${labelName}`}>{labelName}</Link></span>

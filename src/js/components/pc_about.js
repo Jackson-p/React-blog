@@ -56,7 +56,8 @@ export default class PCAbout extends React.Component{
         const { current } = this.state;
         return (
             <div className="pc-about">
-                <PCHeader />
+                <PCHeader selectedhead={4} />
+                <div className="block"></div>
                 <div className="about-container">
                     <div className="about-content">
                         <Steps current={current}>
