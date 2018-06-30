@@ -15,7 +15,6 @@ export default class PCHeader extends React.Component{
     scrollTopHide(){
         if(document.documentElement.scrollTop==0){
             this.node.className+=" scrolltop"
-            console.log(this.node.className);
         }else{
             this.node.className = "header";
         }      
