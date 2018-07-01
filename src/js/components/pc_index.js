@@ -8,7 +8,7 @@ import 'antd/dist/antd.css';
 import { BackTop } from 'antd';
 
 export default class PCIndex extends React.Component{
-
+//考虑到一个window下只有一个onscroll监听事件，只得把pc_header和pc_middle的效果加到这里
     render(){
 
         const tagName = this.props.match?this.props.match.params.tagName:"";

@@ -9,16 +9,18 @@ export default class PCMiddle extends React.Component{
         this.state = {
             hidOpa:1,
             hidtrans:0
-        }
+        };
+        this.scrollMidHide = this.scrollMidHide.bind(this);
     }
     componentDidMount(){
-        window.addEventListener('scroll',this.scrollMidHide.bind(this));
+        //window.onscroll = this.scrollMidHide.bind(this);  
+        window.addEventListener('scroll',this.scrollMidHide);   
+        //console.log(window);
     }
     componentWillUnmount(){
-        window.removeEventListener('scroll');
+        window.removeEventListener('scroll',this.scrollMidHide);
     }
     scrollMidHide(){
-        // console.log(document.documentElement.scrollTop);
         let trans = (document.documentElement.scrollTop - 200)/4;
         let opatemp = this.state.hidOpa;
         if(opatemp-0.01*trans<=0){
@@ -36,8 +38,10 @@ export default class PCMiddle extends React.Component{
         }else{
             transtemp += 5*trans;
         }
-        this.setState({hidOpa : opatemp});
-        this.setState({hidtrans : transtemp})
+        if(this.state){
+            this.setState({hidOpa : opatemp});
+            this.setState({hidtrans : transtemp});
+        }
     }
     render(){
         let HidMid = {

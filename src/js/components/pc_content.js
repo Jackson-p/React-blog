@@ -2,6 +2,7 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import '../../css/PCContent.css';
 import PCHeader from './pc_header';
+import PCBack from './pc_back';
 import axios from 'axios';
 import marked from 'marked';
 import hljs from 'highlight.js';
@@ -30,6 +31,7 @@ export default class PCContent extends React.Component{
             this.setState({content:data});
             //console.log(data);
         }).catch(e => console.log(e));
+        this.node.scrollIntoView();
     }
     render(){
         const content = this.state.content;
@@ -49,7 +51,8 @@ export default class PCContent extends React.Component{
         
         return(
             <div>
-                <PCHeader selectedhead={1}/>
+                <PCHeader selectedhead={1} />
+                <div className="block" ref={(node) => this.node=node}></div>
                 <div className="content-container">
                     <div className="content-header">
                         <span>{time} | <Link to={`/tags/${labelName}`}>{labelName}</Link></span>
@@ -58,6 +61,7 @@ export default class PCContent extends React.Component{
                     <div className="content-body" dangerouslySetInnerHTML={{ __html: bodyOutput }}>
                     </div>
                 </div>
+                <PCBack />
             </div>
         );
     }

@@ -10,6 +10,7 @@ a{
     margin-bottom: 2px;
     z-index: 10;
     position: fixed;
+    transition: all .5s;
 }
 .banner{
     max-width: 1012px;

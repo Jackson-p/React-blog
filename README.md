@@ -156,9 +156,9 @@ issue完整博客系统+demo页+router+补充动态设计+相应页布局+精简
 
 ### 设计与交互层面
 
-* 页面scroll down时文字链接部分向下消失，否则向上消失
+* 页面scroll down时文字链接部分向下消失，否则向上消失 ok
 
-* 文章页进去之后那个超美的天空层背景色带
+* 文章页进去之后那个超美的天空层背景色带 ok
 
 * 要有“一键升天” ok
 
@@ -175,6 +175,7 @@ issue完整博客系统+demo页+router+补充动态设计+相应页布局+精简
 * [参考三](https://segmentfault.com/a/1190000011399153)
 
 --------
+6.30 好吧真的就差那一丢丢，问题出现在pc_header的setstate他说出现了在未渲染时，可我明明设定的监听函数是在componentDidmount中的，费解。。。这点是warning，回头好好学一学看问题到底出在哪？先别急着用index的props解决,明白了问题其实就是叠加。。。所以关键就在于middle.js中willUnmount中把listener去掉，这里注意removelistener中取消的第二个参数，最后是绑定到了constructor的this里，解决！
 
 搞定后剩下的就是细水长流留了，响应式布局针对所有大屏小屏移动端适配哇。。。。
 前端性能优化webpack按需加载，服务器端渲染

@@ -19,8 +19,13 @@
 .content-body{
     box-shadow: 1px 1px 10px #333333; 
     padding: 30px;
-    height: 800px;
+    height: auto;
 }
 .content-body pre{
     background-color: #eaeef3;
+    padding: 10px;
+}
+.block{
+    height: 100px;
+    display: block;
 }

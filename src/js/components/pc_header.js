@@ -10,9 +10,13 @@ export default class PCHeader extends React.Component{
     }
     componentDidMount(){
         this.node.scrollIntoView();
+       // window.onscroll = this.scrollTopHide.bind(this);
         window.addEventListener('scroll',this.scrollTopHide.bind(this));
     }
     scrollTopHide(){
+        if(!this.node){
+            return;
+        }
         if(document.documentElement.scrollTop==0){
             this.node.className+=" scrolltop"
         }else{
