@@ -70,7 +70,6 @@ a{
 .respmenu{
     display: none;
     width: 56px;
-    text-align: center;
     margin: auto;
 }
 .respIcon{
@@ -87,11 +86,14 @@ a{
     }
     .respmenu{
         display: block;
+        float: right;
+        margin: auto;
     }
     #checkbox:checked~ul{
         display: block;
-        margin-right: 40px;
         box-shadow: 0 0 5px #333333;
         padding-left: 0px;
+        float: right;
+        clear:both;
     }
 }

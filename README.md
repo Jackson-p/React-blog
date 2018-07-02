@@ -190,3 +190,7 @@ issue完整博客系统+demo页+router+补充动态设计+相应页布局+精简
 * 也可以参考alloyteam的响应式设计
 
 * [em弹性布局](https://www.w3cplus.com/css/px-to-em)
+
+哇，真的是一晚上的时间才写了一个响应式的header啊orz，flex布局+用了点儿antdesigin的栅格+自己手写了一个label隐藏input模仿js点击事件+媒体查询总算写出来了，可是感觉封装性，后头还是写不出来封装的吧哈哈，写的时候再说吧，没到那个项目呢
+
+7.2了，这一阵子只有晚上可以做响应式了，白天学校有硬件综合训练orz
