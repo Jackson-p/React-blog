@@ -1,8 +1,8 @@
 .about-container{
-    width: 850px;
+    width: 80%;
     padding: 20px;
     margin: auto;
-    height: 700px;
+    height: 800px;
     /* background-color:rgba(127, 255, 212, 0.2); */
 }
 
@@ -22,7 +22,7 @@
   }
   
   .steps-action {
-    margin-top: 24px;
+    margin-top: 5vh;
   }
 
   .about-next{
@@ -34,4 +34,9 @@
   .block{
       display: block;
       height: 75px;
+  }
+  .clear-both{
+      display: block;
+      height: 10px;
+      clear: both;
   }

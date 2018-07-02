@@ -8,10 +8,9 @@ export default class PCDemo extends React.Component{
         return (
             <div className="demowhole">
                 <PCHeader selectedhead={3} />
-                <div className="block">
-                </div>
+                <div className="demo-block"></div>
+                <h1 align="center">Demo</h1>
                 <div className="demodis">
-                    <h1>Demo</h1>
                     <a href="https://201585052.github.io/Single-Process-Handling/" target="_blank">
                         <div className="demolist">
                             <div className="demohead">

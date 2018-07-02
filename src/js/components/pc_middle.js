@@ -2,6 +2,7 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import '../../img/bcg.jpg';
 import '../../css/PCMiddle.css';
+import {Row,Col} from 'antd';
 export default class PCMiddle extends React.Component{
 
     constructor(){
@@ -50,8 +51,7 @@ export default class PCMiddle extends React.Component{
             transition:'all 1s'
         }
         return(
-            <section id="hero" className="scrollme">
-                <div className="midimg">
+                <Col className="midimg" span={24}>
                     <div className="midtext" style={HidMid} >
                         <h1>We must be willing to get rid of the life we've planned,
                             so as to have the life that is waiting for us.
@@ -59,8 +59,7 @@ export default class PCMiddle extends React.Component{
                         <img src='./src/img/gitt.png' />
                         <img src='./src/img/zhi.png' id = 'zhi' />
                     </div>
-                </div>
-            </section>
+                </Col>
         );
     }
 }

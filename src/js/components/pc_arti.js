@@ -4,7 +4,6 @@ import PCArtiBody from './pc_artibody';
 import 'antd/dist/antd.css';
 import '../../css/PCArti.css';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 
 export default class PCArti extends React.Component{
     constructor(){
@@ -38,11 +37,16 @@ export default class PCArti extends React.Component{
         let tagName = this.props.tagName;
         let currentpage = this.state.currentpage;
         return(
-            <div className='midarti'>
-                <ArtiHead />
-                <PCArtiBody tagName={tagName} currentpage={currentpage} handlePageChange={this.handlePageChange.bind(this)}/>
-                
-            </div>
+            <Col className='midarti' span={24}>
+                <Row type="flex" justify="center">
+                    <Col span={18}>
+                        <ArtiHead />
+                    </Col>
+                    <Col span={18}>
+                        <PCArtiBody tagName={tagName} currentpage={currentpage} handlePageChange={this.handlePageChange.bind(this)}/>
+                    </Col>
+                </Row>
+            </Col>
         );
     }
 }

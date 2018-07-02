@@ -42,8 +42,31 @@
     color:#1890ff;
 }
 .pc-artiTem-hr{
-    border: 0.5px solid #7f7f7f;
+    border: 0.5px dotted #7f7f7f;
     opacity: 0.5;
     position: relative;
     top: 150px;
+}
+
+@media screen and (max-width:768px){
+    .pc-artiTem{
+        padding-top: 0px;
+        margin-bottom: 50px;
+    }
+    .pc-artiTem-head{
+        width: 100%;
+        text-align: left;
+        padding-left: 0px;
+        margin-top:0px;
+    }
+    .pc-artiTem-body{
+        width: 100%;
+    }
+    .pc-artiTem-body p {
+        margin-top:10px;
+        height: 120px;
+    }
+    .pc-artiTem-hr{
+        top:240px;
+    }
 }

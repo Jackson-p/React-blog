@@ -37,6 +37,7 @@ a{
 .banner-tag{
     display: flex;
     float: right;
+    margin-right: 20px;
 }
 .banner-tag a{
     color: #7f7f7f;
@@ -73,16 +74,18 @@ a{
     margin: auto;
 }
 .respIcon{
-    height: 5px;
+    height: 3px;
     background-color: #000;
     display: block;
     width: 35px;
-    margin:10px 5px;
+    margin:11px 5px;
 }
 /* 以下尝试用纯CSS+媒体查询实现响应式导航栏 */
 @media screen and (max-width:768px) {
     .banner-tag{
         display: none;
+        margin-right:0;
+        margin-top:6px;  
     }
     .respmenu{
         display: block;
@@ -95,5 +98,6 @@ a{
         padding-left: 0px;
         float: right;
         clear:both;
+        background-color: #fff;
     }
 }

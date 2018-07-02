@@ -27,4 +27,10 @@
     border-radius: 50%;
     width: 28px;
 }
+@media screen and (max-width:768){
+    .midimg{
+        background-size: 600px 600px;
+        height: 600px;
+    }
+}
 

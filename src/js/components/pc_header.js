@@ -18,7 +18,8 @@ export default class PCHeader extends React.Component{
         if(!this.node){
             return;
         }
-        if(document.documentElement.scrollTop==0){
+        //document.documentElement.scrollTop==0
+        if(document.documentElement.scrollTop==0 ){
             this.node.className+=" scrolltop"
         }else{
             this.node.className = "header";

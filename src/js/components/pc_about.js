@@ -89,6 +89,7 @@ export default class PCAbout extends React.Component{
                                 </Button>
                                 )
                             }
+                                <div className="clear-both"></div>
                             </div>
                         </div>
                 </div>
