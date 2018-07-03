@@ -24,7 +24,7 @@ export default class PCBack extends React.Component{
             x.scale(pr, pr)
             x.globalAlpha = 0.6
             function i(){
-                x.clearRect(0,0,w,h)
+                x.clearRect(0,0,w*2,h*2)
                 q=[{x:0,y:h*.7+f},{x:0,y:h*.7-f}]
                 while(q[1].x<w+f) d(q[0], q[1])
             }
