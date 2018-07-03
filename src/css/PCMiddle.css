@@ -29,8 +29,11 @@
 }
 @media screen and (max-width:768){
     .midimg{
-        background-size: 600px 600px;
+        background-size: cover;
         height: 600px;
+    }
+    .midtext{
+        font-size: 12px;
     }
 }
 

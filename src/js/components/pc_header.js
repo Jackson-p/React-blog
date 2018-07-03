@@ -8,11 +8,16 @@ export default class PCHeader extends React.Component{
     //通过路由传值给header组件决定哪种li是选定状态就加入className
     constructor(){
         super();
+        this.scrollTopHide = this.scrollTopHide.bind(this);
     }
     componentDidMount(){
         this.node.scrollIntoView();
        // window.onscroll = this.scrollTopHide.bind(this);
-        window.addEventListener('scroll',this.scrollTopHide.bind(this));
+        let reg = /Android|webOS|iPhone|iPod|BlackBerry/i;
+        window.addEventListener('scroll',this.scrollTopHide);
+        if(reg.test(navigator.userAgent)){
+            window.removeEventListener('scroll',this.scrollTopHide);
+        }
     }
     scrollTopHide(){
         if(!this.node){

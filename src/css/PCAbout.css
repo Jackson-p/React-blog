@@ -40,3 +40,22 @@
       height: 10px;
       clear: both;
   }
+  @media screen and (max-width:768px){
+      .about-content{
+          margin-top: 40px;
+      }
+      .about-content-steps{
+          position: absolute;
+          top:150px;
+      }
+      /* 注：这是一个ant-design内部类的css ,好吧其实并没做到hh*/
+      .about-content-step{
+          margin-left: 16vw;   
+      }
+      .steps-content{
+          align-items: flex-end;
+          margin-top: -40px;
+          height: 350px;
+          padding-bottom: 80px;
+      }
+  }

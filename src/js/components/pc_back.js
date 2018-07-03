@@ -54,7 +54,6 @@ export default class PCBack extends React.Component{
         const pr = window.devicePixelRatio || 1;
         let cwidth = window.innerWidth * pr;
         let cheight = window.innerHeight * pr;
-        cwidth = cwidth>1500?window.innerWidth:cwidth;
         return(
             <canvas width={cwidth} height={cheight} className="pc-back" ref={(canvas) => this.canvas = canvas} />
         );

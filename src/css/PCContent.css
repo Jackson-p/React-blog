@@ -1,6 +1,6 @@
 @import '~highlight.js/styles/mono-blue.css';
 .content-container{
-    width:800px;
+    width:80%;
     margin-left: auto;
     margin-right: auto;
     margin-top:20px;
@@ -28,4 +28,12 @@
 .block{
     height: 100px;
     display: block;
+}
+@media screen and (max-width:768px){
+    .content-body{
+        padding: 10px;
+    }
+    .pc-back{
+        margin-top:50%; 
+    }
 }

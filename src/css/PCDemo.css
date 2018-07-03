@@ -59,8 +59,9 @@
 }
 @media screen and (max-width:768px){
     .demolist{
-        width: 400px;
-        height: 400px;
+        width: 350px;
+        height: 350px;
+        text-align: center;
     }
     .demodis{
         height: 2000px;

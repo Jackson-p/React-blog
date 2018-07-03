@@ -60,8 +60,8 @@ export default class PCAbout extends React.Component{
                 <div className="block"></div>
                 <div className="about-container">
                     <div className="about-content">
-                        <Steps current={current}>
-                            {steps.map(item => <Step key={item.title} title={item.title} />)}
+                        <Steps current={current} className="about-content-steps">
+                            {steps.map(item => <Step key={item.title} title={item.title} className="about-content-step" />)}
                         </Steps>
                         <div className="steps-content">{steps[current].content}</div>
                             <div className="steps-action">
