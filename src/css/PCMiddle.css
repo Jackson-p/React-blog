@@ -29,13 +29,18 @@
 }
 @media screen and (max-width:768px){
     .midimg{
-        background-size: cover;
+        background-size: auto;
         height: 550px;
     }
     .midtext{
         font-size: 12px;
         padding-left: 50px;
         padding-right: 50px;
+    }
+}
+@media screen and (min-width:1500px){
+    .midimg{
+        background-size: auto;
     }
 }
 

@@ -56,8 +56,8 @@ export default class PCMiddle extends React.Component{
                         <h1>We must be willing to get rid of the life we've planned,
                             so as to have the life that is waiting for us.
                         </h1>
-                        <img src='./src/img/gitt.png' />
-                        <img src='./src/img/zhi.png' id = 'zhi' />
+                        <a href="https://www.github.com/201585052"><img src='./src/img/gitt.png' /></a>
+                        <a href="https://www.zhihu.com/people/wang-jia-ping-54/activities"><img src='./src/img/zhi.png' id = 'zhi' /></a>
                     </div>
                 </Col>
         );

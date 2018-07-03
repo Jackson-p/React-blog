@@ -2,6 +2,7 @@
     height: 200px;
     width: 100%;
     padding-top: 50px;
+    border-bottom: 0.5px dotted rgba(140,140,140,0.5);
 }
 .pc-artiTem h3{
     font-style: normal;
@@ -26,7 +27,6 @@
     float: left;
     width: 60%;
     height: auto;
-    border-bottom: 0.5px dotted rgba(140,140,140,0.5);
 }
 .pc-artiTem-body p{
     height: 80px;
@@ -46,6 +46,7 @@
     .pc-artiTem{
         padding-top: 0px;
         margin-bottom: 50px;
+        border: 0;
     }
     .pc-artiTem-head{
         width: 100%;
@@ -55,6 +56,8 @@
     }
     .pc-artiTem-body{
         width: 100%;
+        border-bottom: 0.5px dotted rgba(140,140,140,0.5);
+        padding-bottom: 10px;
     }
     .pc-artiTem-body p {
         margin-top:10px;
