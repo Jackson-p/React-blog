@@ -46,7 +46,8 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname,'./'),
-        publicPath: '/'
+        publicPath: './'
+        //如果要进行热更新模式上面要加点儿
     },
     plugins: [
         

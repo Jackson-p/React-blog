@@ -5,6 +5,7 @@
     margin-right: auto;
     margin-top:20px;
     margin-bottom: 20px;
+    min-height: 600px;
 }
 .content-header a{
     color: black;
