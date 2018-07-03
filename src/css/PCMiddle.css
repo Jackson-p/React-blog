@@ -29,7 +29,7 @@
 }
 @media screen and (max-width:768px){
     .midimg{
-        background-size: auto;
+        background-size: cover;
         height: 550px;
     }
     .midtext{
@@ -40,7 +40,7 @@
 }
 @media screen and (min-width:1500px){
     .midimg{
-        background-size: auto;
+        background-size: cover;
     }
 }
 
