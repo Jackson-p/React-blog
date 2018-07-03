@@ -9,3 +9,8 @@
     display: inline-block;
     vertical-align: baseline;
 }
+@media screen and (max-width:768px){
+    .pc-back{
+        width: 200%;
+    }
+}

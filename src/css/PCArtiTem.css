@@ -1,7 +1,6 @@
 .pc-artiTem{
     height: 200px;
     width: 100%;
-    border-bottom: 0.5px dotted rgba(140,140,140,0.5);
     padding-top: 50px;
 }
 .pc-artiTem h3{
@@ -27,6 +26,7 @@
     float: left;
     width: 60%;
     height: auto;
+    border-bottom: 0.5px dotted rgba(140,140,140,0.5);
 }
 .pc-artiTem-body p{
     height: 80px;
