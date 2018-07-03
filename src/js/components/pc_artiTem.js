@@ -20,7 +20,6 @@ export default class PCArtiTem extends React.Component {
                     <p>{this.props.content}</p>
                     <Link to={`/contents/${this.props.num}`} >...</Link>
                 </div>
-                <hr className="pc-artiTem-hr"/>
             </div>
         );
     };

@@ -7,6 +7,7 @@ import axios from 'axios';
 import marked from 'marked';
 import hljs from 'highlight.js';
 import {HashRouter as Router,Route,Link} from 'react-router-dom'
+import PCFooter from './pc_footer';
 
 export default class PCContent extends React.Component{
     //这一部分我们称之为正文。。嗯
@@ -62,6 +63,7 @@ export default class PCContent extends React.Component{
                     </div>
                 </div>
                 <PCBack />
+                <PCFooter />
             </div>
         );
     }

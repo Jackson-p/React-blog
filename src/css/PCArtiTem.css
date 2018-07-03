@@ -1,7 +1,7 @@
 .pc-artiTem{
     height: 200px;
     width: 100%;
-    border: 1px outside black;
+    border-bottom: 0.5px dotted rgba(140,140,140,0.5);
     padding-top: 50px;
 }
 .pc-artiTem h3{
@@ -41,12 +41,6 @@
 .pc-artiTem-body a:hover{
     color:#1890ff;
 }
-.pc-artiTem-hr{
-    border: 0.5px dotted #7f7f7f;
-    opacity: 0.5;
-    position: relative;
-    top: 150px;
-}
 
 @media screen and (max-width:768px){
     .pc-artiTem{
@@ -67,8 +61,5 @@
         height: 120px;
         text-overflow: ellipsis;
         overflow: scroll;
-    }
-    .pc-artiTem-hr{
-        top:35vh;
     }
 }
