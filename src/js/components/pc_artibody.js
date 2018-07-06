@@ -43,7 +43,9 @@ export default class PCArtiBody extends React.Component{
             const Artilist = artilist.length ?
             artilist.map((article,index) => {
                     const timel = this.transTime(article.created_at);
-                    const content = article.body.substring(0,200)+"...";
+                    let reg = /[\#\`{3}\*]/g;;
+                    let contentBefore = article.body.replace(reg,"");
+                    const content = contentBefore.substring(0,200)+"...";
                     const label = article.labels[0].name;
                     //tagName == undefined 的情况是没有选择制定类型，直接从主页进来的
                     if(tagName == label || tagName == undefined){

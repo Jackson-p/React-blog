@@ -13,6 +13,17 @@ export default class PCMiddle extends React.Component{
         };
         this.scrollMidHide = this.scrollMidHide.bind(this);
     }
+    get_scrollTop_of_body(){ 
+        var scrollTop; 
+        if(typeof window.pageYOffset != 'undefined'){//pageYOffset指的是滚动条顶部到网页顶部的距离 
+            scrollTop = window.pageYOffset; 
+        }else if(typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat')        { 
+            scrollTop = document.documentElement.scrollTop; 
+        }else if(typeof document.body != 'undefined'){ 
+            scrollTop = document.body.scrollTop; 
+        } 
+        return scrollTop; 
+    }
     componentDidMount(){
         //window.onscroll = this.scrollMidHide.bind(this);  
         window.addEventListener('scroll',this.scrollMidHide);   
@@ -22,7 +33,7 @@ export default class PCMiddle extends React.Component{
         window.removeEventListener('scroll',this.scrollMidHide);
     }
     scrollMidHide(){
-        let trans = (document.documentElement.scrollTop - 200)/4;
+        let trans = (this.get_scrollTop_of_body() - 200)/4;
         let opatemp = this.state.hidOpa;
         if(opatemp-0.01*trans<=0){
             opatemp = 0;

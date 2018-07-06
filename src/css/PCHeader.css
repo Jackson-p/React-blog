@@ -11,6 +11,7 @@ a{
     z-index: 10;
     position: fixed;
     transition: all .5s;
+    -webkit-transition: all .5s;
 }
 .banner{
     margin-left: auto;
