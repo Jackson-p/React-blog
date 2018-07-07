@@ -29,7 +29,7 @@
 }
 @media screen and (max-width:768px){
     .midimg{
-        background-size: cover;
+        background-size: 768px 550px;
         background-attachment: fixed;  
         height: 550px;
     }
