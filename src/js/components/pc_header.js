@@ -15,9 +15,10 @@ export default class PCHeader extends React.Component{
        // window.onscroll = this.scrollTopHide.bind(this);
         let reg = /Android|webOS|iPhone|iPod|BlackBerry/i;
         window.addEventListener('scroll',this.scrollTopHide);
-        if(reg.test(navigator.userAgent)){
+        //下面代码本来是用来解决手机端无效低配的，后来还是解决了Safari的兼容性，不过蛮重要就留着吧
+        /*if(reg.test(navigator.userAgent)){
             window.removeEventListener('scroll',this.scrollTopHide);
-        }
+        }*/
     }
     get_scrollTop_of_body(){ 
         var scrollTop; 
