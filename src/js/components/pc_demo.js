@@ -4,6 +4,32 @@ import '../../css/PCDemo.css';
 import PCFooter from './pc_footer';
 
 export default class PCDemo extends React.Component{
+    componentWillMount(){
+        this.addLoadEvent(this.preloader);
+    }
+    preloader(){
+        if (document.images) {
+            var img1 = new Image();
+            var img2 = new Image();
+            var img3 = new Image();
+            img1.src = "./src/img/demo1.png";
+            img2.src = "./src/img/demo2.png";
+            img3.src = "./src/img/demo3.png"
+        }
+    }
+    addLoadEvent(func) {
+        var oldonload = window.onload;
+        if (typeof window.onload != 'function') {
+            window.onload = func;
+        } else {
+            window.onload = function() {
+                if (oldonload) {
+                    oldonload();
+                }
+                func();
+            }
+        }
+    }
     render(){
         return (
             <div className="demowhole">
