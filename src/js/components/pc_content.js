@@ -14,7 +14,8 @@ export default class PCContent extends React.Component{
     constructor(){
         super();
         this.state ={
-            content:""
+            content:"",
+            comments:""
         };
     };
     transTime(timel){
@@ -32,6 +33,13 @@ export default class PCContent extends React.Component{
             this.setState({content:data});
             //console.log(data);
         }).catch(e => console.log(e));
+        const url2 = `https://api.github.com/repos/201585052/201585052.github.io/issues/
+        ${this.props.match.params.num}/comments`;
+        axios.get(url2).then((response) => {
+            const data2 = response.data;
+            this.setState({comments:data2});
+            console.log(data2);
+        }).catch(e => console.log(e));
         this.node.scrollIntoView();
     }
     render(){
@@ -41,6 +49,13 @@ export default class PCContent extends React.Component{
         const title = content.title;
         const bodyInput = content.body;
         let bodyOutput;
+        const comments = this.state.comments;
+        const Comments = comments.length?
+        comments.map((comment,index) => {
+            return <li key={index}>{comment.user.login}:{comment.body}</li>;
+        })
+        :
+        "可以来评论哦";
         marked.setOptions({
             highlight: code => hljs.highlightAuto(code).value,
         });
@@ -60,6 +75,14 @@ export default class PCContent extends React.Component{
                         <h1>{title}</h1>
                     </div>
                     <div className="content-body" dangerouslySetInnerHTML={{ __html: bodyOutput }}>
+
+                    </div>
+                    <div className="content-review">
+                        <div className="review-title">
+                            <h3>评 论</h3>
+                        </div>
+                        <div className="review-hr"></div>
+                        {Comments}
                     </div>
                 </div>
                 <PCBack />
