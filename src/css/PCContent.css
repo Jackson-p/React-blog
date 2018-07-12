@@ -30,6 +30,14 @@
     height: 100px;
     display: block;
 }
+.cometoreview{
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    color: #959595;
+}
 .review-title{
     margin-top: 20px;
     border: 2px solid #959595;
@@ -45,12 +53,31 @@
 .review-title h3{
     color: #959595;
 }
+.review-subtitle-deco{
+    width: 8px;
+    background: #959595;
+    height: 35px;
+    float: left;
+    margin-top: 10px;
+    border-radius: 15%;
+}
+.review-subtitle{
+    float: left;
+    color: #959595;
+    font-size: 16px;
+    margin-top: 14px;
+    margin-left: 15px;
+}
 .review-hr{
     width: 100%;
     border-bottom: 2px solid #959595;
     position: relative; 
     z-index: -3;
     top: -2px;
+}
+.content-block{
+    clear: both;
+    height: 50px;
 }
 @media screen and (max-width:768px){
     .content-body{

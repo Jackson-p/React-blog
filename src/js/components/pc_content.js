@@ -55,7 +55,7 @@ export default class PCContent extends React.Component{
             return <li key={index}>{comment.user.login}:{comment.body}</li>;
         })
         :
-        "可以来评论哦";
+        <div className="cometoreview">暂无评论，欢迎评论</div>;
         marked.setOptions({
             highlight: code => hljs.highlightAuto(code).value,
         });
@@ -82,7 +82,10 @@ export default class PCContent extends React.Component{
                             <h3>评 论</h3>
                         </div>
                         <div className="review-hr"></div>
+                        <div className="review-subtitle-deco"></div>
+                        <div className="review-subtitle">最新</div>
                         {Comments}
+                        <div className="content-block"></div>
                     </div>
                 </div>
                 <PCBack />
