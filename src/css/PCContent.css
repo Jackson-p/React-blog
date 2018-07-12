@@ -78,6 +78,19 @@
 .content-block{
     clear: both;
     height: 50px;
+    text-align: center;
+}
+.content-block button{
+    outline:none;
+}
+.content-block button{
+    margin-top: 20px;
+    background-color: cornflowerblue;
+    color: #fff;
+    padding: 5px;
+    width: 100px;
+    border: 0.5px solid deepskyblue;
+    cursor: pointer;
 }
 @media screen and (max-width:768px){
     .content-body{

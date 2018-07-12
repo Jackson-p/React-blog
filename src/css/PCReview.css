@@ -1,0 +1,13 @@
+.review-item{
+    width: 100%;
+    float: left;
+    clear: both;
+    padding-left: 20px;
+    border-bottom: 1px dashed #d3d3d3;
+}
+.review-item p{
+    display: inline-block;
+}
+.review-item i{
+    float:right;
+}

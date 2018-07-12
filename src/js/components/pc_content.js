@@ -8,6 +8,7 @@ import marked from 'marked';
 import hljs from 'highlight.js';
 import {HashRouter as Router,Route,Link} from 'react-router-dom'
 import PCFooter from './pc_footer';
+import PCReview from './pc_reviews';
 
 export default class PCContent extends React.Component{
     //这一部分我们称之为正文。。嗯
@@ -52,7 +53,8 @@ export default class PCContent extends React.Component{
         const comments = this.state.comments;
         const Comments = comments.length?
         comments.map((comment,index) => {
-            return <li key={index}>{comment.user.login}:{comment.body}</li>;
+            let temptime = this.transTime(comment.created_at);
+            return <PCReview key={index} name={comment.user.login} commcont={comment.body} time={temptime} />
         })
         :
         <div className="cometoreview">暂无评论，欢迎评论</div>;
@@ -85,7 +87,7 @@ export default class PCContent extends React.Component{
                         <div className="review-subtitle-deco"></div>
                         <div className="review-subtitle">最新</div>
                         {Comments}
-                        <div className="content-block"></div>
+                        <div className="content-block"><a href={`https://github.com/201585052/201585052.github.io/issues/${this.props.match.params.num}`} target="_blank" ><button>去评论</button></a></div>
                     </div>
                 </div>
                 <PCBack />
