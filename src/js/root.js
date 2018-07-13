@@ -6,6 +6,7 @@ import PCDemo from './components/pc_demo';
 import PCAbout from './components/pc_about';
 import {HashRouter as Router,Route,Link} from 'react-router-dom';
 import 'antd/dist/antd.css';
+require('es6-promise').polyfill();
 
 export default class Root extends React.Component{
     render(){
