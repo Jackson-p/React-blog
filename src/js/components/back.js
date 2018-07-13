@@ -1,8 +1,7 @@
 import React from 'react';
-import findDOMNode from 'react-dom';
-import '../../css/PCBack.css';
+import '../../css/back.css';
 
-export default class PCBack extends React.Component{
+export default class Back extends React.Component{
 
     componentDidMount(){
             //接下来是背景图,代码选自尤雨溪官网

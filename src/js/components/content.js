@@ -1,16 +1,16 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import '../../css/PCContent.css';
-import PCHeader from './pc_header';
-import PCBack from './pc_back';
+import '../../css/content.css';
+import Header from './header';
+import Back from './back';
 import axios from 'axios';
 import marked from 'marked';
 import hljs from 'highlight.js';
 import {HashRouter as Router,Route,Link} from 'react-router-dom'
-import PCFooter from './pc_footer';
-import PCReview from './pc_reviews';
+import Footer from './footer';
+import Review from './review';
 
-export default class PCContent extends React.Component{
+export default class Content extends React.Component{
     //这一部分我们称之为正文。。嗯
     constructor(){
         super();
@@ -54,7 +54,7 @@ export default class PCContent extends React.Component{
         const Comments = comments.length?
         comments.map((comment,index) => {
             let temptime = this.transTime(comment.created_at);
-            return <PCReview key={index} name={comment.user.login} commcont={comment.body} time={temptime} />
+            return <Review key={index} name={comment.user.login} commcont={comment.body} time={temptime} />
         })
         :
         <div className="cometoreview">暂无评论，欢迎评论</div>;
@@ -69,7 +69,7 @@ export default class PCContent extends React.Component{
         
         return(
             <div>
-                <PCHeader selectedhead={1} />
+                <Header selectedhead={1} />
                 <div className="block" ref={(node) => this.node=node}></div>
                 <div className="content-container">
                     <div className="content-header">
@@ -90,8 +90,8 @@ export default class PCContent extends React.Component{
                         <div className="content-block"><a href={`https://github.com/201585052/201585052.github.io/issues/${this.props.match.params.num}`} target="_blank" ><button>去评论</button></a></div>
                     </div>
                 </div>
-                <PCBack />
-                <PCFooter />
+                <Back />
+                <Footer />
             </div>
         );
     }

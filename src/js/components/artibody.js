@@ -1,15 +1,13 @@
 import React from 'react';
-import { Row ,Col} from 'antd';
 import 'antd/dist/antd.css';
-import '../../css/PCArtibody.css';
-import PropTypes from 'prop-types';
+import '../../css/artibody.css';
 import axios from 'axios';
-import PCArtiTem from './pc_artiTem';
+import ArtiTem from './artitem';
 import { Pagination } from 'antd';
-export default class PCArtiBody extends React.Component{
+export default class ArtiBody extends React.Component{
 
     //这一部分用来展示所有当前博文的相关信息，包括博文时间，博文标签，部分正文,需要能根据相关的标签提取到制定类的文章
-    //具体细化由每个PCArtiTem
+    //具体细化由每个ArtiTem
     constructor() {
         super();
         this.state = {
@@ -51,7 +49,7 @@ export default class PCArtiBody extends React.Component{
                     if(tagName == label || tagName == undefined){
                         if(articlecnt<=pagearticlenum*currentpage && articlecnt>=articlebegi){
                             articlecnt++;
-                            return <PCArtiTem key={index} title={article.title} content={content} time={timel} num={article.number} label={label} />
+                            return <ArtiTem key={index} title={article.title} content={content} time={timel} num={article.number} label={label} />
                         }
                         articlecnt++;
                     }            

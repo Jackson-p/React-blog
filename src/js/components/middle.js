@@ -1,9 +1,9 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import '../../img/bcg.jpg';
-import '../../css/PCMiddle.css';
-import {Row,Col} from 'antd';
-export default class PCMiddle extends React.Component{
+import '../../css/middle.css';
+import {Col} from 'antd';
+export default class Middle extends React.Component{
 
     constructor(){
         super();

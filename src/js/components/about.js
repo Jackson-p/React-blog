@@ -1,7 +1,7 @@
 import React from 'react';
-import '../../css/PCAbout.css';
-import PCHeader from './pc_header';
-import PCFooter from './pc_footer';
+import '../../css/about.css';
+import Header from './header';
+import Footer from './footer';
 import { Steps, Button, message } from 'antd';
 const Step = Steps.Step;
 
@@ -9,7 +9,7 @@ const Step = Steps.Step;
 const steps = [{
   title: '关于本站',
   content: 
-  <div>
+  <div className="intro-content" >
     <h4>因为版权问题弃用原来的csdn，即各种技术尝试博客：<a href="https://blog.csdn.net/jikexueyuan5555/article/list/" >地址</a></h4>
     <h4>HOME发送一些感想或技术随笔</h4>
     <h4>Learn将重要的基础知识体系化</h4>
@@ -19,7 +19,7 @@ const steps = [{
 }, {
   title: '关于本人',
   content: 
-  <div>
+  <div className="intro-content" >
       <h4>良好的生活习惯、健身、社交与工作事业一样必不可少</h4>
       <h4>音乐、美食就像是人生的选修课，分数高了一样开心</h4>
       <h4>工作还在努力地找</h4>
@@ -29,14 +29,14 @@ const steps = [{
 }, {
   title: '关于理想',
   content: 
-  <div>
+  <div className="intro-content" >
       <h4>一些身边的同学喜欢嘲讽前端hh，门槛低确实承认。</h4>
       <h4>不过喜欢就是喜欢</h4>
       <h4>技术为业务服务，谁创造了更大的价值，谁就是更好的技术。</h4>
       <h4>前端是起点，Web Developer是沿途的风景;全栈之路从页面仔做起</h4>
   </div>
 }];
-export default class PCAbout extends React.Component{
+export default class About extends React.Component{
     constructor(){
         super();
         this.state = {
@@ -56,7 +56,7 @@ export default class PCAbout extends React.Component{
         const { current } = this.state;
         return (
             <div className="pc-about">
-                <PCHeader selectedhead={4} />
+                <Header selectedhead={4} />
                 <div className="block"></div>
                 <div className="about-container">
                     <div className="about-content">
@@ -93,7 +93,7 @@ export default class PCAbout extends React.Component{
                             </div>
                         </div>
                 </div>
-                <PCFooter />
+                <Footer />
             </div>
         );
     };

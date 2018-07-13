@@ -1,9 +1,9 @@
 import React from 'react';
-import PCHeader from './pc_header';
-import '../../css/PCDemo.css';
-import PCFooter from './pc_footer';
+import Header from './header';
+import '../../css/demo.css';
+import Footer from './footer';
 
-export default class PCDemo extends React.Component{
+export default class Demo extends React.Component{
     componentWillMount(){
         this.addLoadEvent(this.preloader);
     }
@@ -33,7 +33,7 @@ export default class PCDemo extends React.Component{
     render(){
         return (
             <div className="demowhole">
-                <PCHeader selectedhead={3} />
+                <Header selectedhead={3} />
                 <div className="demo-block"></div>
                 <h1 align="center">Demo</h1>
                 <div className="demodis">
@@ -67,7 +67,7 @@ export default class PCDemo extends React.Component{
                         </div>
                     </a>
                 </div>
-                <PCFooter />
+                <Footer />
             </div>
         );
     };

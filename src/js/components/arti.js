@@ -1,11 +1,10 @@
 import React from 'react';
 import { Row ,Col} from 'antd';
-import PCArtiBody from './pc_artibody';
+import ArtiBody from './artibody';
 import 'antd/dist/antd.css';
-import '../../css/PCArti.css';
-import PropTypes from 'prop-types';
+import '../../css/arti.css';
 
-export default class PCArti extends React.Component{
+export default class Arti extends React.Component{
     constructor(){
         super();
         this.state = {
@@ -43,7 +42,7 @@ export default class PCArti extends React.Component{
                         <ArtiHead />
                     </Col>
                     <Col span={18}>
-                        <PCArtiBody tagName={tagName} currentpage={currentpage} handlePageChange={this.handlePageChange.bind(this)}/>
+                        <ArtiBody tagName={tagName} currentpage={currentpage} handlePageChange={this.handlePageChange.bind(this)}/>
                     </Col>
                 </Row>
             </Col>

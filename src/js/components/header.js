@@ -1,10 +1,10 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import '../../css/PCHeader.css';
+import '../../css/header.css';
 import {Link} from 'react-router-dom';
-import {Row,Col} from 'antd';
+import {Col} from 'antd';
 
-export default class PCHeader extends React.Component{
+export default class Header extends React.Component{
     //通过路由传值给header组件决定哪种li是选定状态就加入className
     constructor(){
         super();

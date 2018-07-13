@@ -1,7 +1,7 @@
 import React from 'react';
-import '../../css/PCReview.css'
+import '../../css/review.css'
 
-export default class PCReview extends React.Component{
+export default class Review extends React.Component{
     render(){
         return (
             <div className="review-item">

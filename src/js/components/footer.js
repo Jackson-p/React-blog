@@ -1,8 +1,8 @@
 import React from 'react';
-import '../../css/PCFooter.css';
+import '../../css/footer.css';
 import {Col} from 'antd';
 
-export default class PCFooter extends React.Component{
+export default class Footer extends React.Component{
     render(){
         return(
             <Col className="pc-footer" span={24}>

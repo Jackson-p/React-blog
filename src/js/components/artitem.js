@@ -1,10 +1,8 @@
 import React from 'react';
-import { Row ,Col} from 'antd';
-import '../../css/PCArtiTem.css';
-import PropTypes from 'prop-types';
+import '../../css/artitem.css';
 import {HashRouter as Router,Route,Link} from 'react-router-dom'
 
-export default class PCArtiTem extends React.Component {
+export default class ArtiTem extends React.Component {
 
     constructor(){
         super();

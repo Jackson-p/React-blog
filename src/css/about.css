@@ -16,9 +16,13 @@
     background-color: #fafafa;
     min-height: 500px;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+  }
+  .intro-content{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
   }
   
   .steps-action {
