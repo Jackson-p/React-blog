@@ -45,11 +45,21 @@
       clear: both;
   }
   @media screen and (max-width:768px){
+      .about-container{
+          padding: 0;
+      }
       .about-content{
           margin-top: 40px;
+      }
+      .intro-content{
+          width: 250px;
+      }
+      .steps-content{
+          min-height: 300px;
       }
       .about-content-steps{
           position: relative;
           left: 18vw;
+          width: 150px;
       }
   }
