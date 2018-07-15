@@ -49,8 +49,9 @@
           margin-top: 40px;
       }
       .about-content-steps{
-          position: absolute;
-          top:150px;
+          position: relative;
+          top:-40px;
+          left: 30px;
       }
       /* 注：这是一个ant-design内部类的css ,好吧其实并没做到hh*/
       .about-content-step{
