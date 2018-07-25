@@ -8,7 +8,7 @@ import {HashRouter as Router,Route,Link} from 'react-router-dom';
 import 'antd/dist/antd.css';
 require('es6-promise').polyfill();
 
-export default class Root extends React.Component{
+class Root extends React.Component{
     render(){
         return (
                 <Router>
