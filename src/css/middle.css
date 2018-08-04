@@ -4,7 +4,7 @@
 .midimg{
     background: url('../img/bcg.jpg') no-repeat center fixed;
     background-size: 1620px 762px;
-    height: 762px;
+    height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -31,7 +31,7 @@
     .midimg{
         background: url('../img/bcg2.jpg');
         background-size: cover;  
-        height: 750px;
+        height: 100vh;
     }
     .midtext{
         font-size: 12px;
