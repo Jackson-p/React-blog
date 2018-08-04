@@ -11,6 +11,6 @@
 }
 @media screen and (max-width:768px){
     .pc-back{
-        width: 200%;
+        width: 200vw;
     }
 }
