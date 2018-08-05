@@ -62,6 +62,8 @@
         width: 350px;
         height: 350px;
         text-align: center;
+        margin-left:0;
+        margin-right: 0;
     }
     .demodis{
         height: 2000px;
