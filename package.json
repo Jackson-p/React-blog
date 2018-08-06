@@ -1,7 +1,7 @@
 {
   "name": "react-blog",
   "version": "1.0.0",
-  "description": "先写个简陋的开始txt日记吧，用于记录自己练手用React栈搭个人博客的过程，希望可以学到东西 回头整理 6.14 日开始配webpack和目录位置等，试试es-lint, npm --save install sth 是以前用过的 安装包的同时会把版本号记录到package.json里面,--save-dev会安装到devDependencies里 dependencies：项目跑起来后需要使用到的模块 devDependencies：开发的时候需要用的模块，但是项目跑起来后就不需要了",
+  "description": "两个webpack.config一个用做测试，一个用做开发",
   "main": "root.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
