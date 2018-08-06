@@ -30,10 +30,10 @@ const steps = [{
   title: '关于理想',
   content: 
   <div className="intro-content" >
-      <h4>一些身边的同学喜欢嘲讽前端hh，门槛低确实承认。</h4>
-      <h4>不过喜欢就是喜欢</h4>
-      <h4>技术为业务服务，谁创造了更大的价值，谁就是更好的技术。</h4>
-      <h4>前端是起点，Web Developer是沿途的风景;全栈之路从页面仔做起</h4>
+      <h4>大前端的时代已经到来</h4>
+      <h4>希望可以精通js并做一些有价值的东西</h4>
+      <h4>移动端的部分和后台的部分觉得是学好前端后，WebDeveloper应该掌握的</h4>
+      <h4>Python爱好者，数据分析和机器学习真的有空就玩玩</h4>
   </div>
 }];
 export default class About extends React.Component{
