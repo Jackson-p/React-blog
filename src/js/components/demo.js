@@ -68,8 +68,7 @@ export default class Demo extends React.Component{
                             <div className="demohead">
                                 <img src="./src/img/demo4.jpeg" />
                             </div>
-                            <p>node+exress(ejs模版引擎)+mongodb搭建的一个校园内学生互助的移动端网站，具有完整的注册登录、个人信息修改、内容发布、相互悬赏的后台逻辑，信息保存在mongodb数据库里。
-                                项目使用forever模块运行在腾讯云服务器上。
+                            <p>node+exress(ejs模版引擎)+mongodb搭建的一个校园内学生互助的移动端网站，具有完整的注册登录、个人信息修改、内容发布、相互悬赏的后台逻辑。
                             </p>
                         </div>
                     </a>
