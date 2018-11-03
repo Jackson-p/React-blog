@@ -10,30 +10,30 @@ const steps = [{
   title: '关于本站',
   content: 
   <div className="intro-content" >
-    <h4>因为版权问题弃用原来的csdn，即各种技术尝试博客：<a href="https://blog.csdn.net/jikexueyuan5555/article/list/" >地址</a></h4>
     <h4>HOME发送一些感想或技术随笔</h4>
     <h4>Learn将重要的基础知识体系化</h4>
     <h4>Demo一些尝试希望他们会有用或有趣</h4>
     <h4>建站希望自己能保持乐趣、提高自己才能造福别人orz</h4>
+    <h4>有个地方记录自己的价值观也不错嘿嘿</h4>
   </div>
 }, {
   title: '关于本人',
   content: 
   <div className="intro-content" >
-      <h4>良好的生活习惯、健身、社交与工作事业一样必不可少</h4>
-      <h4>音乐、美食就像是人生的选修课，分数高了一样开心</h4>
-      <h4>工作还在努力地找</h4>
-      <h4>对谈恋爱已经不抱任何希望了，只想发财</h4>
-      <h4>邮箱：wangyipingweb@foxmail.com</h4>
+      <h4>不会给自己设限，说干什么就干什么。</h4>
+      <h4>在代码和音符中可能会难以自拔</h4>
+      <h4>健身和养生我觉得是工作必不可少的部分</h4>
+      <h4>生活很美好，用心生活、快乐社交</h4>
+      <h4>我怕打针h...hh</h4>
   </div>
 }, {
   title: '关于理想',
   content: 
   <div className="intro-content" >
-      <h4>大前端的时代已经到来</h4>
-      <h4>希望可以精通js并做一些有价值的东西</h4>
-      <h4>移动端的部分和后台的部分觉得是学好前端后，WebDeveloper应该掌握的</h4>
-      <h4>Python爱好者，数据分析和机器学习真的有空就玩玩</h4>
+      <h4>希望用平时技术积累的60%来解决工作的问题</h4>
+      <h4>希望能做到前端 -> 后台 -> 多端 -> 全栈</h4>
+      <h4>希望可以活得很精彩，不和产品打架</h4>
+      <h4>希望希望实现，世界和平</h4>
   </div>
 }];
 export default class About extends React.Component{
