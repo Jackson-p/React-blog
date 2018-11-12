@@ -36,7 +36,7 @@ export default class ArtiBody extends React.Component{
             const artilist = this.state.artilist;
             let articlebegi = pagearticlenum*(currentpage-1)+1;//博文总数不变，选定起点
             let articlecnt = 1;
-            const pagetotal = 10*(artilist.length % pagearticlenum ? parseInt(artilist.length/pagearticlenum)+1 : artilist.length/pagearticlenum);
+            //const pagetotal = 10*(artilist.length % pagearticlenum ? parseInt(artilist.length/pagearticlenum)+1 : artilist.length/pagearticlenum);
             //console.log(pagetotal);
             const Artilist = artilist.length ?
             artilist.map((article,index) => {
@@ -56,6 +56,7 @@ export default class ArtiBody extends React.Component{
             }) 
             :
             "加载中";
+            const pagetotal = 10*(articlecnt % pagearticlenum ? parseInt(articlecnt/pagearticlenum)+1 : articlecnt/pagearticlenum);
         return(
                 <div className="arti-container">
                     {Artilist}
