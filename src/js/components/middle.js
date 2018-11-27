@@ -67,8 +67,9 @@ export default class Middle extends React.Component{
                         <h1>We must be willing to get rid of the life we've planned,
                             so as to have the life that is waiting for us.
                         </h1>
-                        <a href="https://www.github.com/201585052"><img src='./src/img/gitt.png' /></a>
                         <a href="https://www.zhihu.com/people/wang-jia-ping-54/activities"><img src='./src/img/zhi.png' id = 'zhi' /></a>
+                        <a href="https://www.github.com/201585052"><img src='./src/img/gitt.png' id="gi" /></a>
+                        <a href="https://weibo.com/u/6046299335"><img src='./src/img/weibo.png' /></a>
                     </div>
                 </Col>
         );
