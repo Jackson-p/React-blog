@@ -23,14 +23,11 @@
 .midtext img:hover{
     opacity: 1;
 }
-#zhi{
-    border-radius: 50%;
-    width: 28px;
-    position: relative;
-    right: 1px;
-}
 #gi{
-    width: 28px;
+    width: 30px;
+}
+#wb{
+    width: 33px;
 }
 @media screen and (max-width:768px){
     .midimg{
