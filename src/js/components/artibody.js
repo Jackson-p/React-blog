@@ -20,7 +20,7 @@ export default class ArtiBody extends React.Component{
         return reg.exec(timel)[0];
     };
     componentDidMount(){
-        const url  = `https://api.github.com/repos/201585052/201585052.github.io/issues`;
+        const url  = `https://api.github.com/repos/Jackson-p/Jackson-p.github.io/issues`;
         axios.get(url).then((response) => {
             const data = response.data;
             this.setState({artilist:data})

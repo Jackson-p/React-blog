@@ -27,14 +27,14 @@ export default class Content extends React.Component{
         return reg.exec(timel)[0];
     };
     componentDidMount(){
-        const url = `https://api.github.com/repos/201585052/201585052.github.io/issues/
+        const url = `https://api.github.com/repos/Jackson-p/Jackson-p.github.io/issues/
         ${this.props.match.params.num}`;
         axios.get(url).then((response) => {
             const data = response.data;
             this.setState({content:data});
             //console.log(data);
         }).catch(e => console.log(e));
-        const url2 = `https://api.github.com/repos/201585052/201585052.github.io/issues/
+        const url2 = `https://api.github.com/repos/Jackson-p/Jackson-p.github.io/issues/
         ${this.props.match.params.num}/comments`;
         axios.get(url2).then((response) => {
             const data2 = response.data;
@@ -87,7 +87,7 @@ export default class Content extends React.Component{
                         <div className="review-subtitle-deco"></div>
                         <div className="review-subtitle">最新</div>
                         {Comments}
-                        <div className="content-block"><a href={`https://github.com/201585052/201585052.github.io/issues/${this.props.match.params.num}`} target="_blank" ><button>去评论</button></a></div>
+                        <div className="content-block"><a href={`https://github.com/Jackson-p/Jackson-p.github.io/issues/${this.props.match.params.num}`} target="_blank" ><button>去评论</button></a></div>
                     </div>
                 </div>
                 <Back />
