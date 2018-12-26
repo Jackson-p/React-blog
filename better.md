@@ -40,4 +40,4 @@ load:770ms
 
 * 上下浮动特效
 
-### gitmaster没显示？
+### gitmaster创建分支的两种方法
