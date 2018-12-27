@@ -6,7 +6,7 @@ import Demo from './components/demo';
 import About from './components/about';
 import {HashRouter as Router,Route,Link} from 'react-router-dom';
 import 'antd/dist/antd.css';
-require('es6-promise').polyfill();
+//require('es6-promise').polyfill();
 
 class Root extends React.Component{
     render(){
