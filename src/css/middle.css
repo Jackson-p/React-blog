@@ -5,14 +5,16 @@
     background: url('../img/bcg.jpg') no-repeat center fixed;
     background-size: 1620px 762px;
     height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
+    width: 100vw;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    float: none;
 }
 .midtext{
+    display: inline-block;
     width: 400px;
     height: 200px;
-    margin: auto;
     text-align: center;
 }
 .midtext img{

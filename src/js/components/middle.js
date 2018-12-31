@@ -9,7 +9,8 @@ export default class Middle extends React.Component{
         super();
         this.state = {
             hidOpa:1,
-            hidtrans:0
+            hidtrans:0,
+            middisplay:"inline-block"
         };
         this.scrollMidHide = this.scrollMidHide.bind(this);
     }
@@ -24,6 +25,31 @@ export default class Middle extends React.Component{
         } 
         return scrollTop; 
     }
+    scrollMidHide(){
+        let trans = this.get_scrollTop_of_body() - 200;
+        console.log(trans);
+        let opatemp,transtemp,mdisplaytemp;
+        //在未发生特殊移动时自动矫正为合理位置
+        opatemp = 1;
+        transtemp  = 0;
+        mdisplaytemp = "inline-block";
+        if(trans >= 0){
+            //trans差不多为232时透明度要为0
+            opatemp = 1 - trans/232.0;
+            //trans差不多为253时，中心内容离开画面，路程约为434
+            transtemp = (434.0/253) * trans;
+            if(opatemp < 0 || transtemp > 434){
+                mdisplaytemp = "none";
+            }else{
+                mdisplaytemp = "inline-block";
+            }
+        }
+        if(this.state){
+            this.setState({hidOpa : opatemp});
+            this.setState({hidtrans : transtemp});
+            this.setState({middisplay : mdisplaytemp})
+        }
+    }
     componentDidMount(){
         //window.onscroll = this.scrollMidHide.bind(this);  
         window.addEventListener('scroll',this.scrollMidHide);   
@@ -32,33 +58,11 @@ export default class Middle extends React.Component{
     componentWillUnmount(){
         window.removeEventListener('scroll',this.scrollMidHide);
     }
-    scrollMidHide(){
-        let trans = (this.get_scrollTop_of_body() - 200)/4;
-        let opatemp = this.state.hidOpa;
-        if(opatemp-0.01*trans<=0){
-            opatemp = 0;
-        }else if(opatemp-0.01*trans>=1){
-            opatemp = 1;
-        }else{
-            opatemp -= 0.01*trans;
-        }
-        let transtemp = this.state.hidtrans;
-        if(transtemp+5*trans<=0){
-            transtemp = 0;
-        }else if(transtemp+5*trans>=400){
-            transtemp = 400;
-        }else{
-            transtemp += 5*trans;
-        }
-        if(this.state){
-            this.setState({hidOpa : opatemp});
-            this.setState({hidtrans : transtemp});
-        }
-    }
     render(){
         let HidMid = {
             opacity:`${this.state.hidOpa}`,
             transform:`translateY(${this.state.hidtrans}px)`,
+            display:`${this.state.middisplay}`,
             transition:'all 1s'
         }
         return(

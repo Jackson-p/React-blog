@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/201585052/201585052.github.io.git"
+    "url": "git+https://github.com/Jackson-p/Jackson-p.github.io.git"
   },
   "author": "Jackson",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/201585052/201585052.github.io/issues"
+    "url": "https://github.com/Jackson-p/Jackson-p.github.io/issues"
   },
-  "homepage": "https://github.com/201585052/201585052.github.io#readme",
+  "homepage": "https://github.com/Jackson-p/Jackson-p.github.io#readme",
   "dependencies": {
     "antd": "^3.11.6",
     "axios": "^0.18.0",
