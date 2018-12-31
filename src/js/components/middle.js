@@ -14,8 +14,20 @@ export default class Middle extends React.Component{
         };
         this.scrollMidHide = this.scrollMidHide.bind(this);
     }
-    get_scrollTop_of_body(){ 
-        var scrollTop; 
+    // debounce(func, wait = 100){
+    //     let timeout;
+    //     return function(event){
+    //         clearTimeout(timeout);
+    //         event.persist && event.persist()
+    //         timeout = setTimeout(() => {
+    //             func(event)
+    //         },wait);
+    //     };
+    // }
+    //这里的节流会很影响视觉效果，如果没有更优方案还是算了吧orz
+    scrollMidHide(){
+        let scrollTop,trans; 
+        let opatemp,transtemp,mdisplaytemp;
         if(typeof window.pageYOffset != 'undefined'){//pageYOffset指的是滚动条顶部到网页顶部的距离 
             scrollTop = window.pageYOffset; 
         }else if(typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat')        { 
@@ -23,12 +35,8 @@ export default class Middle extends React.Component{
         }else if(typeof document.body != 'undefined'){ 
             scrollTop = document.body.scrollTop; 
         } 
-        return scrollTop; 
-    }
-    scrollMidHide(){
-        let trans = this.get_scrollTop_of_body() - 200;
+        trans = scrollTop - 200;
         console.log(trans);
-        let opatemp,transtemp,mdisplaytemp;
         //在未发生特殊移动时自动矫正为合理位置
         opatemp = 1;
         transtemp  = 0;
@@ -38,7 +46,7 @@ export default class Middle extends React.Component{
             opatemp = 1 - trans/232.0;
             //trans差不多为253时，中心内容离开画面，路程约为434
             transtemp = (434.0/253) * trans;
-            if(opatemp < 0 || transtemp > 434){
+            if(opatemp < 0){
                 mdisplaytemp = "none";
             }else{
                 mdisplaytemp = "inline-block";
