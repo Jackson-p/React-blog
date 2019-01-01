@@ -22,6 +22,9 @@ body{
     text-decoration: none;
     cursor: pointer;
 }
+.tagcloud{
+    text-align: center;
+}
 .tagcloud a:hover{
     background-color: #0085a1;
 }

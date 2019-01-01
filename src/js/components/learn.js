@@ -18,10 +18,10 @@ export default class Learn extends React.Component{
         return this;
     }
     render(){
-        let tagName = (typeof(this.props.match.params.tagName) == "undefined")?"show all":this.props.match.params.tagName;
+        let tagName = (typeof(this.props.match.params.tagName) == "undefined")?"ALL":this.props.match.params.tagName;
         //const alltags = ['show all', 'HTML', 'CSS', 'JS专题', 'Git', '工具、库与框架', 'Web前端安全', 'Web前端测试', '前端面试', '后端', '资源环境'];
         const choseTag = this.state.choseTag;
-        // console.log(choseTag);
+        //console.log(choseTag);
         return(
             <div>
                 <Header />
@@ -29,7 +29,7 @@ export default class Learn extends React.Component{
                 <Col span={24} className="container">
                     <Row type="flex" justify="center">
                         <Col span={ 14 } className="tagcloud">
-                            <Link to="/learn" id="all" className={choseTag == 0?"alltagchecked":null} onClick={this.handleChoose.bind(this, 0)}>show all</Link>
+                            <Link to="/learntags/ALL" id="all" className={choseTag == 0?"alltagchecked":null} onClick={this.handleChoose.bind(this, 0)}>show all</Link>
                             <Link to="/learntags/HTML" className={choseTag == 1?"tagchecked":null} onClick={this.handleChoose.bind(this, 1)}>HTML<sup>12</sup></Link>
                             <Link to="/learntags/CSS" className={choseTag == 2?"tagchecked":null} onClick={this.handleChoose.bind(this, 2)}>CSS</Link>
                             <Link to="/learntags/JS专题" className={choseTag == 3?"tagchecked":null} onClick={this.handleChoose.bind(this, 3)}>JS专题</Link>

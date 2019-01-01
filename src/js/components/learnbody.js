@@ -12,6 +12,9 @@ export default class LearnBody extends React.Component{
             Currentpage:1
         }
     }
+    handlePageChange(page){
+        this.setState({Currentpage:page});
+    }
     componentDidMount(){
         const url = `https://api.github.com/repos/Jackson-p/Jackson-p.github.io/issues`;
         axios.get(url).then((response) => {
@@ -22,28 +25,44 @@ export default class LearnBody extends React.Component{
         })
     }
     render(){
-        const tagName = this.props.tagName;
-        const currentpage = this.state.Currentpage;
-        const learnlist = this.state.Learnlist;
-        const Learnlist = learnlist?
+        let tagName = this.props.tagName;
+        let currentpage = this.state.Currentpage;
+        let learnlist = this.state.Learnlist;
+        let contentBefore,subtitle,label,articlecnt;
+        articlecnt = 0;
+        const pagearticlenum = 6;
+        const reg = /[\#\`{3}\*]/g;
+        let Learnlist = learnlist?
         learnlist.map((article, index) => {
-            let reg = /[\#\`{3}\*]/g;;
-            let contentBefore = article.body.replace(reg,"");
-            let subtitle = contentBefore.substring(0,200)+"...";
-            let label = article.labels[0].name;
-            if(tagName == "show all" || label == tagName){
-                return <LearnItem key={index} title = {article.title} subtitle = {subtitle} />;
+            contentBefore = article.body.replace(reg,"");
+            subtitle = contentBefore.substring(0,200)+"...";
+            label = article.labels[0].name;
+            if(tagName == "ALL" || label == tagName){
+                if(articlecnt >= (currentpage - 1) * pagearticlenum && articlecnt <= currentpage * pagearticlenum - 1){
+                    articlecnt++;
+                    return <LearnItem key={index} title = {article.title} subtitle = {subtitle} />;
+                }
+                articlecnt++;
             }
         })
         :
         "加载中";
-        const pagetotal = learnlist.length;
+        let pagetotal = 0;
+        if(articlecnt > 0){
+            pagetotal = articlecnt % pagearticlenum ? articlecnt/pagearticlenum : Math.ceil(articlecnt/pagearticlenum);
+            pagetotal *= 10;
+            console.log(pagetotal);
+        }
 
         return (
             <div>
                 { Learnlist }
                 <div className="learn-footer">
-                    <Pagination current={currentpage} onChange={this.props.handlePageChange} total={pagetotal} />
+                    {
+                        articlecnt > 0 && currentpage > 0 && pagetotal > 0 &&
+                        <Pagination defaultCurrent={1} onChange={this.handlePageChange.bind(this)} total={pagetotal} />
+                        //老实讲这里这个pagetotal不知道他是bug了还是咋的。。。。
+                    }
                 </div>
             </div>
         );

@@ -24,7 +24,7 @@ npm start 以热更新形式运行。
 
 * about页毛笔motto加入，总体重写。
 
-* redux实现对所有githubissue的统一管理
+* redux实现对所有githubissue的统一管理,实现避免数据重复请求，或者对数据进行缓存。
 
 * 都完事了可以考虑换用王也道长头像
 
