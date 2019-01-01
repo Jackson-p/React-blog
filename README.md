@@ -24,6 +24,8 @@ npm start 以热更新形式运行。
 
 * about页毛笔motto加入，总体重写。
 
+* redux实现对所有githubissue的统一管理
+
 * 都完事了可以考虑换用王也道长头像
 
 
@@ -48,6 +50,18 @@ npm start 以热更新形式运行。
 
 ### 其他或新技术能否优化
 
-* redux实现对所有githubissue的统一管理
 * PWA借助serviceworker实现离线缓存
+
+
+觉得改版完成后再上线新版嗯
+
+### 踩坑
+
+* 和Vue不一样的React解析方式，想要在事件里传参需要先bind后额外传参数，没想到这个还真的很重要。否则就会有传说中的setState死循环刷新，那么好问题来了，我们为啥要先bind呢？
+
+https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=%E4%B8%BA%E4%BB%80%E4%B9%88react%E9%87%8C%E9%9D%A2%E7%9A%84%E4%BA%8B%E4%BB%B6%E8%A6%81%E5%86%99bind&oq=react%2520onclick%2520%25E4%25BC%25A0%25E5%258F%2582&rsv_pq=c8916b2500074067&rsv_t=ac60bU0kAtX7JcYPhLAWLbNe1qHT3eMIj3ro8Ph9HVr6SFkSyzLRltcttsA&rqlang=cn&rsv_enter=1&inputT=7715&rsv_sug3=213&rsv_sug1=105&rsv_sug7=100&rsv_sug2=0&rsv_sug4=8317
+
+https://www.jianshu.com/p/3d0e7513ad83
+
+好，第一个思考题：为什么需要这么写来回调参数，React和Vue为什么在这点上有不同，即React总在事件后要bind以下。
 

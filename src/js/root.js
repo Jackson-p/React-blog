@@ -17,7 +17,8 @@ class Root extends React.Component{
                             <Route exact path="/" component={Index} />
                             <Route path="/contents/:num" component={Content} />
                             <Route path="/tags/:tagName" component={Index} />
-                            <Route path="/learn/:tagName" component={Learn} />
+                            <Route path="/learn" component={Learn} />
+                            <Route path="/learntags/:tagName" component={Learn} />
                             <Route path="/demos" component={Demo} />
                             <Route path="/about" component={About} />
                         </div>
