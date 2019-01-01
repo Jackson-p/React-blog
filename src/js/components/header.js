@@ -11,12 +11,13 @@ export default class Header extends React.Component{
         this.scrollTopHide = this.scrollTopHide.bind(this);
     }
     componentDidMount(){
-        this.node.scrollIntoView();
+       window.scrollTo(0, 0);
+       this.node.scrollIntoView();
        // window.onscroll = this.scrollTopHide.bind(this);
-        let reg = /Android|webOS|iPhone|iPod|BlackBerry/i;
-        window.addEventListener('scroll',this.scrollTopHide);
-        //下面代码本来是用来解决手机端无效低配的，后来还是解决了Safari的兼容性，不过蛮重要就留着吧
-        /*if(reg.test(navigator.userAgent)){
+       window.addEventListener('scroll',this.scrollTopHide);
+       //下面代码本来是用来解决手机端无效低配的，后来还是解决了Safari的兼容性，不过蛮重要就留着吧
+       /*let reg = /Android|webOS|iPhone|iPod|BlackBerry/i;
+       if(reg.test(navigator.userAgent)){
             window.removeEventListener('scroll',this.scrollTopHide);
         }*/
     }
@@ -35,20 +36,19 @@ export default class Header extends React.Component{
         if(!this.node){
             return;
         }
-        
         //document.documentElement.scrollTop==0
-        if(this.get_scrollTop_of_body()==0){
-            if(this.node.className == 'header'){
-                this.node.className+=" scrolltop"
+        if(this.get_scrollTop_of_body() > 0){
+            if(this.node.className == "header scrolltop"){
+                this.node.className = "header"
             }
         }else{
-            this.node.className = "header";
+            this.node.className = "header scrolltop";
         }      
     }
     render(){
         const selectedhead = this.props.selectedhead;
         return (
-            <div className = 'header' ref={node => this.node = node} >
+            <div className = 'header scrolltop' ref={node => this.node = node}>
                 <Col type="flex" justify="space-between" className = 'banner' span={22} >
                     <Col className = 'banner-header'  sm={4} md={6} lg={8} xl={10} >
                         <img src = './src/img/head.jpeg'  />
@@ -63,7 +63,7 @@ export default class Header extends React.Component{
                         </label>
                         <ul className = 'banner-tag' >
                             <Link to="/" ><li className = {selectedhead==1?"selected-tag":null }>Home</li></Link>
-                            <a href="https://wjp.gitbook.io/mybook/" target="_blank" ><li>Learn</li></a>
+                            <Link to="/learn"><li className = {selectedhead==2?"selected-tag":null } >Learn</li></Link>
                             <Link to="/demos" ><li className = {selectedhead==3?"selected-tag":null} >Demo</li></Link>
                             <Link to="/about" ><li className = {selectedhead==4?"selected-tag":null} >About</li></Link>
                         </ul>

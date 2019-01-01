@@ -36,17 +36,18 @@ export default class Middle extends React.Component{
             scrollTop = document.body.scrollTop; 
         } 
         trans = scrollTop - 200;
-        console.log(trans);
+        //console.log(trans);
         //在未发生特殊移动时自动矫正为合理位置
         opatemp = 1;
         transtemp  = 0;
         mdisplaytemp = "inline-block";
         if(trans >= 0){
-            //trans差不多为232时透明度要为0
-            opatemp = 1 - trans/232.0;
-            //trans差不多为253时，中心内容离开画面，路程约为434
-            transtemp = (434.0/253) * trans;
-            if(opatemp < 0){
+            //trans差不多为245时透明度要为0,中心内容浮出清除
+            opatemp = 1 - trans/245.0;
+            //中心内容完全离开画面（尾部，此时已清除），路程约为434
+            transtemp = (434/245) * trans;
+            //要保证清出的部分对原div在可视部分无影响
+            if(trans > 434){
                 mdisplaytemp = "none";
             }else{
                 mdisplaytemp = "inline-block";

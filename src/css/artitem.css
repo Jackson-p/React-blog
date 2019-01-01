@@ -30,6 +30,8 @@
 }
 .pc-artiTem-body p{
     height: 80px;
+    color: #a3a3a3;
+    font-style: italic;
 }
 .pc-artiTem-body a{
     text-decoration: none;

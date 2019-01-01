@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Index from './components/index';
 import Content from './components/content';
+import Learn from './components/learn';
 import Demo from './components/demo';
 import About from './components/about';
 import {HashRouter as Router,Route,Link} from 'react-router-dom';
@@ -16,6 +17,7 @@ class Root extends React.Component{
                             <Route exact path="/" component={Index} />
                             <Route path="/contents/:num" component={Content} />
                             <Route path="/tags/:tagName" component={Index} />
+                            <Route path="/learn/:tagName" component={Learn} />
                             <Route path="/demos" component={Demo} />
                             <Route path="/about" component={About} />
                         </div>
