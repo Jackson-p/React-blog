@@ -8,7 +8,7 @@ npm start 以热更新形式运行。
 
 欢迎来到个人网站分享学习，同时网站开源，有任何不足的地方欢迎大家批评指正～(ps:个人网站的搭建日记也写在网站里)
 
-以下为各个版次大优化的emmmm，算日记
+以下为各个版次大优化的emmmm，算日记。每一次大改版完整完成一次后上线。
 
 ---
 
@@ -31,7 +31,7 @@ npm start 以热更新形式运行。
 
 ### Webpack
 
-按需加载（体现在库里面，分离核心库），ugly代码压缩等系列,用官方的analyz查看了一下，好像bundle里面还真没有太冗余的东西。。。学会了优化回头看吧。总体来讲就是大大减少bundle.js的体积，或者说总体上不只使用bundle.js而是采用code split的方式。还有一些硬性优化像antd库如果性价比不高，便手动实现一些功能
+按需加载（体现在库里面，分离核心库），ugly代码压缩等系列,用官方的analyz查看了一下，好像bundle里面还真没有太冗余的东西。。。学会了优化回头看吧。总体来讲就是大大减少bundle.js的体积，或者说总体上不只使用bundle.js而是采用code split的方式。
 
 
 ### IE兼容性
@@ -44,7 +44,7 @@ npm start 以热更新形式运行。
 
 * ~~scroll事件函数节流or框架内onWheel代替（自带节流）~~
 
-* 提取公共css 保证页面样式基本兼容性。
+* 提取公共css,保证页面样式基本兼容性,响应式布局。
 
 * 无限美化：包括字体的学习与升级（偏设计了)，字体颜色与斜体的应用啥的
 
@@ -63,5 +63,11 @@ https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=%E4%B8%BA%E4%BB%80%E4%
 
 https://www.jianshu.com/p/3d0e7513ad83
 
+https://blog.csdn.net/youyou_LIN/article/details/79673026
+
 好，第一个思考题：为什么需要这么写来回调参数，React和Vue为什么在这点上有不同，即React总在事件后要bind以下。
 
+
+* 在React生命周期中在取消挂载之后，仍然用取到的数据进行setState，会造成内存泄漏。
+
+https://www.jianshu.com/p/a9d1f5aa719a

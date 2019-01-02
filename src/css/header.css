@@ -9,9 +9,11 @@ a{
     box-shadow: 0 2px 8px #f0f1f2;
     margin-bottom: 2px;
     z-index: 10;
-    position: fixed;
     transition: all .5s;
     -webkit-transition: all .5s;
+}
+.hfixed{
+    position: fixed;
 }
 .banner{
     margin-left: auto;

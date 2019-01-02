@@ -40,18 +40,18 @@ export default class LearnBody extends React.Component{
             if(tagName == "ALL" || label == tagName){
                 if(articlecnt >= (currentpage - 1) * pagearticlenum && articlecnt <= currentpage * pagearticlenum - 1){
                     articlecnt++;
-                    return <LearnItem key={index} title = {article.title} subtitle = {subtitle} />;
+                    return <LearnItem key={index} title = {article.title} subtitle = {subtitle} num = {article.number} />;
                 }
                 articlecnt++;
             }
         })
         :
-        "加载中";
+        "加载中...";
         let pagetotal = 0;
         if(articlecnt > 0){
             pagetotal = articlecnt % pagearticlenum ? articlecnt/pagearticlenum : Math.ceil(articlecnt/pagearticlenum);
             pagetotal *= 10;
-            console.log(pagetotal);
+            // console.log(pagetotal);
         }
 
         return (

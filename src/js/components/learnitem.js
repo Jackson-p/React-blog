@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import '../../css/learnitem.css';
 
 export default class LearnItem extends React.Component{
@@ -8,10 +9,10 @@ export default class LearnItem extends React.Component{
     render(){
         return (
             <div className="previews">
-                <a href="www.baidu.com" className="links">
+                <Link to={`/contents/${this.props.num}`} className="links">
                     <p className="post-title">{this.props.title}</p>
                     <p className="post-subtitle">{this.props.subtitle}</p>
-                </a>
+                </Link>
                 <hr />
             </div>
         )

@@ -37,18 +37,19 @@ export default class Header extends React.Component{
             return;
         }
         //document.documentElement.scrollTop==0
+        let basiclas = "header" + (this.props.selectedhead == 1?" hfixed":"");
         if(this.get_scrollTop_of_body() > 0){
-            if(this.node.className == "header scrolltop"){
-                this.node.className = "header"
+            if(this.node.className.indexOf("scrolltop") != -1){
+                this.node.className = basiclas;
             }
-        }else{
-            this.node.className = "header scrolltop";
+        }else if(this.props.selectedhead == 1){
+            this.node.className = basiclas + " scrolltop";
         }      
     }
     render(){
         const selectedhead = this.props.selectedhead;
         return (
-            <div className = 'header scrolltop' ref={node => this.node = node}>
+            <div className = {selectedhead == 1?"header scrolltop hfixed":"header"} ref={node => this.node = node}>
                 <Col type="flex" justify="space-between" className = 'banner' span={22} >
                     <Col className = 'banner-header'  sm={4} md={6} lg={8} xl={10} >
                         <img src = './src/img/head.jpeg'  />
