@@ -20,29 +20,28 @@ export default class Arti extends React.Component{
     //把分页器的组件也放在这里了，毕竟footer算是index吧
     render(){
 
-        const ArtiHead = () => {
-            let ArtiHeadname;
-            if(this.props.tagName){
-                ArtiHeadname = <h2>{this.props.tagName}</h2>
-            }else{
-                ArtiHeadname = <h2>Life</h2>;
-            }
-            return(
-                <div className='arti-head'>
-                    {ArtiHeadname}
-                </div>
-            )
-        };
-        let tagName = this.props.tagName;
+        // const ArtiHead = () => {
+        //     let ArtiHeadname;
+        //     if(this.props.tagName){
+        //         ArtiHeadname = <h2>{this.props.tagName}</h2>
+        //     }else{
+        //         ArtiHeadname = <h2>Life</h2>;
+        //     }
+        //     return(
+        //         <div className='arti-head'>
+        //             {ArtiHeadname}
+        //         </div>
+        //     )
+        // };
         let currentpage = this.state.currentpage;
         return(
-            <Col className='midarti' span={24}>
+            <Col className="midarti" span={24}>
                 <Row type="flex" justify="center">
                     <Col span={18}>
-                        <ArtiHead />
+                        <div className="arti-head"><h2>Life</h2></div>
                     </Col>
                     <Col span={18}>
-                        <ArtiBody tagName={tagName} currentpage={currentpage} handlePageChange={this.handlePageChange.bind(this)}/>
+                        <ArtiBody  currentpage={currentpage} handlePageChange={this.handlePageChange.bind(this)}/>
                     </Col>
                 </Row>
             </Col>

@@ -18,16 +18,19 @@ npm start 以热更新形式运行。
 
 还是不断地写博文，然后根据github的labels对应上比较好的内容分区，这样比较合适，没准还能顺其自然出个书嘿嘿嘿，内容来自书和社区
 
-* 主页推偏日记类的life ，只有这一个种类
+* ~~主页推偏日记类的life ，只有这一个种类~~
 
-* learn页仿照黄玄实现技术文章分类，并按标签提取，提取后的文章可建立markdown索引。
+* ~~learn页实现技术文章分类，并按标签提取，~~
 
 * about页毛笔motto加入，总体重写。
 
-* redux实现对所有githubissue的统一管理,实现避免数据重复请求，或者对数据进行缓存。
+* redux实现对所有githubissue的统一管理
+
+* localstorage也好，主页变量缓存也好，PWA的serviceworker也好，实现避免数据重复请求，或者对数据进行缓存。
 
 * 都完事了可以考虑换用王也道长头像
 
+* 提取后的文章可建立markdown索引。
 
 ### Webpack
 
@@ -48,26 +51,3 @@ npm start 以热更新形式运行。
 
 * 无限美化：包括字体的学习与升级（偏设计了)，字体颜色与斜体的应用啥的
 
-### 其他或新技术能否优化
-
-* PWA借助serviceworker实现离线缓存
-
-
-觉得改版完成后再上线新版嗯
-
-### 踩坑
-
-* 和Vue不一样的React解析方式，想要在事件里传参需要先bind后额外传参数，没想到这个还真的很重要。否则就会有传说中的setState死循环刷新，那么好问题来了，我们为啥要先bind呢？
-
-https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=%E4%B8%BA%E4%BB%80%E4%B9%88react%E9%87%8C%E9%9D%A2%E7%9A%84%E4%BA%8B%E4%BB%B6%E8%A6%81%E5%86%99bind&oq=react%2520onclick%2520%25E4%25BC%25A0%25E5%258F%2582&rsv_pq=c8916b2500074067&rsv_t=ac60bU0kAtX7JcYPhLAWLbNe1qHT3eMIj3ro8Ph9HVr6SFkSyzLRltcttsA&rqlang=cn&rsv_enter=1&inputT=7715&rsv_sug3=213&rsv_sug1=105&rsv_sug7=100&rsv_sug2=0&rsv_sug4=8317
-
-https://www.jianshu.com/p/3d0e7513ad83
-
-https://blog.csdn.net/youyou_LIN/article/details/79673026
-
-好，第一个思考题：为什么需要这么写来回调参数，React和Vue为什么在这点上有不同，即React总在事件后要bind以下。
-
-
-* 在React生命周期中在取消挂载之后，仍然用取到的数据进行setState，会造成内存泄漏。
-
-https://www.jianshu.com/p/a9d1f5aa719a

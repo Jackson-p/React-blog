@@ -19,7 +19,7 @@ export default class Learn extends React.Component{
     }
     render(){
         let tagName = (typeof(this.props.match.params.tagName) == "undefined")?"ALL":this.props.match.params.tagName;
-        //const alltags = ['show all', 'HTML', 'CSS', 'JS专题', 'Git', '工具、库与框架', 'Web前端安全', 'Web前端测试', '前端面试', '后端', '资源环境'];
+        //const alltags = ['show all', 'HTML', 'CSS', 'JS专题', 'Git', '工具、库与框架', 'Web前端安全', 'Web前端测试', '前端面试', '后端', '资源环境', '计算机科学'];
         const choseTag = this.state.choseTag;
         //console.log(choseTag);
         return(
@@ -40,6 +40,7 @@ export default class Learn extends React.Component{
                             <Link to="/learntags/前端面试" className={choseTag == 8?"tagchecked":null} onClick={this.handleChoose.bind(this, 8)}>前端面试</Link>
                             <Link to="/learntags/后端" className={choseTag == 9?"tagchecked":null} onClick={this.handleChoose.bind(this, 9)}>后端</Link>
                             <Link to="/learntags/资源环境" className={choseTag == 10?"tagchecked":null} onClick={this.handleChoose.bind(this, 10)} >资源环境</Link>
+                            <Link to="/learntags/计算机科学" className={choseTag == 11?"tagchecked":null} onClick={this.handleChoose.bind(this, 11)} >计算机科学</Link>
                         </Col>
                         <Col span={14} className="tag">{tagName}</Col>
                         <Col span={14} className="articles" >

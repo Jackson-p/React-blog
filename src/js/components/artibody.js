@@ -28,40 +28,39 @@ export default class ArtiBody extends React.Component{
         }).catch(e => console.log(e));  
     };
     render(){
-        //本页的输入应该除了显示的标签（默认是undefined）还有就是当前页数（默认是undefined）
-        //而渲染页面的过程应该是给定起点和终点，在范围之内就渲染
-            let tagName = this.props.tagName;
-            let currentpage = this.props.currentpage;
-            const pagearticlenum = 6;
-            const artilist = this.state.artilist;
-            let articlebegi = pagearticlenum*(currentpage-1)+1;//博文总数不变，选定起点
-            let articlecnt = 1;
-            //const pagetotal = 10*(artilist.length % pagearticlenum ? parseInt(artilist.length/pagearticlenum)+1 : artilist.length/pagearticlenum);
-            //console.log(pagetotal);
-            const Artilist = artilist.length ?
-            artilist.map((article,index) => {
-                    const timel = this.transTime(article.created_at);
-                    let reg = /[\#\`{3}\*]/g;;
-                    let contentBefore = article.body.replace(reg,"");
-                    const content = contentBefore.substring(0,200)+"...";
-                    const label = article.labels[0].name;
-                    //tagName == undefined 的情况是没有选择制定类型，直接从主页进来的
-                    if(tagName == label || tagName == undefined){
-                        if(articlecnt<=pagearticlenum*currentpage && articlecnt>=articlebegi){
-                            articlecnt++;
-                            return <ArtiTem key={index} title={article.title} content={content} time={timel} num={article.number} label={label} />
-                        }
+        let currentpage = this.props.currentpage;
+        let artilist = this.state.artilist;
+        let articlecnt = 0;
+        let timel,contentBefore,content;
+        const reg = /[\#\`{3}\*]/g;
+        const pagearticlenum = 6;
+        const label = "Life";
+        let Artilist = artilist.length ?
+        artilist.map((article,index) => {
+                timel = this.transTime(article.created_at);
+                contentBefore = article.body.replace(reg,"");
+                content = contentBefore.substring(0,200)+"...";
+                if(article.labels[0].name == label){
+                    if(articlecnt >= (currentpage - 1) * pagearticlenum && articlecnt <= currentpage * pagearticlenum - 1){
                         articlecnt++;
-                    }            
-            }) 
-            :
-            "加载中";
-            const pagetotal = 10*(articlecnt % pagearticlenum ? parseInt(articlecnt/pagearticlenum)+1 : articlecnt/pagearticlenum);
+                        return <ArtiTem key={index} title={article.title} content={content} time={timel} num={article.number} label={label} />
+                    }
+                    articlecnt++;
+                }            
+        }) 
+        :
+        "加载中";
+        let pagetotal = 0;
+        if(articlecnt > 0){
+            pagetotal = articlecnt % pagearticlenum ? articlecnt/pagearticlenum : Math.ceil(articlecnt/pagearticlenum);
+            pagetotal *= 10;
+            // console.log(pagetotal);
+        }
         return(
                 <div className="arti-container">
                     {Artilist}
                     <div className="arti-footer">
-                        <Pagination current={currentpage} onChange={this.props.handlePageChange} total={pagetotal} />
+                        {pagetotal > 0 && <Pagination current={currentpage} onChange={this.props.handlePageChange} total={pagetotal} />}
                     </div>
                 </div>
         );

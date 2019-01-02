@@ -10,12 +10,11 @@ export default class Index extends React.Component{
 //考虑到一个window下只有一个onscroll监听事件，只得把header和middle的效果加到这里
     render(){
 
-        const tagName = this.props.match?this.props.match.params.tagName:"";
         return (
             <div>
                 <Header selectedhead={1}/>
                 <Middle />
-                <Arti tagName={tagName}/>
+                <Arti />
                 <Footer />
                 <BackTop />
             </div>
