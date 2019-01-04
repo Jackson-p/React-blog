@@ -17,12 +17,14 @@ export default class LearnBody extends React.Component{
     }
     componentDidMount(){
         const url = `https://api.github.com/repos/Jackson-p/Jackson-p.github.io/issues`;
-        axios.get(url).then((response) => {
-            const data = response.data;
-            this.setState({Learnlist:data})
-        }).catch(e =>{
-            console.log(e);
-        })
+        if(this.state.Learnlist.length == 0){
+            axios.get(url).then((response) => {
+                const data = response.data;
+                this.setState({Learnlist:data})
+            }).catch(e =>{
+                console.log(e);
+            })
+        }
     }
     render(){
         let tagName = this.props.tagName;

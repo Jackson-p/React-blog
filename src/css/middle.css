@@ -17,6 +17,9 @@
     height: 200px;
     text-align: center;
 }
+.midtext h1{
+    cursor: default;
+}
 .midtext img{
     width: 30px;
     opacity: 0.7;

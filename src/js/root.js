@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Index from './components/index';
+import Diary from './components/diary';
 import Content from './components/content';
 import Learn from './components/learn';
 import Demo from './components/demo';
@@ -15,7 +16,7 @@ class Root extends React.Component{
                 <Router>
                         <div>
                             <Route exact path="/" component={Index} />
-                            <Route path="/tags/:tagName" component={Index} />
+                            <Route path="/diaries/:num" component={Diary} />
                             <Route path="/learn" component={Learn} />
                             <Route path="/learntags/:tagName" component={Learn} />
                             <Route path="/contents/:num" component={Content} />

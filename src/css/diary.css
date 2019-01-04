@@ -1,5 +1,5 @@
 @import '~highlight.js/styles/mono-blue.css';
-.content-container{
+.diary-container{
     width:80%;
     margin-left: auto;
     margin-right: auto;
@@ -7,22 +7,22 @@
     margin-bottom: 20px;
     min-height: 600px;
 }
-.content-header a{
+.diary-header a{
     color: black;
 }
-.content-header a:hover{
+.diary-header a:hover{
     color:#1890ff;
 }
-.content-header h1{
+.diary-header h1{
     margin: 1em 0;
     font-weight: 200;
 }
-.content-body{
+.diary-body{
     box-shadow: 1px 1px 10px #333333; 
     padding: 30px;
     height: auto;
 }
-.content-body pre{
+.diary-body pre{
     background-color: #eaeef3;
     padding: 10px;
 }
@@ -75,15 +75,15 @@
     z-index: -3;
     top: -2px;
 }
-.content-block{
+.diary-block{
     clear: both;
     height: 50px;
     text-align: center;
 }
-.content-block button{
+.diary-block button{
     outline:none;
 }
-.content-block button{
+.diary-block button{
     margin-top: 20px;
     background-color: cornflowerblue;
     color: #fff;
@@ -93,7 +93,7 @@
     cursor: pointer;
 }
 @media screen and (max-width:768px){
-    .content-body{
+    .diary-body{
         padding: 10px;
     }
     .pc-back{

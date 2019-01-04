@@ -1,12 +1,12 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import '../../css/content.css';
+import '../../css/diary.css';
 import Header from './header';
 import Back from './back';
 import axios from 'axios';
 import marked from 'marked';
 import hljs from 'highlight.js';
-import {HashRouter as Router,Route,Link} from 'react-router-dom'
+// import {HashRouter as Link} from 'react-router-dom'
 import Footer from './footer';
 import Review from './review';
 
@@ -44,14 +44,14 @@ export default class Content extends React.Component{
         this.node.scrollIntoView();
     }
     render(){
-        const content = this.state.content;
-        const time = this.transTime(content.created_at);
-        const labelName = content.labels ? content.labels[0].name:"";
-        const title = content.title;
-        const bodyInput = content.body;
+        const labelName = "Life";
+        let content = this.state.content;
+        let time = this.transTime(content.created_at);
+        let title = content.title;
+        let bodyInput = content.body;
         let bodyOutput;
-        const comments = this.state.comments;
-        const Comments = comments.length?
+        let comments = this.state.comments;
+        let Comments = comments.length?
         comments.map((comment,index) => {
             let temptime = this.transTime(comment.created_at);
             return <Review key={index} name={comment.user.login} commcont={comment.body} time={temptime} />
@@ -64,19 +64,19 @@ export default class Content extends React.Component{
         if(bodyInput){
             bodyOutput = marked(bodyInput);
         }else{
-            bodyOutput = "";
+            bodyOutput = "加载中...";
         }
         
         return(
             <div>
                 <Header selectedhead={1} />
                 <div className="block" ref={(node) => this.node=node}></div>
-                <div className="content-container">
-                    <div className="content-header">
-                        <span>{time} | <Link to={`/tags/${labelName}`}>{labelName}</Link></span>
+                <div className="diary-container">
+                    <div className="diary-header">
+                        <span>{time} | Life</span>
                         <h1>{title}</h1>
                     </div>
-                    <div className="content-body" dangerouslySetInnerHTML={{ __html: bodyOutput }}>
+                    <div className="diary-body" dangerouslySetInnerHTML={{ __html: bodyOutput }}>
 
                     </div>
                     <div className="content-review">

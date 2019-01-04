@@ -36,7 +36,7 @@ export default class Demo extends React.Component{
         return (
             <div className="demowhole">
                 <Header selectedhead={3} />
-                <div className="demo-block"></div>
+                <div className="block"></div>
                 <h1 align="center">Demo</h1>
                 <div className="demodis">
                     <a href="https://www.github.com/201585052/Single-Process-Handling/" target="_blank">
