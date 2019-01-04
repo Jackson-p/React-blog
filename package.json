@@ -29,6 +29,7 @@
     "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
+    "@babel/polyfill": "^7.2.5",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-plugin-import": "^1.11.0",
