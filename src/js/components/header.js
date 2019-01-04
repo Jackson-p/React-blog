@@ -52,7 +52,7 @@ export default class Header extends React.Component{
             <div className = {selectedhead == 1?"header scrolltop hfixed":"header"} ref={node => this.node = node}>
                 <Col type="flex" justify="space-between" className = 'banner' span={22} >
                     <Col className = 'banner-header'  sm={4} md={6} lg={8} xl={10} >
-                        <img src = './src/img/head.jpeg'  />
+                        <img src = './src/img/head.jpg'  />
                         <h1>&nbsp;Jackson</h1>
                     </Col>
                     <Col xs={4} md={8} lg={10} xl={12} > 
