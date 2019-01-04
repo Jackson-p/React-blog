@@ -2,6 +2,9 @@
     margin: auto;
     height: auto;
 }
+.arti-body{
+    min-height: 800px;
+}
 .arti-footer{
     margin-top: 100px;
     text-align: center;

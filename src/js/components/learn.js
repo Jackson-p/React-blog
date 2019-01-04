@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Header from './header';
+import Footer from './footer';
 import LearnBody from './learnbody';
 import { Col, Row } from 'antd';
 import '../../css/learn.css';
@@ -39,6 +40,7 @@ export default class Learn extends React.Component{
                         </Col>
                     </Row>
                 </Col>
+                <Footer />
             </div>
         );
     }

@@ -24,6 +24,8 @@ export default class LearnBody extends React.Component{
             }).catch(e =>{
                 console.log(e);
             })
+        }else{
+            console.log('liaoliao');//这里的这个写法，暂时是没有啥意义的，因为每次都会重新渲染组件，这里留着代码是想想可不可以直接保留状态，不请求新数据
         }
     }
     render(){
@@ -58,7 +60,7 @@ export default class LearnBody extends React.Component{
 
         return (
             <div>
-                { Learnlist }
+                <div className="learn-list">{ Learnlist }</div>
                 <div className="learn-footer">
                     {
                         articlecnt > 0 && currentpage > 0 && pagetotal > 0 &&

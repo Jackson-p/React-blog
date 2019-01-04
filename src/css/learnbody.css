@@ -1,5 +1,7 @@
+.learn-list{
+    min-height: 600px;
+}
 .learn-footer{
     text-align: center;
-    margin-top: 20px;
     margin-bottom: 40px;
 }

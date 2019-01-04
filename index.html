@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="max-age=7200">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="./src/img/tith.ICO" type="image/x-icon" />
     <title>Jackson</title>
 </head>
 <body>
     <div id="root"></div>
+    <!-- 定义全局变量等 -->
+    <script>
+        var store = {
+            source:{
+                token: null,
+                cancel: null
+            }
+        }
+    </script>
+    <!-- 资源文件引入 -->
     <script src="./bundle.js"></script>
 </body>
 </html>

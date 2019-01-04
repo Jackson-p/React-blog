@@ -58,7 +58,7 @@ export default class ArtiBody extends React.Component{
         }
         return(
                 <div className="arti-container">
-                    {Artilist}
+                    <div className="arti-body">{Artilist}</div>
                     <div className="arti-footer">
                         {pagetotal > 0 && <Pagination current={currentpage} onChange={this.props.handlePageChange} total={pagetotal} />}
                     </div>

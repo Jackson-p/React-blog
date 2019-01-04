@@ -6,9 +6,25 @@ import Content from './components/content';
 import Learn from './components/learn';
 import Demo from './components/demo';
 import About from './components/about';
-import {HashRouter as Router,Route,Link} from 'react-router-dom';
+import {HashRouter as Router,Route} from 'react-router-dom';
+import axios from 'axios';
 import 'antd/dist/antd.css';
 //require('es6-promise').polyfill();
+
+const CancelToken = axios.CancelToken;
+const source = CancelToken.source();
+store.requestCancel = source.cancel();//保存到全局变量，以供路由切换时使用
+const http = axios.create({
+    cancelToken:source.token
+});
+http.interceptors.request.use(config => {
+    config.cancelToken = store.source.token;
+    return config;
+}, err =>{
+    return Promise.reject(err);
+})
+
+
 
 class Root extends React.Component{
     render(){
