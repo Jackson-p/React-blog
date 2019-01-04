@@ -24,7 +24,7 @@ export default class Content extends React.Component{
         const allmonths = ['January','February','March','April','May','June','July','August','September','October','November','December'];
         let realtime = new Date(timel);
         let month = allmonths[realtime.getMonth()];
-        let day = realtime.getDay();
+        let day = realtime.getDate();
         let year = realtime.getFullYear();
         return 'From Jackson on ' + month + ' ' + day + ', ' + year;
     };
@@ -50,7 +50,6 @@ export default class Content extends React.Component{
         let title = content.title;
         let bodyInput = content.body;
         let bodyOutput;
-        let temptime;
         let comments = this.state.comments;
         let Comments = comments.length?
         comments.map((comment,index) => {
