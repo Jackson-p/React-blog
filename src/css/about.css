@@ -26,3 +26,8 @@
 .intro h1{
     margin: 30px;
 }
+@media screen and (max-width:768px){
+    .motto{
+        display: none;
+    }
+}

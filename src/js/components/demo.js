@@ -73,6 +73,8 @@ export default class Demo extends React.Component{
                         </div>
                     </a>
                 </div>
+                <div className="cancelfloat"></div>
+                <div className="block"></div>
                 <Footer />
             </div>
         );

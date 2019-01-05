@@ -1,0 +1,25 @@
+/* 这里定义全局样式 */
+body{
+    margin: 0;
+    padding: 0;
+    text-rendering:auto;
+    -webkit-font-smoothing:antialiased;
+    font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",STHeiti,"Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC","WenQuanYi Micro Hei",SimSun,sans-serif
+}
+/* 注意这里的body果然会影响全局。。。。 */
+.block{
+    height: 100px;
+    display: block;
+}
+.cancelfloat{
+    clear: both;
+}
+a{
+    text-decoration: none;
+}
+hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+}

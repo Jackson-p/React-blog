@@ -19,8 +19,8 @@ export default class Learn extends React.Component{
                 <Header selectedhead={2}/>
                 <div className="block"></div>
                 <Col span={24} className="container">
-                    <Row type="flex" justify="center">
-                        <Col span={ 14 } className="tagcloud">
+                    <Row type="flex" justify="center" className="learns" >
+                        <Col md={14} span={24} className="tagcloud">
                             <Link to="/learntags/ALL" id="all" className={tagName == "ALL"?"alltagchecked":null} >show all</Link>
                             <Link to="/learntags/HTML" className={tagName == "HTML"?"tagchecked":null} >HTML<sup>12</sup></Link>
                             <Link to="/learntags/CSS" className={tagName == "CSS"?"tagchecked":null}>CSS</Link>
@@ -34,8 +34,8 @@ export default class Learn extends React.Component{
                             <Link to="/learntags/资源环境" className={tagName == "资源环境"?"tagchecked":null}>资源环境</Link>
                             <Link to="/learntags/计算机科学" className={tagName == "计算机科学"?"tagchecked":null}>计算机科学</Link>
                         </Col>
-                        <Col span={14} className="tag">{tagName}</Col>
-                        <Col span={14} className="articles" >
+                        <Col md={14} span={24} className="tag">{tagName}</Col>
+                        <Col md={{span:14, offset:1}} span={24}>
                             <LearnBody tagName={tagName} />
                         </Col>
                     </Row>
