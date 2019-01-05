@@ -5,6 +5,7 @@
     margin-top:20px;
     margin-bottom: 20px;
     min-height: 600px;
+    position: initial;
 }
 .content-header{
     text-align: left;
@@ -126,5 +127,11 @@
     }
     .pc-back{
         margin-top:50%; 
+    }
+    .content-header{
+        padding-left: 10px;
+    }
+    .content-header h1{
+        font-size: 30px;
     }
 }

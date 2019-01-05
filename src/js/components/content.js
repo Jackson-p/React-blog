@@ -71,14 +71,14 @@ export default class Content extends React.Component{
                 <Header selectedhead={2} />
                 <Col span={24} className="content-container">
                     <Row type="flex" justify="center">
-                        <Col span={16} className="content-header">
+                        <Col md={16} span={24} className="content-header">
                             <div className="tag"><Link to={`/learntags/${labelName}`}>{labelName}</Link></div>
                             <h1>{title}</h1>
                             <h2>{time}</h2>
                             <hr />
                         </Col>
-                        <Col span={16} className="content-body" dangerouslySetInnerHTML={{ __html: bodyOutput }}></Col>
-                        <Col span={16} className="content-review">
+                        <Col md={16} span={24} className="content-body" dangerouslySetInnerHTML={{ __html: bodyOutput }}></Col>
+                        <Col md={16} span={24} className="content-review">
                             <div className="review-title">
                                 <h3>评 论</h3>
                             </div>

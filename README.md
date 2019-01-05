@@ -14,7 +14,7 @@ npm start 以热更新形式运行。
 
 ### 性能优化（改版后变慢许多)
 
-* webpack方面按需加载分离核心库（babel/polyfill记得要引入Promise部分，来解决IE兼容性问题，但为了速度保障暂时还没有引进），代码压缩或者是code split等方法大大减少bundle.js的体积
+* webpack方面按需加载分离核心库（babel/polyfill记得要引入Promise部分，来解决IE兼容性问题，但为了速度保障暂时还没有引进），代码压缩或者是code split等方法大大减少bundle.js的体积，其实我突然这么一想，好像antd等库也全都引进来了，怪不得这么大。。。
 
 * 对路由切换时setState可能有错误，可能产生内存泄漏的问题的解决
 

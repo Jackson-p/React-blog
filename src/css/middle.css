@@ -10,6 +10,7 @@
     vertical-align: middle;
     text-align: center;
     float: none;
+    overflow: hidden;
 }
 .midtext{
     display: inline-block;
