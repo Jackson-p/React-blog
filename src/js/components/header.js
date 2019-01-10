@@ -1,5 +1,4 @@
 import React from 'react';
-import 'antd/dist/antd.css';
 import '../../css/header.css';
 import {Link} from 'react-router-dom';
 import {Col} from 'antd';

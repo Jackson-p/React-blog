@@ -1,7 +1,6 @@
 import React from 'react';
 import { Row ,Col} from 'antd';
 import ArtiBody from './artibody';
-import 'antd/dist/antd.css';
 import '../../css/arti.css';
 
 export default class Arti extends React.Component{

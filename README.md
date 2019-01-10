@@ -24,6 +24,7 @@ split coding, CommonsChunkPlugin, tree shaking
 [高端地引入所需包的固定内容](https://www.cnblogs.com/vajoy/p/5225843.html)
 [按需加载之babel](https://segmentfault.com/q/1010000007998999)
 
+减了antd就减了不少了
 
 
 

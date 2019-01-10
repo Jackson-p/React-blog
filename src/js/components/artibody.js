@@ -1,5 +1,4 @@
 import React from 'react';
-import 'antd/dist/antd.css';
 import '../../css/artibody.css';
 import axios from 'axios';
 import ArtiTem from './artitem';

@@ -1,5 +1,4 @@
 import React from 'react';
-import 'antd/dist/antd.css';
 import '../../img/bcg.jpg';
 import '../../css/middle.css';
 import {Col} from 'antd';

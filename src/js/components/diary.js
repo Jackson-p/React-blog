@@ -1,11 +1,10 @@
 import React from 'react';
-import 'antd/dist/antd.css';
 import '../../css/diary.css';
 import Header from './header';
 import Back from './back';
 import axios from 'axios';
 import marked from 'marked';
-import hljs from 'highlight.js';
+import hljs from 'highlight';
 // import {HashRouter as Link} from 'react-router-dom'
 import Footer from './footer';
 import Review from './review';
