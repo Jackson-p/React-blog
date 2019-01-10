@@ -1,17 +1,10 @@
 const path = require('path');
-const UglifyJsPlugin=require('uglifyjs-webpack-plugin');
 
 
 module.exports = {
     entry: path.resolve(__dirname, 'src/js', 'root.js'),
-    optimization: {
-        minimizer:[
-            new UglifyJsPlugin({
-                uglifyOptions:{
-                    compress:true
-                }
-            })
-        ]
+    externs:{
+
     },
     module:{
         rules:[
@@ -25,6 +18,7 @@ module.exports = {
             {
                 test:/\.js?$/,
                 exclude: /node_modules/,
+                include: path.resolve(__dirname,'./src/js'),
                 use:{
                     loader:'babel-loader'
                     //options: require('./babel.config')
@@ -32,6 +26,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|gif)$/,
+                include:path.resolve(__dirname,'./src/img'),
                 use: [
                     {
                         loader: "file-loader",
@@ -44,11 +39,9 @@ module.exports = {
         ]
     },
     output: {
+        path: path.resolve(__dirname,'dist'),
         filename: 'bundle.js',
-        path: path.resolve(__dirname,'./'),
         publicPath: '',
-        // chunkFilename: "[name].js",
-        // filename: "[name].js"
     },
     plugins: [
         

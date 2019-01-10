@@ -4,6 +4,6 @@
         "react"
     ],
     "plugins": [
-        ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]
+        ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]//实现antd按需加载
     ]
 }

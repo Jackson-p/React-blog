@@ -15,6 +15,27 @@ npm start 以热更新形式运行。
 ### 性能优化（改版后变慢许多)
 
 * webpack方面按需加载分离核心库（babel/polyfill记得要引入Promise部分，来解决IE兼容性问题，但为了速度保障暂时还没有引进），代码压缩或者是code split等方法大大减少bundle.js的体积，其实我突然这么一想，好像antd等库也全都引进来了，怪不得这么大。。。
+split coding, CommonsChunkPlugin, tree shaking
+
+
+[大全1](https://blog.csdn.net/weixin_40817115/article/details/80992301)
+[大全2](https://www.jianshu.com/p/a64735eb0e2b)
+[大全3](https://blog.csdn.net/fortunegrant/article/details/79534790)
+[高端地引入所需包的固定内容](https://www.cnblogs.com/vajoy/p/5225843.html)
+[按需加载之babel](https://segmentfault.com/q/1010000007998999)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 * 对路由切换时setState可能有错误，可能产生内存泄漏的问题的解决
 
@@ -87,4 +108,6 @@ https://www.jianshu.com/p/a9d1f5aa719a
 
 ### IE兼容性
 
-~~以前好像是因为axios的缘故导致IE无法兼容，当时引入了es6-promise的ployfill，其中引入了一个叫url-parse的老包导致了github页面上的安全警告（安全第一嘛），所以既然已经注释掉了，就要想想如何合理地解决ie兼容性问题。所以还得是用人家babel的polyfill，用完感觉bundle.js又大了，哭。而且不止大了，这个babel-polyfill好慢的。。。。大哭~~
+~~以前好像是因为axios的缘故导致IE无法兼容，当时引入了es6-promise的ployfill，其中引入了一个叫url-parse的老包导致了github页面上的安全警告（安全第一嘛），所以既然已经注释掉了，就要想想如何合理地解决ie兼容性问题。所以还得是用人家babel的polyfill，用完感觉bundle.js又大了，哭。而且不止大了，这个babel-polyfill好慢的。。。。大哭~~(之前)
+//require('es6-promise').polyfill();
+//https://blog.csdn.net/LiangHui0914/article/details/78908386

@@ -7,11 +7,8 @@ import Learn from './components/learn';
 import Demo from './components/demo';
 import About from './components/about';
 import {HashRouter as Router,Route} from 'react-router-dom';
-//import '@babel/polyfill';
 import axios from 'axios';
-import 'antd/dist/antd.css';
-//require('es6-promise').polyfill();
-//https://blog.csdn.net/LiangHui0914/article/details/78908386
+
 
 const CancelToken = axios.CancelToken;
 const source = CancelToken.source();
