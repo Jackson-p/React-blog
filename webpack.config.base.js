@@ -5,7 +5,12 @@ module.exports = {
     entry: path.resolve(__dirname, 'src/js', 'root.js'),
     externals:{
         axios: 'axios',
-        highlight: 'hljs'
+        highlight: 'hljs',
+        marked: 'marked'
+        // ,
+        // react: 'react',
+        // ReactDOM: 'react-dom',
+        // ReactRouter: 'react-router-dom'
     },
     module:{
         rules:[
