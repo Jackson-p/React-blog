@@ -14,49 +14,36 @@ npm start 以热更新形式运行。
 
 ### 性能优化（改版后变慢许多)
 
-* webpack方面按需加载分离核心库（babel/polyfill记得要引入Promise部分，来解决IE兼容性问题，但为了速度保障暂时还没有引进）
+#### webpack综合优化
+
+webpack方面按需加载分离核心库（babel/polyfill记得要引入Promise部分，来解决IE兼容性问题，但为了速度保障暂时还没有引进）
 
 需要尝试的解决方案：
 
-cdn外部引入，vendor公共模块，按需加载不引入整块，split coding, CommonsChunkPlugin, tree shaking，各种细节插件处理比如ModuleConcatenationPlugin合并闭包
+* cdn外部引入,external
+* 按需加载不引入整块
+* split coding : vendor公共模块 and CommonsChunkPlugin
+* tree shaking
+* 各种细节插件处理比如ModuleConcatenationPlugin合并闭包
 
+参考过的网址：
 
 ~~[大全1](https://blog.csdn.net/weixin_40817115/article/details/80992301)~~
+
 ~~[大全2](https://www.jianshu.com/p/a64735eb0e2b)~~
+
 ~~[大全3](https://blog.csdn.net/fortunegrant/article/details/79534790)~~
-[高端地引入所需包的固定内容](https://www.cnblogs.com/vajoy/p/5225843.html)
+
+~~[高端地引入所需包的固定内容](https://www.cnblogs.com/vajoy/p/5225843.html)~~
+
 [避免重复使用相同代码的打包](https://segmentfault.com/q/1010000011198549/a-1020000011286950)
+
 [按需加载之babel](https://segmentfault.com/q/1010000007998999)
+
 [兼容](https://blog.csdn.net/qq_39985511/article/details/80887041)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-* 对路由切换时setState可能有错误，可能产生内存泄漏的问题的解决
-
-### 其他技术的学习与引用
-
-* 自己写或者找到合适的库实现更好的markdown渲染，提取后的文章可建立markdown索引。
-* 数据缓存方面应该会有还要好的方案的吧,如PWA技术借助serviceworker实现离线缓存？
-* redux实现对所有githubissue的统一管理
-
-### CSS&&细节
-
-* 无限美化：包括字体的学习与升级（偏设计了)，字体颜色与斜体的应用啥的
-
-### SEO优化
-
-* 解决React div嵌套过深问题和React虚拟Dom不利于搜索引擎爬虫问题
+#### 对路由切换时setState可能有错误，可能产生内存泄漏的问题的解决
 
 ### 踩过的坑也就是要学的
 
@@ -78,6 +65,22 @@ https://www.jianshu.com/p/a9d1f5aa719a
 * unmount之后的setState进行处理，防止内存泄漏，也就是说在unmounted后取消axios请求，一般出现于路由切换。这个问题大佬们给出了两种方案，请求拦截和在unmount部分加处理，然后再顺便思考一下fetch在面对这类问题时的解决方案
 
 * 清除浮动的n种方法？
+
+## 优化方案3.0
+
+### 其他技术的学习与引用
+
+* 自己写或者找到合适的库实现更好的markdown渲染，提取后的文章可建立markdown索引。
+* 数据缓存方面应该会有还要好的方案的吧,如PWA技术借助serviceworker实现离线缓存？
+* redux实现对所有githubissue的统一管理
+
+### CSS&&细节
+
+* 无限美化：包括字体的学习与升级（偏设计了)，字体颜色与斜体的应用啥的
+
+### SEO优化
+
+* 解决React div嵌套过深问题和React虚拟Dom不利于搜索引擎爬虫问题
 
 
 # 历史版本
