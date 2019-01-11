@@ -2,6 +2,7 @@
   "name": "react-blog",
   "version": "1.0.0",
   "description": "两个webpack.config一个用做测试，一个用做开发",
+  "sideEffects":["*.css"],
   "main": "root.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
