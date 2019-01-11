@@ -22,19 +22,19 @@ webpack方面按需加载分离核心库（babel/polyfill记得要引入Promise�
 
 * cdn外部引入,external
 * 按需加载不引入整块
-* split coding : vendor公共模块 and CommonsChunkPlugin
-* tree shaking
+* split coding : vendor公共模块 and CommonsChunkPlugin！
+* tree shaking！
 * 各种细节插件处理比如ModuleConcatenationPlugin合并闭包
 
 参考过的网址：
 
-~~[大全1](https://blog.csdn.net/weixin_40817115/article/details/80992301)~~
+[大全1](https://blog.csdn.net/weixin_40817115/article/details/80992301)
 
-~~[大全2](https://www.jianshu.com/p/a64735eb0e2b)~~
+[大全2](https://www.jianshu.com/p/a64735eb0e2b)
 
-~~[大全3](https://blog.csdn.net/fortunegrant/article/details/79534790)~~
+[大全3](https://blog.csdn.net/fortunegrant/article/details/79534790)
 
-~~[高端地引入所需包的固定内容](https://www.cnblogs.com/vajoy/p/5225843.html)~~
+[高端地引入所需包的固定内容](https://www.cnblogs.com/vajoy/p/5225843.html)
 
 [避免重复使用相同代码的打包](https://segmentfault.com/q/1010000011198549/a-1020000011286950)
 
