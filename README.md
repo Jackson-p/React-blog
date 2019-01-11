@@ -22,7 +22,9 @@ split coding, CommonsChunkPlugin, tree shaking
 [大全2](https://www.jianshu.com/p/a64735eb0e2b)
 [大全3](https://blog.csdn.net/fortunegrant/article/details/79534790)
 [高端地引入所需包的固定内容](https://www.cnblogs.com/vajoy/p/5225843.html)
+[避免重复使用相同代码的打包](https://segmentfault.com/q/1010000011198549/a-1020000011286950)
 [按需加载之babel](https://segmentfault.com/q/1010000007998999)
+[兼容](https://blog.csdn.net/qq_39985511/article/details/80887041)
 
 减了antd就减了不少了
 
