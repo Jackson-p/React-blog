@@ -42,6 +42,10 @@ webpack方面按需加载分离核心库（babel/polyfill记得要引入Promise�
 
 [兼容](https://blog.csdn.net/qq_39985511/article/details/80887041)
 
+[webpack全面配置](https://juejin.im/post/5bb089e86fb9a05cd84935d0)
+
+[tree shaking](https://juejin.im/post/5b7381c0f265da27dd66c6fd)
+
 
 #### 对路由切换时setState可能有错误，可能产生内存泄漏的问题的解决
 
