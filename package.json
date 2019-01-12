@@ -2,7 +2,9 @@
   "name": "react-blog",
   "version": "1.0.0",
   "description": "两个webpack.config一个用做测试，一个用做开发",
-  "sideEffects":["*.css"],
+  "sideEffects": [
+    "*.css"
+  ],
   "main": "root.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -23,6 +25,7 @@
   "dependencies": {
     "antd": "^3.11.6",
     "axios": "^0.18.0",
+    "babel-runtime": "^6.26.0",
     "highlight.js": "^9.13.1",
     "marked": "^0.5.2",
     "react": "^16.7.0",
@@ -34,6 +37,7 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-plugin-import": "^1.11.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^2.1.0",

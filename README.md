@@ -16,14 +16,14 @@ npm start 以热更新形式运行。
 
 #### webpack综合优化
 
-webpack方面按需加载分离核心库（babel/polyfill记得要引入Promise部分，来解决IE兼容性问题，但为了速度保障暂时还没有引进）
+webpack方面按需加载分离核心库（babel/polyfill记得要引入Promise部分，来解决IE兼容性问题，但为了速度保障暂时还没有引进，后用babel/runtime解决此问题）
 
 需要尝试的解决方案：
 
 * cdn外部引入,external
-* 按需加载不引入整块
-* split coding : vendor公共模块 and CommonsChunkPlugin！
-* tree shaking！
+* 按需加载不引入整块(如antd)
+* split coding : vendor公共模块 and splitChunks
+* tree shaking
 * 各种细节插件处理比如ModuleConcatenationPlugin合并闭包
 
 参考过的网址：
@@ -45,6 +45,8 @@ webpack方面按需加载分离核心库（babel/polyfill记得要引入Promise�
 [webpack全面配置](https://juejin.im/post/5bb089e86fb9a05cd84935d0)
 
 [tree shaking](https://juejin.im/post/5b7381c0f265da27dd66c6fd)
+
+[babel-runtime来解决兼容性](http://www.php.cn/js-tutorial-380204.html)
 
 
 #### 对路由切换时setState可能有错误，可能产生内存泄漏的问题的解决

@@ -7,6 +7,7 @@ import Learn from './components/learn';
 import Demo from './components/demo';
 import About from './components/about';
 import {HashRouter as Router,Route} from 'react-router-dom';
+window.Promise = Promise;
 import axios from 'axios';
 
 
