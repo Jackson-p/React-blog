@@ -17,7 +17,7 @@ export default class About extends React.Component{
                 <Header selectedhead={4}/>
                 <div span={24} className="about-container">
                     <div className="motto">
-                        <img src="./src/img/motto2.png" />
+                        <img src="./src/img/motto2.jpg" />
                     </div>
                     <div className="intro">
                         <h1>2019</h1>

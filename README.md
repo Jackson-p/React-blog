@@ -14,39 +14,18 @@ npm start 以热更新形式运行。
 
 ### 性能优化（改版后变慢许多)
 
-#### webpack综合优化
+#### ~~webpack综合优化~~
 
-webpack方面按需加载分离核心库（babel/polyfill记得要引入Promise部分，来解决IE兼容性问题，但为了速度保障暂时还没有引进，后用babel/runtime解决此问题）
+~~webpack方面按需加载分离核心库（babel/polyfill记得要引入Promise部分，来解决IE兼容性问题，但为了速度保障暂时还没有引进，后用babel/runtime解决此问题）~~
 
-需要尝试的解决方案：
+~~需要尝试的解决方案：~~
 
-* cdn外部引入,external
-* 按需加载不引入整块(如antd)
-* split coding : vendor公共模块 and splitChunks
-* tree shaking
-* 各种细节插件处理比如ModuleConcatenationPlugin合并闭包
+* ~~cdn外部引入,external~~
+* ~~按需加载不引入整块(如antd)~~
+* ~~split coding : vendor公共模块 and splitChunks~~
+* ~~tree shaking~~
+* ~~各种细节插件处理比如ModuleConcatenationPlugin合并闭包~~
 
-参考过的网址：
-
-[大全1](https://blog.csdn.net/weixin_40817115/article/details/80992301)
-
-[大全2](https://www.jianshu.com/p/a64735eb0e2b)
-
-[大全3](https://blog.csdn.net/fortunegrant/article/details/79534790)
-
-[高端地引入所需包的固定内容](https://www.cnblogs.com/vajoy/p/5225843.html)
-
-[避免重复使用相同代码的打包](https://segmentfault.com/q/1010000011198549/a-1020000011286950)
-
-[按需加载之babel](https://segmentfault.com/q/1010000007998999)
-
-[兼容](https://blog.csdn.net/qq_39985511/article/details/80887041)
-
-[webpack全面配置](https://juejin.im/post/5bb089e86fb9a05cd84935d0)
-
-[tree shaking](https://juejin.im/post/5b7381c0f265da27dd66c6fd)
-
-[babel-runtime来解决兼容性](http://www.php.cn/js-tutorial-380204.html)
 
 
 #### 对路由切换时setState可能有错误，可能产生内存泄漏的问题的解决
@@ -74,11 +53,16 @@ https://www.jianshu.com/p/a9d1f5aa719a
 
 ## 优化方案3.0
 
+
 ### 其他技术的学习与引用
 
 * 自己写或者找到合适的库实现更好的markdown渲染，提取后的文章可建立markdown索引。
 * 数据缓存方面应该会有还要好的方案的吧,如PWA技术借助serviceworker实现离线缓存？
 * redux实现对所有githubissue的统一管理
+
+### 性能优化
+
+* 这个没完好吧
 
 ### CSS&&细节
 
@@ -121,5 +105,3 @@ https://www.jianshu.com/p/a9d1f5aa719a
 ### IE兼容性
 
 ~~以前好像是因为axios的缘故导致IE无法兼容，当时引入了es6-promise的ployfill，其中引入了一个叫url-parse的老包导致了github页面上的安全警告（安全第一嘛），所以既然已经注释掉了，就要想想如何合理地解决ie兼容性问题。所以还得是用人家babel的polyfill，用完感觉bundle.js又大了，哭。而且不止大了，这个babel-polyfill好慢的。。。。大哭~~(之前)
-//require('es6-promise').polyfill();
-//https://blog.csdn.net/LiangHui0914/article/details/78908386
