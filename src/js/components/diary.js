@@ -38,7 +38,7 @@ export default class Content extends React.Component{
         axios.get(url2).then((response) => {
             const data2 = response.data;
             this.setState({comments:data2});
-            console.log(data2);
+            //console.log(data2);
         }).catch(e => console.log(e));
         this.node.scrollIntoView();
     }

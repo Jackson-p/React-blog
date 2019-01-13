@@ -8,12 +8,14 @@ module.exports = merge(baseWebpackConfig, {
         mode: 'development',
         devtool: 'inline-source-map',
         devServer: {
-            contentBase: path.resolve(__dirname, './'),//开发服务运行时的文件根目录
+            contentBase: path.resolve(__dirname, 'dist'),//开发服务运行时的文件根目录
             host: 'localhost',
             port: port,
             inline: true,
             compress: true,
             stats: "errors-only",
             open: true//默认打开浏览器
-        }
+        },
+        plugins: [
+        ]
 })
