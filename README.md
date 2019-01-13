@@ -10,47 +10,6 @@ npm start 以热更新形式运行。
 
 ---
 
-## 优化方案2.0
-
-### 性能优化（第一次改版后)
-
-#### ~~webpack综合优化~~
-
-~~webpack方面按需加载分离核心库（babel/polyfill记得要引入Promise部分，来解决IE兼容性问题，但为了速度保障暂时还没有引进，后用babel/runtime解决此问题）~~
-
-~~需要尝试的解决方案：~~
-
-* ~~cdn外部引入,external~~
-* ~~按需加载不引入整块(如antd)~~
-* ~~split coding : vendor公共模块 and splitChunks~~
-* ~~tree shaking~~
-* ~~各种细节插件处理比如ModuleConcatenationPlugin合并闭包~~
-
-
-
-#### 对路由切换时setState可能有错误，可能产生内存泄漏的问题的解决
-
-### 踩过的坑也就是要学的
-
-* 和Vue不一样的React解析方式，想要在事件里传参需要先bind后额外传参数，没想到这个还真的很重要。否则就会有传说中的setState死循环刷新，那么好问题来了，我们为啥要先bind呢？
-
-https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&tn=baidu&wd=%E4%B8%BA%E4%BB%80%E4%B9%88react%E9%87%8C%E9%9D%A2%E7%9A%84%E4%BA%8B%E4%BB%B6%E8%A6%81%E5%86%99bind&oq=react%2520onclick%2520%25E4%25BC%25A0%25E5%258F%2582&rsv_pq=c8916b2500074067&rsv_t=ac60bU0kAtX7JcYPhLAWLbNe1qHT3eMIj3ro8Ph9HVr6SFkSyzLRltcttsA&rqlang=cn&rsv_enter=1&inputT=7715&rsv_sug3=213&rsv_sug1=105&rsv_sug7=100&rsv_sug2=0&rsv_sug4=8317
-
-https://www.jianshu.com/p/3d0e7513ad83
-
-https://blog.csdn.net/youyou_LIN/article/details/79673026
-
-好，第一个思考题：为什么需要这么写来回调参数，React和Vue为什么在这点上有不同，即React总在事件后要bind以下。like onClick = {this.handleChange.bind(this,6)} 而不是 onClick = {this.handleChange(6).bind(this)}
-
-
-* 在React生命周期中在取消挂载之后，仍然用取到的数据进行setState，会造成内存泄漏。
-
-https://www.jianshu.com/p/a9d1f5aa719a
-
-* unmount之后的setState进行处理，防止内存泄漏，也就是说在unmounted后取消axios请求，一般出现于路由切换。这个问题大佬们给出了两种方案，请求拦截和在unmount部分加处理，然后再顺便思考一下fetch在面对这类问题时的解决方案
-
-* 清除浮动的n种方法？
-
 ## 优化方案3.0
 
 
@@ -105,3 +64,25 @@ https://www.jianshu.com/p/a9d1f5aa719a
 ### IE兼容性
 
 ~~以前好像是因为axios的缘故导致IE无法兼容，当时引入了es6-promise的ployfill，其中引入了一个叫url-parse的老包导致了github页面上的安全警告（安全第一嘛），所以既然已经注释掉了，就要想想如何合理地解决ie兼容性问题。所以还得是用人家babel的polyfill，用完感觉bundle.js又大了，哭。而且不止大了，这个babel-polyfill好慢的。。。。大哭~~(之前)
+
+## 优化方案2.0
+
+### 性能优化（第一次改版后)
+
+#### ~~webpack综合优化~~
+
+~~webpack方面按需加载分离核心库（babel/polyfill记得要引入Promise部分，来解决IE兼容性问题，但为了速度保障暂时还没有引进，后用babel/runtime解决此问题）~~
+
+~~需要尝试的解决方案：~~
+
+* ~~cdn外部引入,external~~
+* ~~按需加载不引入整块(如antd)~~
+* ~~split coding : vendor公共模块 and splitChunks~~
+* ~~tree shaking~~
+* ~~各种细节插件处理比如ModuleConcatenationPlugin合并闭包~~
+
+
+
+#### ~~对路由切换时setState可能有错误，可能产生内存泄漏的问题的解决~~
+
+~~在网速很慢的情况下，如果axios请求的数据尚未到达，就触发了路由切换，那么React组件销毁之后再进行setState就会发生报警。。。~~

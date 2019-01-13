@@ -39,7 +39,7 @@ export default class Demo extends React.Component{
                 <div className="block"></div>
                 <h1 align="center">Demo</h1>
                 <div className="demodis">
-                    <a href="https://www.github.com/201585052/Single-Process-Handling/" target="_blank">
+                    <a href="https://www.github.com/Jackson-p/Single-Process-Handling/" target="_blank">
                         <div className="demolist">
                             <div className="demohead">
                                 <img src="./src/img/demo1.png" />
@@ -47,7 +47,7 @@ export default class Demo extends React.Component{
                             <p>用js操作DOM实现动画模拟前三种调度算法，用Echart展示最后一种时间片轮转算法</p>
                         </div>
                     </a>
-                    <a href="https://www.github.com/201585052/React-newspublish/" target="_blank">
+                    <a href="https://www.github.com/Jackson-p/React-newspublish/" target="_blank">
                         <div className="demolist">
                             <div className="demohead">
                                 <img src="./src/img/demo2.png" />
@@ -55,7 +55,7 @@ export default class Demo extends React.Component{
                             <p>通过fetch向头条接口提取数据，通过react-responsive开发两套代码的方式来实现移动端适配</p>
                         </div>
                     </a>
-                    <a href="https://www.github.com/201585052/Mud/" target="_blank">
+                    <a href="https://www.github.com/Jackson-p/Mud/" target="_blank">
                         <div className="demolist">
                             <div className="demohead">
                                 <img src="./src/img/demo3.png" />
@@ -63,7 +63,7 @@ export default class Demo extends React.Component{
                             <p>canvas+面向对象的思路开发的小游戏,蓝色火柴人不断躲避生成的攻击球，每隔一段时间会有功能道具出现。生存时间即为分数</p>
                         </div>
                     </a>
-                    <a href="https://www.github.com/201585052/fml/">
+                    <a href="https://www.github.com/Jackson-p/fml/">
                         <div className="demolist">
                             <div className="demohead">
                                 <img src="./src/img/demo4.jpeg" />

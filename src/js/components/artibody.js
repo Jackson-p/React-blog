@@ -19,13 +19,18 @@ export default class ArtiBody extends React.Component{
         return reg.exec(timel)[0];
     };
     componentDidMount(){
+        this._isMounted = true;
         const url  = `https://api.github.com/repos/Jackson-p/Jackson-p.github.io/issues`;
         axios.get(url).then((response) => {
             const data = response.data;
-            this.setState({artilist:data})
-            //console.log(data);
+            if(this._isMounted){
+                this.setState({artilist:data})
+            }
         }).catch(e => console.log(e));  
     };
+    componentWillUnmount(){
+        this._isMounted = false;
+    }
     render(){
         let currentpage = this.props.currentpage;
         let artilist = this.state.artilist;

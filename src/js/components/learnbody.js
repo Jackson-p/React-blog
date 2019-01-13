@@ -16,17 +16,23 @@ export default class LearnBody extends React.Component{
         this.setState({Currentpage:page});
     }
     componentDidMount(){
+        this._isMounted = true;
         const url = `https://api.github.com/repos/Jackson-p/Jackson-p.github.io/issues`;
         if(this.state.Learnlist.length == 0){
             axios.get(url).then((response) => {
                 const data = response.data;
-                this.setState({Learnlist:data})
+                if(this._isMounted){
+                    this.setState({Learnlist:data})
+                }
             }).catch(e =>{
                 console.log(e);
             })
         }else{
             console.log('liaoliao');//这里的这个写法，暂时是没有啥意义的，因为每次都会重新渲染组件，这里留着代码是想想可不可以直接保留状态，不请求新数据
         }
+    };
+    componentWillUnmount(){
+        this._isMounted = false;
     }
     render(){
         let tagName = this.props.tagName;

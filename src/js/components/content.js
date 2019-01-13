@@ -29,20 +29,27 @@ export default class Content extends React.Component{
         return 'From Jackson on ' + month + ' ' + day + ', ' + year;
     };
     componentDidMount(){
+        this._isMounted = true;
         const url = `https://api.github.com/repos/Jackson-p/Jackson-p.github.io/issues/
         ${this.props.match.params.num}`;
-        axios.get(url).then((response) => {
-            const data = response.data;
-            this.setState({content:data});
-            //console.log(data);
-        }).catch(e => console.log(e));
         const url2 = `https://api.github.com/repos/Jackson-p/Jackson-p.github.io/issues/
         ${this.props.match.params.num}/comments`;
+        axios.get(url).then((response) => {
+            const data = response.data;
+            if(this._isMounted){
+                this.setState({content:data});
+            }
+        }).catch(e => console.log(e));
         axios.get(url2).then((response) => {
             const data2 = response.data;
-            this.setState({comments:data2});
+            if(this._isMounted){
+                this.setState({comments:data2});
+            }
         }).catch(e => console.log(e));
-    }
+    };
+    componentWillUnmount(){
+        this._isMounted = false;
+    };
     render(){
         let content = this.state.content;
         let time = this.transTime(content.created_at);
