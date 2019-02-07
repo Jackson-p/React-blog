@@ -20,16 +20,15 @@ export default class About extends React.Component{
                         <img src="./src/img/motto2.jpg" />
                     </div>
                     <div className="intro">
-                        <h1>2019</h1>
+                        <h1>From 2019</h1>
                         <p>
+                            把广义的健身融入生活。
                             用代码创造有趣的东西，发挥有趣的价值。
-                            一名即将初出茅庐的大学生，定位是Web前端开发。
                         </p>
                         <p>
-                            喜欢coding，剧、电影和动漫，对游戏逐渐失迷。爱音乐中度患者。
-                            一直想健身。。。
+                            业余时间喜欢读读书，看看动漫、剧、电影。音乐爱好者。游戏有人一起的话还是蛮喜欢玩的hhh
                         </p>
-                        <p>ps:除了热爱的开发以外，最近对道家思想蛮感兴趣的</p>
+                        <p>ps:除了热爱的开发以外，最近对道家思想蛮感兴趣</p>
                     </div>
                 </div>
                 <Footer />
