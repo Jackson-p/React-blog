@@ -20,7 +20,7 @@ export default class ArtiBody extends React.Component{
     };
     componentDidMount(){
         this._isMounted = true;
-        const url  = `https://api.github.com/repos/Jackson-p/Jackson-p.github.io/issues`;
+        const url  = `https://api.github.com/repos/Jackson-p/Jackson-p.github.io/issues?state=open`;
         axios.get(url).then((response) => {
             const data = response.data;
             if(this._isMounted){
@@ -39,6 +39,7 @@ export default class ArtiBody extends React.Component{
         const reg = /[\#\`{3}\*]/g;
         const pagearticlenum = 6;
         const label = "Life";
+        console.log(artilist);
         let Artilist = artilist.length ?
         artilist.map((article,index) => {
                 timel = this.transTime(article.created_at);
@@ -53,7 +54,7 @@ export default class ArtiBody extends React.Component{
                 }            
         }) 
         :
-        "加载中";
+        "加载中...";
         let pagetotal = 0;
         if(articlecnt > 0){
             pagetotal = articlecnt % pagearticlenum ? articlecnt/pagearticlenum : Math.ceil(articlecnt/pagearticlenum);
