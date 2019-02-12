@@ -47,7 +47,7 @@ export default class LearnBody extends React.Component{
             contentBefore = article.body.replace(reg,"");
             subtitle = contentBefore.substring(0,200)+"...";
             label = article.labels[0].name;
-            if(tagName == "ALL" || label == tagName){
+            if((tagName == "ALL" && label != "Life") || label == tagName){
                 if(articlecnt >= (currentpage - 1) * pagearticlenum && articlecnt <= currentpage * pagearticlenum - 1){
                     articlecnt++;
                     return <LearnItem key={index} title = {article.title} subtitle = {subtitle} num = {article.number} />;
