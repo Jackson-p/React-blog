@@ -76,7 +76,7 @@ export default class Middle extends React.Component{
         return(
                 <Col className="midimg" span={24}>
                     <div className="midtext" style={HidMid} >
-                        <h1>All I can do is just to live, live as I like.</h1>
+                        <h1>Live a healthy life and be active to solve problems,hold happiness.</h1>
                         <a href="https://www.github.com/Jackson-p"><img src='./src/img/gitt.png' id="gi" /></a>
                         <a href="https://weibo.com/u/6046299335"><img src='./src/img/weibo.png' id="wb" /></a>
                     </div>
