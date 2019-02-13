@@ -11,6 +11,11 @@ module.exports = {
         // ReactDOM: 'react-dom',
         // ReactRouter: 'react-router-dom'
     },
+    resolve:{
+        alias:{
+            '@': '../../../'
+        }
+    },
     module:{
         rules:[
             {
