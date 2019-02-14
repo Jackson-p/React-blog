@@ -1,7 +1,7 @@
 import React from 'react';
 import ArtiTem from './artitem';
-import { Pagination } from 'antd';
-import { getIssues, transTime, calcPagetotal} from '@/utils/utils';
+import { Pagination, Spin } from 'antd';
+import { getIssues, transTime, calcPagetotal, interceptors} from '@/utils/utils';
 import '../../css/artibody.css';
 
 export default class ArtiBody extends React.Component{
@@ -13,7 +13,8 @@ export default class ArtiBody extends React.Component{
         this.state = {
             artilist : '加载中...',
             currentpage : 1,
-            totalpages : -1//代表分页器还未渲染
+            totalpages : -1,//代表分页器还未渲染
+            loading : false//避免用户疯狂请求
         };
         this._isMounted = true;
         this.pagesize = 6;
@@ -27,18 +28,16 @@ export default class ArtiBody extends React.Component{
         }).then((response) => {
             let data = response.data.items;
             let totalpages = calcPagetotal(response.data.total_count, pagesize);
-            this.setState({totalpages:totalpages})
             if(!data || data.length ==0){
                 data = <h1>暂无数据哦</h1>
             }
             if(this._isMounted){//请求的数据因为有延迟要避免内存泄漏
-                this.setState({artilist:data});
+                this.setState({totalpages:totalpages, artilist:data});
             }
         }).catch(e => console.log(e));
     }
     handlePages(page){
-        this.setState({artilist:'加载中...'})
-        this.setState({currentpage : page},this.showIssues(this.props.label,page));
+        this.setState({artilist:'加载中...', currentpage : page},this.showIssues(this.props.label,page));
     }
     componentDidMount(){
         this.showIssues(this.props.label);
@@ -58,14 +57,29 @@ export default class ArtiBody extends React.Component{
                 return <ArtiTem key={index} title={article.title} content={content} time={timel} num={article.number} />      
         }) 
         :
-        artilist
+        artilist;
+        interceptors.request.use((req) => {
+            if(this._isMounted){
+                this.setState({loading:true});
+            }
+            return req;
+        }, (err) => console.log(err));
+
+        interceptors.response.use((res) => {
+            if(this._isMounted){
+                this.setState({loading:false});
+            }
+            return res;
+        }, (err) => console.log(err));
         return(
-                <div className="arti-container">
-                    <div className="arti-body">{Artilist}</div>
-                    <div className="arti-footer">
-                        {this.state.totalpages >= 0 && <Pagination defaultCurrent={1} onChange={this.handlePages.bind(this)} total={this.state.totalpages*10} />}
+                <Spin size="large" spinning={this.state.loading}>
+                    <div className="arti-container">
+                        <div className="arti-body">{Artilist}</div>
+                        <div className="arti-footer">
+                            {this.state.totalpages >= 0 && <Pagination defaultCurrent={1} onChange={this.handlePages.bind(this)} total={this.state.totalpages*10} />}
+                        </div>
                     </div>
-                </div>
+                </Spin>
         );
     }
 }

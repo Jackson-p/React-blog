@@ -3,7 +3,8 @@ import {Link} from 'react-router-dom';
 import Header from './header';
 import Footer from './footer';
 import LearnBody from './learnbody';
-import { Col, Row } from 'antd';
+import { Col, Row, Spin} from 'antd';
+import { interceptors } from '@/utils/utils'
 import '../../css/learn.css';
 
 export default class Learn extends React.Component{
@@ -14,6 +15,7 @@ export default class Learn extends React.Component{
         let tagName = (typeof(this.props.match.params.tagName) == "undefined")?"ALL":this.props.match.params.tagName;
         //const alltags = ['show all', 'HTML', 'CSS', 'JS专题', 'Git', '工具、库与框架', 'Web前端安全', 'Web前端测试', '前端面试', '后端', '资源环境', '计算机科学'];
         //console.log(choseTag);
+        
         return(
             <div>
                 <Header selectedhead={2}/>
