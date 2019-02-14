@@ -1,78 +1,66 @@
 import React from 'react';
-import axios from 'axios';
 import LearnItem from './learnitem';
 import { Pagination } from 'antd';
+import { getIssues, transTime, calcPagetotal} from '@/utils/utils';
 import '../../css/learnbody.css';
 
 export default class LearnBody extends React.Component{
-    constructor(){
+    constructor() {
         super();
         this.state = {
-            Learnlist:'',
-            Currentpage:1
-        }
+            learnlist : '加载中...',
+            currentpage : 1,
+            totalpages : -1//代表分页器还未渲染
+        };
+        this._isMounted = true;
+        this.pagesize = 6;
     }
-    handlePageChange(page){
-        this.setState({Currentpage:page});
+    showIssues(label='',currentpage = this.state.currentpage, pagesize=this.pagesize, keyword=""){
+        getIssues({
+            label:label,
+            currentpage:currentpage,
+            pagesize:pagesize,
+            keyword:keyword
+        }).then((response) => {
+            let data = response.data.items;
+            let totalpages = calcPagetotal(response.data.total_count, pagesize);
+            this.setState({totalpages:totalpages})
+            if(!data || data.length ==0){
+                data = <h1>暂无数据哦</h1>
+            }
+            if(this._isMounted){//请求的数据因为有延迟要避免内存泄漏
+                this.setState({learnlist:data});
+            }
+        }).catch(e => console.log(e));
+    }
+    handlePages(page){
+        this.setState({currentpage : page},this.showIssues(this.props.tagName,page));
     }
     componentDidMount(){
-        this._isMounted = true;
-        const url = `https://api.github.com/repos/Jackson-p/Jackson-p.github.io/issues`;
-        if(this.state.Learnlist.length == 0){
-            axios.get(url).then((response) => {
-                const data = response.data;
-                if(this._isMounted){
-                    this.setState({Learnlist:data})
-                }
-            }).catch(e =>{
-                console.log(e);
-            })
-        }else{
-            console.log('liaoliao');//这里的这个写法，暂时是没有啥意义的，因为每次都会重新渲染组件，这里留着代码是想想可不可以直接保留状态，不请求新数据
-        }
+        this.showIssues(this.props.tagName);
     };
     componentWillUnmount(){
         this._isMounted = false;
     }
     render(){
-        let tagName = this.props.tagName;
-        let currentpage = this.state.Currentpage;
-        let learnlist = this.state.Learnlist;
-        let contentBefore,subtitle,label,articlecnt;
-        articlecnt = 0;
-        const pagearticlenum = 6;
-        const reg = /[\#\`{3}\*]/g;
-        let Learnlist = learnlist?
-        learnlist.map((article, index) => {
-            contentBefore = article.body.replace(reg,"");
-            subtitle = contentBefore.substring(0,200)+"...";
-            label = article.labels[0].name;
-            if((tagName == "ALL" && label != "Life") || label == tagName){
-                if(articlecnt >= (currentpage - 1) * pagearticlenum && articlecnt <= currentpage * pagearticlenum - 1){
-                    articlecnt++;
-                    return <LearnItem key={index} title = {article.title} subtitle = {subtitle} num = {article.number} />;
-                }
-                articlecnt++;
-            }
-        })
+        const reg = /[\#\`{3}\*]i/g;
+        let timel,contentBefore,content;
+        let learnlist = this.state.learnlist;
+        let Learnlist = Array.isArray(learnlist) ?
+        learnlist.map((article,index) => {
+                timel = transTime(article.created_at);
+                contentBefore = article.body.replace(reg,"");
+                content = contentBefore.substring(0,200)+"...";
+                return <LearnItem key={index} title={article.title} content={content} time={timel} num={article.number} />      
+        }) 
         :
-        "加载中...";
-        let pagetotal = 0;
-        if(articlecnt > 0){
-            pagetotal = articlecnt % pagearticlenum ? articlecnt/pagearticlenum : Math.ceil(articlecnt/pagearticlenum);
-            pagetotal *= 10;
-            // console.log(pagetotal);
-        }
+        learnlist
 
         return (
             <div>
                 <div className="learn-list">{ Learnlist }</div>
                 <div className="learn-footer">
-                    {
-                        articlecnt > 0 && currentpage > 0 && pagetotal > 0 &&
-                        <Pagination defaultCurrent={1} onChange={this.handlePageChange.bind(this)} total={pagetotal} />
-                        //老实讲这里这个pagetotal不知道他是bug了还是咋的。。。。
-                    }
+                    {this.state.totalpages >= 0 && <Pagination defaultCurrent={1} onChange={this.handlePages.bind(this)} total={this.state.totalpages*10} />}
                 </div>
             </div>
         );

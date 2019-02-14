@@ -15,7 +15,7 @@ export default class Arti extends React.Component{
                         <div className="arti-head"><h2>Life</h2></div>
                     </Col>
                     <Col span={18}>
-                        <ArtiBody />
+                        <ArtiBody label="Life"/>
                     </Col>
                 </Row>
             </Col>

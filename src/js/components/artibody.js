@@ -32,15 +32,15 @@ export default class ArtiBody extends React.Component{
                 data = <h1>暂无数据哦</h1>
             }
             if(this._isMounted){//请求的数据因为有延迟要避免内存泄漏
-                this.setState({artilist:data})
+                this.setState({artilist:data});
             }
         }).catch(e => console.log(e));
     }
     handlePages(page){
-        this.setState({currentpage : page},this.showIssues('',page));
+        this.setState({currentpage : page},this.showIssues(this.props.label,page));
     }
     componentDidMount(){
-        this.showIssues();
+        this.showIssues(this.props.label);
     };
     componentWillUnmount(){
         this._isMounted = false;
