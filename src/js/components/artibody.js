@@ -37,6 +37,7 @@ export default class ArtiBody extends React.Component{
         }).catch(e => console.log(e));
     }
     handlePages(page){
+        this.setState({artilist:'加载中...'})
         this.setState({currentpage : page},this.showIssues(this.props.label,page));
     }
     componentDidMount(){

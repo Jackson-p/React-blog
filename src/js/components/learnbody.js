@@ -1,21 +1,27 @@
 import React from 'react';
 import LearnItem from './learnitem';
 import { Pagination } from 'antd';
-import { getIssues, transTime, calcPagetotal} from '@/utils/utils';
+import { getIssues, calcPagetotal} from '@/utils/utils';
 import '../../css/learnbody.css';
 
 export default class LearnBody extends React.Component{
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
+            tagName : props.tagName,
             learnlist : '加载中...',
             currentpage : 1,
             totalpages : -1//代表分页器还未渲染
         };
-        this._isMounted = true;
         this.pagesize = 6;
     }
-    showIssues(label='',currentpage = this.state.currentpage, pagesize=this.pagesize, keyword=""){
+    componentWillReceiveProps(nextProps){
+        //说明标签发生了变化，其他状态都需要初始化
+        this.setState({tagName: nextProps.tagName, learnlist : '加载中...', currentpage : 1, totalpages : -1}
+            ,this.showIssues(nextProps.tagName));
+    }
+    showIssues(label='',currentpage = 1, pagesize=this.pagesize, keyword=""){
+        label = label == 'ALL'?'':label;
         getIssues({
             label:label,
             currentpage:currentpage,
@@ -28,30 +34,25 @@ export default class LearnBody extends React.Component{
             if(!data || data.length ==0){
                 data = <h1>暂无数据哦</h1>
             }
-            if(this._isMounted){//请求的数据因为有延迟要避免内存泄漏
-                this.setState({learnlist:data});
-            }
+            this.setState({learnlist:data});
         }).catch(e => console.log(e));
     }
     handlePages(page){
-        this.setState({currentpage : page},this.showIssues(this.props.tagName,page));
+        this.setState({learnlist:'加载中...'})
+        this.setState({currentpage : page},this.showIssues(this.state.tagName,page));
     }
     componentDidMount(){
         this.showIssues(this.props.tagName);
     };
-    componentWillUnmount(){
-        this._isMounted = false;
-    }
     render(){
         const reg = /[\#\`{3}\*]i/g;
-        let timel,contentBefore,content;
+        let contentBefore,content;
         let learnlist = this.state.learnlist;
         let Learnlist = Array.isArray(learnlist) ?
         learnlist.map((article,index) => {
-                timel = transTime(article.created_at);
                 contentBefore = article.body.replace(reg,"");
                 content = contentBefore.substring(0,200)+"...";
-                return <LearnItem key={index} title={article.title} content={content} time={timel} num={article.number} />      
+                return <LearnItem key={index} title={article.title} subtitle={content} num={article.number} />      
         }) 
         :
         learnlist
