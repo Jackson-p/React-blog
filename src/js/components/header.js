@@ -63,7 +63,7 @@ export default class Header extends React.Component{
                         </label>
                         <ul className = 'banner-tag' >
                             <Link to="/" ><li className = {selectedhead==1?"selected-tag":null }>Home</li></Link>
-                            <Link to="/learntags/ALL"><li className = {selectedhead==2?"selected-tag":null } >Learn</li></Link>
+                            <Link to="/learn"><li className = {selectedhead==2?"selected-tag":null } >Learn</li></Link>
                             <Link to="/demos" ><li className = {selectedhead==3?"selected-tag":null} >Demo</li></Link>
                             <Link to="/about" ><li className = {selectedhead==4?"selected-tag":null} >About</li></Link>
                         </ul>

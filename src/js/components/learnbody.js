@@ -1,7 +1,7 @@
 import React from 'react';
 import LearnItem from './learnitem';
 import { Pagination } from 'antd';
-import { getIssues, calcPagetotal, interceptors} from '@/utils/utils';
+import { getIssues, calcPagetotal } from '@/utils/utils';
 import '../../css/learnbody.css';
 
 export default class LearnBody extends React.Component{
@@ -23,6 +23,7 @@ export default class LearnBody extends React.Component{
     }
     showIssues(label='',currentpage = 1, pagesize=this.pagesize, keyword=""){
         label = label == 'ALL'?'':label;
+        this.props.handleLoading(true);
         getIssues({
             label:label,
             currentpage:currentpage,
@@ -36,6 +37,7 @@ export default class LearnBody extends React.Component{
             }
             if(this._isMounted){
                 this.setState({totalpages:totalpages, learnlist:data});
+                this.props.handleLoading(false);
             }
         }).catch(e => console.log(e));
     }
@@ -60,20 +62,6 @@ export default class LearnBody extends React.Component{
         }) 
         :
         learnlist;
-
-        interceptors.request.use((req) => {
-            if(this._isMounted){
-                this.props.handleLoading(true);
-            }
-            return req;
-        }, (err) => console.log(err));
-
-        interceptors.response.use((res) => {
-            if(this._isMounted){
-                this.props.handleLoading(false);
-            }
-            return res;
-        }, (err) => console.log(err));
 
         return (
             <div>
