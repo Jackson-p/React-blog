@@ -4,12 +4,19 @@ import Header from './header';
 import Footer from './footer';
 import LearnBody from './learnbody';
 import { Col, Row, Spin} from 'antd';
-import { interceptors } from '@/utils/utils'
 import '../../css/learn.css';
 
 export default class Learn extends React.Component{
     constructor(){
         super();
+        this.state = {
+            loading:false
+        }
+        console.log(this);
+    }
+    handleLoading(loadingbool){
+        this.setState({ loading:loadingbool });
+        //console.log(loadingbool);
     }
     render(){
         let tagName = (typeof(this.props.match.params.tagName) == "undefined")?"ALL":this.props.match.params.tagName;
@@ -17,7 +24,7 @@ export default class Learn extends React.Component{
         //console.log(choseTag);
         
         return(
-            <div>
+            <Spin spinning={this.state.loading} size="large">
                 <Header selectedhead={2}/>
                 <div className="block"></div>
                 <Col span={24} className="container">
@@ -38,12 +45,12 @@ export default class Learn extends React.Component{
                         </Col>
                         <Col md={14} span={24} className="tag">{tagName}</Col>
                         <Col md={{span:14, offset:1}} span={24}>
-                            <LearnBody tagName={tagName} />
+                            <LearnBody tagName={ tagName } handleLoading={ this.handleLoading.bind(this) }/>
                         </Col>
                     </Row>
                 </Col>
                 <Footer />
-            </div>
+            </Spin>
         );
     }
 }

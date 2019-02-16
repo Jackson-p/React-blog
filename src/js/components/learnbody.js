@@ -1,6 +1,6 @@
 import React from 'react';
 import LearnItem from './learnitem';
-import { Pagination, Spin } from 'antd';
+import { Pagination } from 'antd';
 import { getIssues, calcPagetotal, interceptors} from '@/utils/utils';
 import '../../css/learnbody.css';
 
@@ -11,8 +11,7 @@ export default class LearnBody extends React.Component{
             tagName : props.tagName,
             learnlist : '加载中...',
             currentpage : 1,
-            totalpages : -1,//代表分页器还未渲染
-            loading:false
+            totalpages : -1//代表分页器还未渲染
         };
         this._isMounted = true;
         this.pagesize = 6;
@@ -64,25 +63,25 @@ export default class LearnBody extends React.Component{
 
         interceptors.request.use((req) => {
             if(this._isMounted){
-                this.setState({loading:true});
+                this.props.handleLoading(true);
             }
             return req;
         }, (err) => console.log(err));
 
         interceptors.response.use((res) => {
             if(this._isMounted){
-                this.setState({loading:false});
+                this.props.handleLoading(false);
             }
             return res;
         }, (err) => console.log(err));
 
         return (
-            <Spin size="large" spinning={this.state.loading}>
+            <div>
                 <div className="learn-list">{ Learnlist }</div>
                 <div className="learn-footer">
                     {this.state.totalpages >= 0 && <Pagination defaultCurrent={1} onChange={this.handlePages.bind(this)} total={this.state.totalpages*10} />}
                 </div>
-            </Spin>
+            </div>
         );
     }
 }
