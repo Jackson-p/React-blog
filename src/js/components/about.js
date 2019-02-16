@@ -16,19 +16,17 @@ export default class About extends React.Component{
             <div>
                 <Header selectedhead={4}/>
                 <div span={24} className="about-container">
-                    <div className="motto">
-                        <img src="./src/img/motto2.jpg" />
-                    </div>
                     <div className="intro">
                         <h1>From 2019</h1>
                         <p>
-                            把广义的健身融入生活。
-                            用代码创造有趣的东西，发挥有趣的价值。
+                            大学的几年弄过微商，摆过地摊，卖过电话卡。
+                            参加过大型科创，ACM-CCPC拿奖，在校团委做网站，做做副部。
+                            自学了C/C++、Java、Js、PHP、Python毕业的时候还能记住一半。
                         </p>
                         <p>
-                            业余时间喜欢读读书，看看动漫、剧、电影。音乐爱好者。游戏有人一起的话还是蛮喜欢玩的hhh
+                            真是一个有活力的少年hhh
                         </p>
-                        <p>ps:除了热爱的开发以外，最近对道家思想蛮感兴趣</p>
+                        <p>认真做毕设，入职之后就在北京做个全职的程序员了，fighting~</p>
                     </div>
                 </div>
                 <Footer />

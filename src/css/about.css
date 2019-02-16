@@ -3,21 +3,11 @@
     width: 100%;
     display: table;
 }
-.motto{
-    width: 400px;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    margin-left: 100px;
-    box-shadow: 5px 0 #f0f1f2;
-}
-.motto img{
-    display: inline-block;
-    width: 80%;
-}
+
 .intro{
-    height: 100vh;
-    overflow-y: scroll;
+    min-height: 100vh;
+    width: 80%;
+    margin: auto;
 }
 .intro p {
     font-size: 24px;
