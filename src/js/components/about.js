@@ -19,14 +19,12 @@ export default class About extends React.Component{
                     <div className="intro">
                         <h1>From 2019</h1>
                         <p>
-                            大学的几年弄过微商，摆过地摊，卖过电话卡。<br />
-                            参加过大型科创，ACM-CCPC拿奖，在校团委做网站，做做副部。<br />
-                            自学了C/C++、Java、Js、PHP、Python毕业的时候还能记住一半。
+                            自律生活，自由做事（不限制自己）。
                         </p>
                         <p>
-                            真是一个有活力的少年hhh
+                            业余时间喜欢读读书，看看动漫、剧、电影。音乐爱好者。游戏有人一起的话还是蛮喜欢玩的。
                         </p>
-                        <p>认真做毕设，入职之后就在北京做个全职的程序员了，fighting~</p>
+                        <p> 有时间的时候还是要多出去溜达溜达，认识认识人hhh</p>
                     </div>
                 </div>
                 <Footer />

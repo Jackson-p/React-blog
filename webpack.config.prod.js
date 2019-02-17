@@ -2,16 +2,23 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const baseWebpackConfig = require('./webpack.config.base');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 
 module.exports = merge(baseWebpackConfig, {
     mode: 'production',
-    plugins: [new BundleAnalyzerPlugin({
+    plugins: [
+      new BundleAnalyzerPlugin({
         analyzerMode: 'server',
         analyzerHost: '127.0.0.1',
         analyzerPort: 8888
-    }),
-    new webpack.optimize.ModuleConcatenationPlugin()],
+      }),
+      new webpack.optimize.ModuleConcatenationPlugin(),
+      new WorkboxPlugin.GenerateSW({
+          clientsClaim:true,
+          skipWaiting:true
+      })
+    ],
     optimization: {
         splitChunks: {
           cacheGroups: {
