@@ -80,7 +80,7 @@ export default class Learn extends React.Component{
         learnlist.map((article,index) => {
                 contentBefore = article.body.replace(reg,"");
                 content = contentBefore.substring(0,200)+"...";
-                return <LearnItem key={index} title={article.title} subtitle={content} num={article.number} />      
+                return <LearnItem key={index} title={article.title} subtitle={content} num={article.number} type={article.labels[0].name} />
         }) 
         :
         learnlist;

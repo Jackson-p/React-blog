@@ -9,7 +9,7 @@ export default class LearnItem extends React.Component{
     render(){
         return (
             <div className="previews">
-                <Link to={`/contents/${this.props.num}`} className="links">
+                <Link to={this.props.type == 'Life' ? `/diaries/${this.props.num}` : `/contents/${this.props.num}`} className="links">
                     <p className="post-title">{this.props.title}</p>
                     <p className="post-subtitle">{this.props.subtitle}</p>
                 </Link>
