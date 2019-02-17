@@ -6,7 +6,7 @@
 
 .intro{
     min-height: 100vh;
-    width: 80%;
+    width: 60%;
     margin: auto;
 }
 .intro p {
@@ -17,7 +17,7 @@
     margin: 30px;
 }
 @media screen and (max-width:768px){
-    .motto{
-        display: none;
+    .intro{
+        width: 80%;
     }
 }

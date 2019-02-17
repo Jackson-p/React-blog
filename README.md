@@ -26,7 +26,7 @@ npm start 以热更新形式运行。
 
 ### 其他技术的学习与引用
 
-* 自己写或者找到合适的库实现更好的markdown渲染，提取后的文章可建立markdown索引,这个看到了是css问题，直接用github-like的css（也就是自己用的knowledge.css就好)
+* ~~自己写或者找到合适的库实现更好的markdown渲染，（提取后的文章可建立markdown索引）,这个看到了是css问题，直接改css就成。。。~~
 
 * 数据缓存方面应该会有还要好的方案的吧,如PWA技术借助serviceworker实现离线缓存？
 
