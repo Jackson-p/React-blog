@@ -5,7 +5,6 @@ import LearnItem from './learnitem';
 import { Col, Row, Spin, Pagination} from 'antd';
 import { getIssues, calcPagetotal } from '@/utils/utils';
 import '../../css/learn.css';
-import '../../css/learnbody.css';
 
 
 // interceptors.request.use((req) => {
@@ -19,10 +18,12 @@ import '../../css/learnbody.css';
 // }, (err) => console.log(err));
 
 export default class Learn extends React.Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
-            chosentag : 'ALL',
+            chosentag : props.location.state?props.location.state.chosentag
+            :
+            'ALL',
             loading : false,
             learnlist : '加载中...',
             currentpage : 1,

@@ -19,8 +19,8 @@ export default class About extends React.Component{
                     <div className="intro">
                         <h1>From 2019</h1>
                         <p>
-                            大学的几年弄过微商，摆过地摊，卖过电话卡。
-                            参加过大型科创，ACM-CCPC拿奖，在校团委做网站，做做副部。
+                            大学的几年弄过微商，摆过地摊，卖过电话卡。<br />
+                            参加过大型科创，ACM-CCPC拿奖，在校团委做网站，做做副部。<br />
                             自学了C/C++、Java、Js、PHP、Python毕业的时候还能记住一半。
                         </p>
                         <p>

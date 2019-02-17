@@ -79,7 +79,13 @@ export default class Content extends React.Component{
                 <Col span={24} className="content-container">
                     <Row type="flex" justify="center">
                         <Col md={16} span={24} className="content-header">
-                            <div className="tag"><Link to={`/learntags/${labelName}`}>{labelName}</Link></div>
+                            <div className="tag">
+                            {
+                                labelName == "Life"?<Link to='/'>{ labelName }</Link>
+                                :
+                                <Link to={{ pathname: '/learn', state: {chosentag : labelName} }}>{ labelName }</Link>
+                            }
+                            </div>
                             <h1>{title}</h1>
                             <h2>{time}</h2>
                             <hr />

@@ -16,7 +16,6 @@ const getIssues = function({label = '', currentpage, pagesize, keyword}){
 }
 const transTime = function(timel){
     var reg = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])/i;
-    //return timel.substring(0,10);
     return reg.exec(timel)[0];
 };
 const calcPagetotal = function(total, pagesize){
