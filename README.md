@@ -30,7 +30,7 @@ npm start 以热更新形式运行。
 
 * 为markdown文章建立导航
 
-* 通过PWA newfirst的思路缓存数据和不会变的静态资源，不用localforage.
+* 写合理的webpack，能使PWA正常发挥作用（上线版本暂时去掉PWA相关代码）。
 
 * github仓库上文章和网站代码分开.
 

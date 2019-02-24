@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const baseWebpackConfig = require('./webpack.config.base');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const WorkboxPlugin = require('workbox-webpack-plugin');
 
 
 module.exports = merge(baseWebpackConfig, {
@@ -13,11 +12,7 @@ module.exports = merge(baseWebpackConfig, {
         analyzerHost: '127.0.0.1',
         analyzerPort: 8888
       }),
-      new webpack.optimize.ModuleConcatenationPlugin(),
-      new WorkboxPlugin.GenerateSW({
-          clientsClaim:true,
-          skipWaiting:true
-      })
+      new webpack.optimize.ModuleConcatenationPlugin()
     ],
     optimization: {
         splitChunks: {
