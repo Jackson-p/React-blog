@@ -1,7 +1,8 @@
 import React from 'react';
-import '../../css/header.css';
 import {Link} from 'react-router-dom';
 import {Col} from 'antd';
+import '../../css/header.css';
+import head from '../../img/head.jpg';
 
 export default class Header extends React.Component{
     //通过路由传值给header组件决定哪种li是选定状态就加入className
@@ -51,7 +52,7 @@ export default class Header extends React.Component{
             <div className = {selectedhead == 1?"header scrolltop hfixed":"header"} ref={node => this.node = node}>
                 <Col type="flex" justify="space-between" className = 'banner' span={22} >
                     <Col className = 'banner-header'  sm={4} md={6} lg={8} xl={10} >
-                        <img src = './src/img/head.jpg'  />
+                        <img src = {head}  />
                         <h1>&nbsp;Jackson</h1>
                     </Col>
                     <Col xs={4} md={8} lg={10} xl={12} > 

@@ -1,5 +1,7 @@
 const path = require('path');
 // const webpack = require('webpack');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
     entry: {
@@ -7,12 +9,22 @@ module.exports = {
     },
     resolve:{
         alias:{
-            '@': '../../../',
-
+            '@': '../../../'
         }
     },
     module:{
         rules:[
+            {
+                test:/\.html$/,
+                use:[
+                    {
+                        loader: 'html-loader',
+                        options: {
+                            attrs: ['img:src']
+                        }
+                    }
+                ]
+            },
             {
                 test:/\.css$/,
                 use:[
@@ -29,13 +41,17 @@ module.exports = {
                 }
             },
             {
-                test: /\.(png|jpg|gif)$/,
-                include:path.resolve(__dirname,'./src/img'),
+                test: /\.(png|jpg|jpeg|gif)$/,
+                // include:path.resolve(__dirname,'./src/img'),
+                // exclude: /node_modules/,
                 use: [
                     {
-                        loader: "file-loader",
+                        loader: 'url-loader',
                         options: {
-                            name:'[path][name].[ext]'
+                          name: '[name]-[hash:5].min.[ext]',
+                          limit: 10000, // size <= 20KB
+                          publicPath: 'static/',
+                          outputPath: 'static/'
                         }
                     }
                 ]
@@ -43,10 +59,10 @@ module.exports = {
         ]
     },
     output: {
-      publicPath: __dirname + '/dist/',
+      publicPath: '',
       path: path.resolve(__dirname,'dist'),
-      filename: "[name].bundle.js",
-      chunkFilename: "[name].chunk.js"
+      filename: "[name]-[hash:5].bundle.js",
+      chunkFilename: "[name]-[hash:5].chunk.js"
     },
     plugins: [
         // new webpack.ProvidePlugin({
@@ -54,5 +70,14 @@ module.exports = {
         //     hljs: 'highlight.js',
         //     marked: 'marked'
         // })
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template:'./index.html',
+            chunks:['page'],
+            minify: {
+                collapseWhitespace: true
+            }
+        }),
+        new CleanWebpackPlugin(['dist'])
     ]
 };

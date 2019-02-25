@@ -1,7 +1,10 @@
 import React from 'react';
-import '../../img/bcg.jpg';
-import '../../css/middle.css';
 import {Col} from 'antd';
+import '../../css/middle.css';
+import gitt from '../../img/gitt.png';
+import weibo from '../../img/weibo.png';
+
+
 export default class Middle extends React.Component{
 
     constructor(){
@@ -77,8 +80,8 @@ export default class Middle extends React.Component{
                 <Col className="midimg" span={24}>
                     <div className="midtext" style={HidMid} >
                         <h1>Believe in fate, self-discipline and freedom</h1>
-                        <a href="https://www.github.com/Jackson-p"><img src='./src/img/gitt.png' id="gi" /></a>
-                        <a href="https://weibo.com/u/6046299335"><img src='./src/img/weibo.png' id="wb" /></a>
+                        <a href="https://www.github.com/Jackson-p"><img src={gitt} id="gi" /></a>
+                        <a href="https://weibo.com/u/6046299335"><img src={weibo} id="wb" /></a>
                     </div>
                 </Col>
         );
