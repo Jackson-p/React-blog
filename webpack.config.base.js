@@ -1,7 +1,7 @@
 const path = require('path');
 // const webpack = require('webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -78,6 +78,8 @@ module.exports = {
                 collapseWhitespace: true
             }
         }),
-        new CleanWebpackPlugin(['dist'])
+        new CopyWebpackPlugin([
+            {from:'./src/img/tith.ICO', to:'./'}
+        ])
     ]
 };
