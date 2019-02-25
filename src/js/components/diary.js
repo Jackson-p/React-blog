@@ -2,9 +2,6 @@ import React from 'react';
 import '../../css/diary.css';
 import Header from './header';
 import Back from './back';
-import axios from 'axios';
-import marked from 'marked';
-import hljs from 'highlight';
 // import {HashRouter as Link} from 'react-router-dom'
 import Footer from './footer';
 import Review from './review';

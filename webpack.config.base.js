@@ -1,19 +1,14 @@
 const path = require('path');
+// const webpack = require('webpack');
 
 module.exports = {
-    entry: path.resolve(__dirname, 'src/js', 'root.js'),
-    externals:{
-        axios: 'axios',
-        highlight: 'hljs',
-        marked: 'marked'
-        // ,
-        // react: 'react',
-        // ReactDOM: 'react-dom',
-        // ReactRouter: 'react-router-dom'
+    entry: {
+        page: path.resolve(__dirname, 'src/js', 'root.js')
     },
     resolve:{
         alias:{
-            '@': '../../../'
+            '@': '../../../',
+
         }
     },
     module:{
@@ -31,7 +26,6 @@ module.exports = {
                 include: path.resolve(__dirname,'./src/js'),
                 use:{
                     loader:'babel-loader'
-                    //options: require('./babel.config')
                 }
             },
             {
@@ -49,11 +43,16 @@ module.exports = {
         ]
     },
     output: {
+      publicPath: __dirname + '/dist/',
       path: path.resolve(__dirname,'dist'),
-      filename: '[name].bundle.js',
-      publicPath: '',
+      filename: "[name].bundle.js",
+      chunkFilename: "[name].chunk.js"
     },
     plugins: [
-        
+        // new webpack.ProvidePlugin({
+        //     axios: 'axios',
+        //     hljs: 'highlight.js',
+        //     marked: 'marked'
+        // })
     ]
 };
