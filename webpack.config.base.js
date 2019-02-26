@@ -2,6 +2,7 @@ const path = require('path');
 // const webpack = require('webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -81,5 +82,15 @@ module.exports = {
         new CopyWebpackPlugin([
             {from:'./src/img/tith.ICO', to:'./'}
         ])
+        ,
+        new WorkboxPlugin.GenerateSW({
+            swDest: 'sw.js',
+            clientsClaim:true,
+            skipWaiting:true,
+            runtimeCaching:[{
+              urlPattern: new RegExp('https://api.github.com'),
+              handler: 'staleWhileRevalidate'
+            }]
+        })
     ]
 };
