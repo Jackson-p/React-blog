@@ -61,6 +61,7 @@ module.exports = {
     },
     output: {
       publicPath: '',
+      //publicPath简单说就是引用资源时的公共路径,注意写主js代码的时候都用相对路径。
       path: path.resolve(__dirname,'dist'),
       filename: "[name]-[hash:5].bundle.js",
       chunkFilename: "[name]-[hash:5].chunk.js"
