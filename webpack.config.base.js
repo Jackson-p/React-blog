@@ -1,5 +1,5 @@
 const path = require('path');
-// const webpack = require('webpack');
+//const webpack = require('webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
@@ -10,7 +10,10 @@ module.exports = {
     },
     resolve:{
         alias:{
-            '@': '../../../'
+            '@': '../../../',
+            axios:path.resolve(__dirname,'vendor/axios.min.js'),
+            hljs:path.resolve(__dirname,'vendor/highlight.min.js'),
+            marked:(__dirname,'vendor/marked.min.js')
         }
     },
     module:{
@@ -71,7 +74,7 @@ module.exports = {
         //     axios: 'axios',
         //     hljs: 'highlight.js',
         //     marked: 'marked'
-        // })
+        // }),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template:'./index.html',

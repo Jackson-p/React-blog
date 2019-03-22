@@ -19,7 +19,7 @@ export default class About extends React.Component{
                     <div className="intro">
                         <h1>From 2019</h1>
                         <p>
-                            自由生活，自律做事。
+                            幸福快乐来源于工作、学习与生活的平衡。
                         </p>
                         <p>
                             业余时间喜欢读读书，看看动漫、剧、电影。音乐爱好者。游戏有人一起的话还是蛮喜欢玩的。
