@@ -13,7 +13,7 @@ module.exports = {
             '@': '../../../',
             axios:path.resolve(__dirname,'vendor/axios.min.js'),
             hljs:path.resolve(__dirname,'vendor/highlight.min.js'),
-            marked:(__dirname,'vendor/marked.min.js')
+            marked:path.resolve(__dirname,'vendor/marked.min.js')
         }
     },
     module:{
