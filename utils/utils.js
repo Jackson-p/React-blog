@@ -1,4 +1,3 @@
-import axios from 'axios'
 const getIssues = function({label = '', currentpage, pagesize, keyword}){
     let url;
     if (label && label.trim().length > 0) {

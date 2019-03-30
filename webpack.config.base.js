@@ -11,9 +11,7 @@ module.exports = {
     resolve:{
         alias:{
             '@': '../../../',
-            axios:path.resolve(__dirname,'vendor/axios.min.js'),
-            hljs:path.resolve(__dirname,'vendor/highlight.min.js'),
-            marked:path.resolve(__dirname,'vendor/marked.min.js')
+            '@ant-design/icons/lib/dist$': path.resolve(__dirname, './src/js/icon.js')
         }
     },
     module:{
@@ -84,7 +82,8 @@ module.exports = {
             }
         }),
         new CopyWebpackPlugin([
-            {from:'./src/img/tith.ICO', to:'./'}
+            {from:'./src/img/tith.ICO', to:'./'},
+            {from:'./vendor', to:'./'}
         ])
         ,
         new WorkboxPlugin.GenerateSW({
