@@ -13,6 +13,17 @@
     <script src="https://cdn.bootcss.com/axios/0.18.0/axios.min.js"></script>
     <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
     <script src="https://cdn.bootcss.com/marked/0.6.1/marked.min.js"></script>
+    <script>
+        if(!window.axios){
+            document.write(unescape('%3Cscript src="./axios.min.js"%3E%3C/script%3E'))
+        }
+        if(!window.hljs){
+            document.write(unescape('%3Cscript src="./highlight.min.js"%3E%3C/script%3E'))
+        }
+        if(!window.marked){
+            document.write(unescape('%3Cscript src="./marked.min.js"%3E%3C/script%3E'))
+        }
+    </script>
     <!-- <script src="./axios.min.js"></script>
     <script src="./highlight.min.js"></script>
     <script src="./marked.min.js"></script> -->
